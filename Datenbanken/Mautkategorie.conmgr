@@ -18,11 +18,10 @@
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
-          DTS:MaximumWidth="50"
-          DTS:DataType="129"
+          DTS:DataType="21"
           DTS:TextQualified="True"
           DTS:ObjectName="KATEGORIE_ID"
-          DTS:DTSID="{5AAB52D4-8D08-46CC-BFF3-F08283E033E9}"
+          DTS:DTSID="{AA36A3A2-5C7D-4AC9-9C75-8E1238E7DCEC}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -31,7 +30,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="SSKL_ID"
-          DTS:DTSID="{1616A495-36EA-4D6F-BCB5-B3767648CA08}"
+          DTS:DTSID="{204EF4D3-A889-415C-A5C7-6D4606655DE3}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -40,7 +39,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="KAT_BEZEICHNUNG"
-          DTS:DTSID="{87EF50B8-3EDC-4630-94AE-5CCDE3A847E5}"
+          DTS:DTSID="{81BBB69C-3618-4984-9FCB-A31EDA7A3D94}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -49,7 +48,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="ACHSZAHL"
-          DTS:DTSID="{89F91C2E-E03B-45E5-9FE2-5BCF0FE4A38A}"
+          DTS:DTSID="{C76B2778-38CF-4A90-B91A-8E9367637753}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -57,7 +56,7 @@
           DTS:DataType="14"
           DTS:TextQualified="True"
           DTS:ObjectName="MAUTSATZ_JE_KM"
-          DTS:DTSID="{D50DF0AC-659E-4B15-8A43-7458E5B5B07E}"
+          DTS:DTSID="{27630511-DE4B-49CB-B24F-45698B4B4CFB}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
