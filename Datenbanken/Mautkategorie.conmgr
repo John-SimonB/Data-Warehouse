@@ -1,0 +1,65 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Mautkategorie"
+  DTS:DTSID="{26F00807-5684-41EA-9936-44D89E9D633F}"
+  DTS:Description="Dummydaten für Mautkategorie"
+  DTS:CreationName="FLATFILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:Format="Delimited"
+      DTS:LocaleID="1031"
+      DTS:HeaderRowDelimiter="_x000D__x000A_"
+      DTS:ColumnNamesInFirstDataRow="True"
+      DTS:RowDelimiter=""
+      DTS:TextQualifier="_x0060__x0022__x0060_"
+      DTS:CodePage="1252"
+      DTS:ConnectionString="C:\Users\John-Simon\Desktop\Datenbanken\Flatfile\Mautkategorie.csv">
+      <DTS:FlatFileColumns>
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="KATEGORIE_ID"
+          DTS:DTSID="{5AAB52D4-8D08-46CC-BFF3-F08283E033E9}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="SSKL_ID"
+          DTS:DTSID="{1616A495-36EA-4D6F-BCB5-B3767648CA08}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="KAT_BEZEICHNUNG"
+          DTS:DTSID="{87EF50B8-3EDC-4630-94AE-5CCDE3A847E5}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x002C_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="129"
+          DTS:TextQualified="True"
+          DTS:ObjectName="ACHSZAHL"
+          DTS:DTSID="{89F91C2E-E03B-45E5-9FE2-5BCF0FE4A38A}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x000D__x000A_"
+          DTS:DataType="14"
+          DTS:TextQualified="True"
+          DTS:ObjectName="MAUTSATZ_JE_KM"
+          DTS:DTSID="{D50DF0AC-659E-4B15-8A43-7458E5B5B07E}"
+          DTS:CreationName="" />
+      </DTS:FlatFileColumns>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
