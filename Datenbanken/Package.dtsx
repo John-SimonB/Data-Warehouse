@@ -11,8 +11,8 @@
   DTS:LocaleID="1031"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="146"
-  DTS:VersionGUID="{F2C55EF2-5453-4D1A-90A3-FE3FCEF816F5}">
+  DTS:VersionBuild="151"
+  DTS:VersionGUID="{523DCB8A-FD00-4687-BCB8-90EAC4E121B0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -43,161 +43,6 @@
         <pipeline
           version="1">
           <components>
-            <component
-              refId="Package\Lade Fahrzeugdaten\Flatfilequelle"
-              componentClassID="Microsoft.FlatFileSource"
-              contactInfo="Flatfilequelle;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;1"
-              description="Flatfilequelle"
-              localeId="1031"
-              name="Flatfilequelle"
-              usesDispositions="true"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Gibt an, ob Spalten mit der Länge &quot;0&quot; als NULL behandelt werden."
-                  name="RetainNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Gibt den Namen der Ausgabespalte an, die den Dateinamen enthält. Wenn kein Name angegeben wird, wird keine Ausgabespalte generiert, die den Dateinamen enthält."
-                  name="FileNameColumnName"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Connections[FlatFileConnection]"
-                  connectionManagerID="{26F00807-5684-41EA-9936-44D89E9D633F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Mautkategorie]"
-                  name="FlatFileConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle]"
-                  name="Ausgabe der Flatfilequelle">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[SSKL_ID]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Konvertierung"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[SSKL_ID]"
-                      length="50"
-                      lineageId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[SSKL_ID]"
-                      name="SSKL_ID"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Gibt an, ob die Daten im Binärformat sind."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[KAT_BEZEICHNUNG]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Konvertierung"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[KAT_BEZEICHNUNG]"
-                      length="50"
-                      lineageId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[KAT_BEZEICHNUNG]"
-                      name="KAT_BEZEICHNUNG"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Gibt an, ob die Daten im Binärformat sind."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[MAUTSATZ_JE_KM]"
-                      dataType="decimal"
-                      errorOrTruncationOperation="Konvertierung"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[MAUTSATZ_JE_KM]"
-                      lineageId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[MAUTSATZ_JE_KM]"
-                      name="MAUTSATZ_JE_KM"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Gibt an, ob die Daten im Binärformat sind."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[KATEGORIE_ID]"
-                      dataType="ui8"
-                      name="KATEGORIE_ID" />
-                    <externalMetadataColumn
-                      refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[SSKL_ID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="SSKL_ID" />
-                    <externalMetadataColumn
-                      refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[KAT_BEZEICHNUNG]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="KAT_BEZEICHNUNG" />
-                    <externalMetadataColumn
-                      refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[ACHSZAHL]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="ACHSZAHL" />
-                    <externalMetadataColumn
-                      refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[MAUTSATZ_JE_KM]"
-                      dataType="decimal"
-                      name="MAUTSATZ_JE_KM" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle]"
-                  isErrorOut="true"
-                  name="Fehlerausgabe der Flatfilequelle">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[Fehlerausgabespalte der Flatfilequelle]"
-                      codePage="1252"
-                      dataType="text"
-                      description="Fehlerausgabespalte der Flatfilequelle"
-                      lineageId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[Fehlerausgabespalte der Flatfilequelle]"
-                      name="Fehlerausgabespalte der Flatfilequelle" />
-                    <outputColumn
-                      refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
             <component
               refId="Package\Lade Fahrzeugdaten\OLE DB-Befehl"
               componentClassID="Microsoft.OLEDBCommand"
@@ -269,6 +114,7 @@ EXEC Update_Fahrzeug_DIMENSION
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="FZ_ID"
+                      cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@FZ_ID]"
                       lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[FZ_ID]" />
                     <inputColumn
@@ -533,6 +379,7 @@ EXEC Update_Fahrzeug_DIMENSION
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="FZ_ID"
+                      cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\Lade Fahrzeugdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[FZ_ID]"
                       lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[FZ_ID]" />
                     <inputColumn
@@ -664,6 +511,1123 @@ EXEC Update_Fahrzeug_DIMENSION
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Lade Fahrzeugdaten\Skriptkomponente"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Schließt benutzerdefinierten Skriptcode ein und führt ihn aus. Wenden Sie beispielsweise eine Geschäftsregel an, durch die der Bereich der gültigen Werte in einer Spalte &quot;income&quot; beschränkt wird, oder addieren Sie Werte in zwei Spalten, und berechnen Sie den Mittelwert der Summe.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;13"
+              description="Schließt benutzerdefinierten Skriptcode ein und führt ihn aus. Wenden Sie beispielsweise eine Geschäftsregel an, durch die der Bereich der gültigen Werte in einer Spalte &quot;income&quot; beschränkt wird, oder addieren Sie Werte in zwei Spalten, und berechnen Sie den Mittelwert der Summe."
+              name="Skriptkomponente"
+              version="13">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Speichert den Quellcode der Komponente."
+                  isArray="true"
+                  name="SourceCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="30">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[My Project\AssemblyInfo.vb]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Imports System
+Imports System.Reflection
+Imports System.Runtime.InteropServices
+
+' General Information about an assembly is controlled through the following 
+' set of attributes. Change these attribute values to modify the information
+' associated with an assembly.
+
+' Review the values of the assembly attributes
+
+<Assembly: AssemblyTitle("SC_50a72ef761b04429a73e3bf34e41d943")> 
+<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyProduct("SC_50a72ef761b04429a73e3bf34e41d943")> 
+<Assembly: AssemblyCopyright("Copyright @  2024")> 
+<Assembly: AssemblyTrademark("")> 
+<Assembly: CLSCompliant(True)> 
+
+<Assembly: ComVisible(False)> 
+
+'The following GUID is for the ID of the typelib if this project is exposed to COM
+<Assembly: Guid("14f04d14-f53e-4c37-8490-27893f13bfb5")> 
+
+' Version information for an assembly consists of the following four values:
+'
+'      Major Version
+'      Minor Version 
+'      Build Number
+'      Revision
+'
+' You can specify all the values or you can default the Build and Revision Numbers 
+' by using the '*' as shown below:
+' <Assembly: AssemblyVersion("1.0.*")>
+
+<Assembly: AssemblyVersion("1.0.0.0")> 
+<Assembly: AssemblyFileVersion("1.0.0.0")> 
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[ComponentWrapper.vb]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[' THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+' Microsoft SQL Server Integration Services component wrapper
+' This module defines the base class for your component
+' THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+
+Imports System
+Imports System.Data
+Imports Microsoft.SqlServer.Dts.Pipeline
+Imports Microsoft.SqlServer.Dts.Pipeline.Wrapper
+Imports Microsoft.SqlServer.Dts.Runtime.Wrapper
+
+<CLSCompliant(False)> _
+Public Class UserComponent
+    Inherits ScriptComponent
+
+    Public Connections As New Connections(Me)
+    Public Variables As New Variables(Me)
+
+    Public Overrides Sub ProcessInput(ByVal InputID As Integer, ByVal InputName As String, ByVal Buffer As PipelineBuffer, ByVal OutputMap As OutputNameMap)
+
+        If InputName.Equals("Eingabe ""0""", StringComparison.Ordinal) Then
+            Eingabe0_ProcessInput(New Eingabe0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap))
+        End If
+
+    End Sub
+
+    Public Overridable Sub Eingabe0_ProcessInput(ByVal Buffer As Eingabe0Buffer)
+
+        While Buffer.NextRow()
+            Eingabe0_ProcessInputRow(Buffer)
+        End While
+
+    End Sub
+
+    Public Overridable Sub Eingabe0_ProcessInputRow(ByVal Row As Eingabe0Buffer)
+
+    End Sub
+
+End Class
+
+<CLSCompliant(False)> _
+Public Class Connections
+
+    Dim ParentComponent As ScriptComponent
+
+    <CLSCompliant(False)> _
+    Public Sub New(ByVal Component As ScriptComponent)
+        ParentComponent = Component
+    End Sub
+
+End Class
+
+<CLSCompliant(False)> _
+Public Class Variables
+
+    Dim ParentComponent As ScriptComponent
+
+    <CLSCompliant(False)> _
+    Public Sub New(ByVal Component As ScriptComponent)
+        ParentComponent = Component
+    End Sub
+
+End Class
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[main.vb]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[#Region "Help:  Introduction to the Script Component"
+' The Script Component allows you to perform virtually any operation that can be accomplished in
+' a .Net application within the context of an Integration Services data flow.
+
+' Expand the other regions which have "Help" prefixes for examples of specific ways to use
+' Integration Services features within this script component.
+#End Region
+
+#Region "Imports"
+Imports System
+Imports System.Data
+Imports System.Math
+Imports Microsoft.SqlServer.Dts.Pipeline.Wrapper
+Imports Microsoft.SqlServer.Dts.Runtime.Wrapper
+#End Region
+
+' This is the class to which to add your code.  Do not change the name, attributes, or parent
+' of this class.
+<Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute> _
+<CLSCompliant(False)> _
+Public Class ScriptMain
+    Inherits UserComponent
+
+#Region "Help:  Using Integration Services variables and parameters"
+    'To use a variable in this script, first ensure that the variable has been added to
+    'either the list contained in the ReadOnlyVariables property or the list contained in
+    'the ReadWriteVariables property of this script component, according to whether or not your
+    'code needs to write into the variable.  To do so, save this script, close this instance of
+    'Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties.
+    'To use a parameter in this script, follow the same steps. Parameters are always read-only.
+
+    'Example of reading from a variable or parameter:
+    ' startTime = Variables.MyStartTime;
+
+    'Example of writing to a variable:
+    ' Variables.myStringVariable = "new value";
+#End Region
+
+#Region "Help:  Using Integration Services Connnection Managers"
+    'Some types of connection managers can be used in this script component.  See the help topic
+    '"Working with Connection Managers Programatically" for details.
+
+    'To use a connection manager in this script, first ensure that the connection manager has
+    'been added to either the list of connection managers on the Connection Managers page of the
+    'script component editor.  To add the connection manager, save this script, close this instance of
+    ' Visual Studio, and add the Connection Manager to the list.
+
+    'If the component needs to hold a connection open while processing rows, override the
+    'AcquireConnections and ReleaseConnections methods.
+
+    'Example of using an ADO.Net connection manager to acquire a SqlConnection:
+    ' Dim rawConnection As Object = Connections.SalesDB.AcquireConnection(Transaction)
+    ' Dim salesDBConn As SqlConnection = CType(rawConnection, SqlConnection)
+
+    'Example of using a File connection manager to acquire a file path:
+    ' Dim rawConnection As Object = Connections.Prices_zip.AcquireConnection(Transaction)
+    ' Dim filePath As String = CType(rawConnection, String)
+
+    'Example of releasing a connection manager:
+    ' Connections.SalesDB.ReleaseConnection(rawConnection)
+#End Region
+
+#Region "Help:  Firing Integration Services Events"
+    'This script component can fire events.
+
+    'Example of firing an error event:
+    ' ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, cancel)
+
+    'Example of firing an information event:
+    ' ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain)
+
+    'Example of firing a warning event:
+    ' ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0)
+
+#End Region
+
+    'This method is called once, before rows begin to be processed in the data flow.
+    '
+    'You can remove this method if you don't need to do anything here.
+    Public Overrides Sub PreExecute()
+        MyBase.PreExecute()
+        '
+        ' Add your code here
+        '
+    End Sub
+
+    ' This method is called after all the rows have passed through this component.
+    '
+    ' You can delete this method if you don't need to do anything here.
+    Public Overrides Sub PostExecute()
+        MyBase.PostExecute()
+        '
+        ' Add your code here
+        '
+    End Sub
+
+    'This method is called once for every row that passes through the component from Eingabe0.
+    '
+    'Example of reading a value from a column in the the row:
+    ' zipCode = Row.ZipCode
+    '
+    'Example of writing a value to a column in the row:
+    ' Row.ZipCode = zipCode
+    Public Overrides Sub Eingabe0_ProcessInputRow(ByVal Row As Eingabe0Buffer)
+        ' Pr�fen, ob ACHSZAHL und ACHSEN nicht Nothing sind und ACHSEN ein g�ltiger Integer ist
+        If (Row.ACHSZAHL IsNot Nothing AndAlso Row.ACHSEN IsNot Nothing) Then
+            Dim achsenzahlString As String = Row.ACHSZAHL
+            Dim achsen As Integer = Row.ACHSEN
+            Dim isValid As Boolean = False
+
+            ' �berpr�fen, ob ACHSZAHL mit "<=" beginnt
+            If achsenzahlString.StartsWith("<=") Then
+                Dim zahl As Integer
+                If Integer.TryParse(achsenzahlString.Substring(2), zahl) Then
+                    If achsen <= zahl Then
+                        isValid = True
+                    End If
+                End If
+                ' �berpr�fen, ob ACHSZAHL mit "<" beginnt
+            ElseIf achsenzahlString.StartsWith("<") Then
+                Dim zahl As Integer
+                If Integer.TryParse(achsenzahlString.Substring(1), zahl) Then
+                    If achsen < zahl Then
+                        isValid = True
+                    End If
+                End If
+                ' �berpr�fen, ob ACHSZAHL mit ">=" beginnt
+            ElseIf achsenzahlString.StartsWith(">=") Then
+                Dim zahl As Integer
+                If Integer.TryParse(achsenzahlString.Substring(2), zahl) Then
+                    If achsen >= zahl Then
+                        isValid = True
+                    End If
+                End If
+                ' �berpr�fen, ob ACHSZAHL mit ">" beginnt
+            ElseIf achsenzahlString.StartsWith(">") Then
+                Dim zahl As Integer
+                If Integer.TryParse(achsenzahlString.Substring(1), zahl) Then
+                    If achsen > zahl Then
+                        isValid = True
+                    End If
+                End If
+                ' �berpr�fen, ob ACHSZAHL eine bestimmte Zahl ist
+            Else
+                Dim zahl As Integer
+                If Integer.TryParse(achsenzahlString, zahl) Then
+                    If achsen = zahl Then
+                        isValid = True
+                    End If
+                End If
+            End If
+
+            ' Wenn die Bedingung nicht erf�llt ist, setzen Sie FZID auf Nothing
+            If Not isValid Then
+                Row.FZID = Nothing
+            End If
+        End If
+    End Sub
+
+End Class
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[My Project\Settings.settings]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)" GeneratedClassNamespace="" GeneratedClassName="MySettings">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_50a72ef761b04429a73e3bf34e41d943.vbproj]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{141076f5-c19a-4870-807f-1801e9a3a526}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>My Project</AppDesignerFolder>
+    <RootNamespace>SC_50a72ef761b04429a73e3bf34e41d943</RootNamespace>
+    <AssemblyName>SC_50a72ef761b04429a73e3bf34e41d943</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- This sections specifies references for the project. -->
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Compile Include="main.vb" />
+    <Compile Include="BufferWrapper.vb" />
+    <Compile Include="ComponentWrapper.vb" />
+  </ItemGroup>
+  <!-- Visual Basic supports Importing namespaces (equivalent to using statements in C#).-->
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="My Project\" />
+    <Compile Include="My Project\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a VB project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="SSIS_SC160" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
+        <Host Name="SSIS_SC160" IconIndex=""></Host>
+        <ProjectClient>
+          <HostIdentifier>SSIS_SC160</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[My Project\Settings.Designer.vb]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+
+Partial Friend NotInheritable Class MySettings
+    Inherits System.Configuration.ApplicationSettingsBase
+
+    Private Shared m_Value As MySettings
+
+    Private Shared m_SyncObject As Object = New Object
+
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Public Shared ReadOnly Property Value() As MySettings
+        Get
+            If (MySettings.m_Value Is Nothing) Then
+                System.Threading.Monitor.Enter(MySettings.m_SyncObject)
+                If (MySettings.m_Value Is Nothing) Then
+                    Try
+                        MySettings.m_Value = New MySettings
+                    Finally
+                        System.Threading.Monitor.Exit(MySettings.m_SyncObject)
+                    End Try
+                End If
+            End If
+            Return MySettings.m_Value
+        End Get
+    End Property
+End Class
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[BufferWrapper.vb]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[' THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+' Microsoft SQL Server Integration Services buffer wrappers
+' This module defines classes for accessing data flow buffers
+' THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+
+
+Option Strict Off   ' This allows usage of PipelineBuffer typed accessors.
+
+Imports System
+Imports System.Data
+Imports Microsoft.SqlServer.Dts.Pipeline
+Imports Microsoft.SqlServer.Dts.Pipeline.Wrapper
+
+<CLSCompliant(False)> _
+Public Class Eingabe0Buffer
+    Inherits ScriptBuffer
+
+    Public Sub New(ByVal Buffer As PipelineBuffer, ByVal BufferColumnIndexes As Integer(), ByVal OutputMap As OutputNameMap)
+        MyBase.New(Buffer, BufferColumnIndexes, OutputMap)
+    End Sub
+
+    Public ReadOnly Property [SSKLID]() As String
+        Get
+            Return Buffer.GetString(Me.BufferColumnIndexes(0))
+        End Get
+    End Property
+    Public ReadOnly Property [SSKLID_IsNull] As Boolean
+        Get
+            Return IsNull(0)
+        End Get
+    End Property
+
+    Public Property [FZID]() As String
+        Get
+            Return Buffer.GetString(Me.BufferColumnIndexes(1))
+        End Get
+        Set
+            Me(1) = Value
+        End Set
+    End Property
+    Public Property [FZID_IsNull] As Boolean
+        Get
+            Return IsNull(1)
+        End Get
+        Set
+            If (value)
+                SetNull(1)
+            Else
+                Throw New InvalidOperationException("Die IsNull-Eigenschaft kann nicht auf  festgelegt werden. Ordnen Sie stattdessen der Spalte einen Wert zu.")
+            End If
+        End Set
+    End Property
+
+    Public Property [ACHSEN]() As String
+        Get
+            Return Buffer.GetString(Me.BufferColumnIndexes(2))
+        End Get
+        Set
+            Me(2) = Value
+        End Set
+    End Property
+    Public Property [ACHSEN_IsNull] As Boolean
+        Get
+            Return IsNull(2)
+        End Get
+        Set
+            If (value)
+                SetNull(2)
+            Else
+                Throw New InvalidOperationException("Die IsNull-Eigenschaft kann nicht auf  festgelegt werden. Ordnen Sie stattdessen der Spalte einen Wert zu.")
+            End If
+        End Set
+    End Property
+
+    Public ReadOnly Property [KATBEZEICHNUNG]() As String
+        Get
+            Return Buffer.GetString(Me.BufferColumnIndexes(3))
+        End Get
+    End Property
+    Public ReadOnly Property [KATBEZEICHNUNG_IsNull] As Boolean
+        Get
+            Return IsNull(3)
+        End Get
+    End Property
+
+    Public ReadOnly Property [MAUTSATZJEKM]() As Decimal
+        Get
+            Return Buffer.GetDecimal(Me.BufferColumnIndexes(4))
+        End Get
+    End Property
+    Public ReadOnly Property [MAUTSATZJEKM_IsNull] As Boolean
+        Get
+            Return IsNull(4)
+        End Get
+    End Property
+
+    Public Property [ACHSZAHL]() As String
+        Get
+            Return Buffer.GetString(Me.BufferColumnIndexes(5))
+        End Get
+        Set
+            Me(5) = Value
+        End Set
+    End Property
+    Public Property [ACHSZAHL_IsNull] As Boolean
+        Get
+            Return IsNull(5)
+        End Get
+        Set
+            If (value)
+                SetNull(5)
+            Else
+                Throw New InvalidOperationException("Die IsNull-Eigenschaft kann nicht auf  festgelegt werden. Ordnen Sie stattdessen der Spalte einen Wert zu.")
+            End If
+        End Set
+    End Property
+
+    Public Overloads Function NextRow() As Boolean
+        NextRow = MyBase.NextRow()
+    End Function
+
+    Public Overloads Function EndOfRowset() As Boolean
+        EndOfRowset = MyBase.EndOfRowset
+    End Function
+
+End Class
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Project]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>SC_50a72ef761b04429a73e3bf34e41d943</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>SC_50a72ef761b04429a73e3bf34e41d943</msb:DisplayName>
+    <msb:ProjectId>{687945C3-A087-493C-997A-1AD0B5A52CA7}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="SC_50a72ef761b04429a73e3bf34e41d943.vbproj" />
+    <msb:File Include="My Project\Settings.Designer.vb" />
+    <msb:File Include="main.vb" />
+    <msb:File Include="BufferWrapper.vb" />
+    <msb:File Include="My Project\Resources.resx" />
+    <msb:File Include="ComponentWrapper.vb" />
+    <msb:File Include="My Project\AssemblyInfo.vb" />
+    <msb:File Include="My Project\Resources.Designer.vb" />
+    <msb:File Include="My Project\Settings.settings" />
+  </msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[My Project\Resources.resx]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[My Project\Resources.Designer.vb]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+Namespace My.Resources
+    
+    '''<summary>
+    '''   A strongly-typed resource class, for looking up localized strings, etc.
+    '''</summary>
+    'This class was auto-generated by the Strongly Typed Resource Builder
+    'class via a tool like ResGen or Visual Studio.NET.
+    'To add or remove a member, edit your .ResX file then rerun ResGen
+    'with the /str option, or rebuild your VS project.
+    Class MyResources
+        
+        Private Shared _resMgr As System.Resources.ResourceManager
+        
+        Private Shared _resCulture As System.Globalization.CultureInfo
+        
+        Friend Sub New()
+            MyBase.New
+        End Sub
+        
+        '''<summary>
+        '''   Returns the cached ResourceManager instance used by this class.
+        '''</summary>
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Public Shared ReadOnly Property ResourceManager() As System.Resources.ResourceManager
+            Get
+                If (_resMgr Is Nothing) Then
+                    Dim temp As System.Resources.ResourceManager = New System.Resources.ResourceManager("My.Resources.MyResources", GetType(MyResources).Assembly)
+                    _resMgr = temp
+                End If
+                Return _resMgr
+            End Get
+        End Property
+        
+        '''<summary>
+        '''   Overrides the current thread's CurrentUICulture property for all
+        '''   resource lookups using this strongly typed resource class.
+        '''</summary>
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Public Shared Property Culture() As System.Globalization.CultureInfo
+            Get
+                Return _resCulture
+            End Get
+            Set
+                _resCulture = value
+            End Set
+        End Property
+    End Class
+End Namespace
+]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Speichert die binäre Darstellung der Komponente."
+                  isArray="true"
+                  name="BinaryCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="2">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_50a72ef761b04429a73e3bf34e41d943.dll]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDADhBdGYAAAAAAAAAAOAAIiALAVAAACIAAAAIAAAAAAAAjkEA
+AAAgAAAAYAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACgAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAADxBAABPAAAAAGAAAEgEAAAAAAAAAAAAAAAAAAAA
+AAAAAIAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAlCEAAAAgAAAAIgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAYAAAAAYAAAAkAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAIAAAAACAAAAKgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAABw
+QQAAAAAAAEgAAAACAAUA7CQAAJgbAAABAAAAAAAAAIRAAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBgAAAoqHgIoGQAACiqmcxoAAAqAAQAABHMbAAAKgAIA
+AARzHAAACoADAAAEcx0AAAqABAAABCoufgEAAARvHgAACioufgIAAARvHwAACioufgMAAARvIAAA
+CioufgQAAARvIQAACioeAigiAAAKKq5+BQAABC0ecgEAAHDQBQAAAigjAAAKbyQAAApzJQAACoAF
+AAAEfgUAAAQqGn4GAAAEKh4CgAYAAAQqHgIoJQAABioeAigmAAAKKh4CKCcAAAoqAAAAEzACAOcA
+AAABAAARA28fAAAGOdsAAAADbxcAAAY50AAAAANvHwAABgoDbxcAAAYoKAAACgsWDAZyMwAAcG8p
+AAAKLCEGGG8qAAAKEgMoKwAACjmRAAAABwk9igAAABcMOIMAAAAGcjkAAHBvKQAACiwZBhdvKgAA
+ChIEKCsAAAosZgcRBC9hFwwrXQZyPQAAcG8pAAAKLBkGGG8qAAAKEgUoKwAACixABxEFMjsXDCs3
+BnJDAABwbykAAAosGQYXbyoAAAoSBigrAAAKLBoHEQYxFRcMKxEGEgcoKwAACiwHBxEHMwIXDAgt
+BwMUbxQAAAYqKgIDBAUoLAAACipSAnstAAAKAnsuAAAKFpRvLwAACioiAhYoMAAACipSAnstAAAK
+AnsuAAAKF5RvLwAACiomAhcDKDEAAAoqIgIXKDAAAAoqWgMsCAIXKDIAAAoqckcAAHBzMwAACnpS
+AnstAAAKAnsuAAAKGJRvLwAACiomAhgDKDEAAAoqIgIYKDAAAAoqWgMsCAIYKDIAAAoqckcAAHBz
+MwAACnpSAnstAAAKAnsuAAAKGZRvLwAACioiAhkoMAAACipSAnstAAAKAnsuAAAKGpRvNAAACioi
+AhooMAAACipSAnstAAAKAnsuAAAKG5RvLwAACiomAhsDKDEAAAoqIgIbKDAAAAoqWgMsCAIbKDIA
+AAoqckcAAHBzMwAACnoAAAATMAEACQAAAAIAABECKDUAAAoKBioAAAATMAEACQAAAAIAABECKDYA
+AAoKBip+Aig3AAAKAgJzKQAABn0HAAAEAgJzKgAABn0IAAAEKpIEch4BAHAabzgAAAosFQIFAgMo
+OQAACg4EcxAAAAZvJwAABipKKwcCA28oAAAGA28jAAAGLfEqBio6AigiAAAKAgN9CQAABCo6Aigi
+AAAKAgN9CgAABCpCcyIAAAooOgAACoAMAAAEKh4CKDsAAAoqAAAbMAEAPwAAAAAAAAB+CwAABC0y
+fgwAAAQoOgAACig8AAAKfgsAAAQtHHMsAAAGgAsAAATeEH4MAAAEKDoAAAooPQAACtx+CwAABCoA
+ARAAAAIAHQAMKQAQAAAAADYCAyg6AAAKKD4AAAoqHgIoPwAACiou0AwAAAIoIwAACioeAihAAAAK
+KgAAEzABABQAAAADAAARAowFAAAbLQgoAQAAKworAgIKBioiA/4VBQAAGyoAAAATMAIAKAAAAAQA
+ABECe0IAAApvQwAACgoGjAgAABstEigCAAArCgJ7QgAACgZvRAAACgYqSgIoIgAACgJzRQAACn1C
+AAAKKgBCU0pCAQABAAAAAAAMAAAAdjQuMC4zMDMxOQAAAAAFAGwAAAAYCwAAI34AAIQLAAD4CgAA
+I1N0cmluZ3MAAAAAfBYAADgBAAAjVVMAtBcAABAAAAAjR1VJRAAAAMQXAADUAwAAI0Jsb2IAAAAA
+AAAAAgAAAVcVogkJDwAAAPoBMwAWAAABAAAAMgAAAA0AAAANAAAANgAAABYAAABFAAAAPQAAAAQA
+AAAFAAAAFAAAABsAAAAIAAAAAQAAAAUAAAABAAAAAgAAAAMAAAACAAAAAABBBQEAAAAAAAYAlAPQ
+CAYAPgTQCAYAawIRCA8AdgkAAAYArAKhBgYAdwOhBgYAJQShBgYAtAOhBgYAzQOhBgYA8wKhBgYA
+6AMqBgYAmAKKCAYAFAKKCAYAPwOhBgYADgOvBAoANwKrBwoA/wErBQoAfwIrBQ4AzgFgCA4A4Qck
+CAYAJwMRCA4AwwKpCA4A2wIJAQYA8wkqBg4AxwdgCA4AXAMJAQYApQEqBg4AAQABBQoAIgIxBgYA
+kQfwCAYA3gaMBhIA/gOBAQYA5gQqBhIAgAeBARYAcQeBARIA6gaBAQYA+QQqBhIAMwqBAQoA3gF3
+BgYATgIRCAYAUwEqBgYA7QqhBg4AxgmpCAYA1QQqBgYAKwAqBgYAswYqBgYAzQYqBgYA3gnQCAYA
+CQieBAYA8gcqBgAAAABVAAAAAAABAAEAAAAAAGkGwgpNAAEAAQAAAAAA3wfCClEAAQACAAABEAD6
+CcIKYQABAAMAAAAAADIJAQlhAAUACAABAAAATgYxACAABwAMAAEAAABiBzEAiQAHABAAAQAAABUK
+MQCZAAcAJQABAAAA0gkxAGEACQApAAEAAACFCTEAYQAKACoAAAEQALQJMQCdAAsAKwAFAQAAUggA
+AGEADQAuAAUBAAAQAAAAYQANADUAMQArBzEBMQACBzkBMQAWB0EBMQBEB0kBEQDqB1EBEQDCAVUB
+BgDSCVkBBgCFCV0BAQAjCmEBAQAjCmEBEQBzBGYBEQDtCWoBIQCXCvkAUCAAAAAABhj8BwYAAQBY
+IAAAAAAGGPwHBgABAGAgAAAAABEYAghtAQEAiiAAAAAAEwjSB3EBAQCWIAAAAAATCFkGdgEBAKIg
+AAAAABMIwwd7AQEAriAAAAAAEwhCCIABAQC6IAAAAAADGPwHBgABAMIgAAAAABYIjQeFAQEA7iAA
+AAAAFgiqAYoBAQD1IAAAAAAWCLYBjwEBAP0gAAAAAAYY/AcGAAIABSEAAAAAxgJcBAYAAgANIQAA
+AADGAmcEBgACABghAAAAAMYCoQqVAQIACyIAAAAABhj8B4YAAwAWIgAAAAAGCF4A1gAGACsiAAAA
+AAYIaQWxAAYANCIAAAAABghpANYABgBJIgAAAAAGCHIAEAAGAFMiAAAAAAYIewWxAAcAXCIAAAAA
+BgiLBRUABwBzIgAAAAAGCMEA1gAIAIgiAAAAAAYIzAAQAAgAkiIAAAAABgj1BbEACQCbIgAAAAAG
+CAcGFQAJALIiAAAAAAYIgwDWAAoAxyIAAAAABgibBbEACgDQIgAAAAAGCLAAmwEKAOUiAAAAAAYI
+3QWxAAoA7iIAAAAABgiWANYACgADIwAAAAAGCKMAEAAKAA0jAAAAAAYItQWxAAsAFiMAAAAABgjJ
+BRUACwAwIwAAAACGALoKsQAMAEgjAAAAAIYABAqxAAwAXSMAAAAABhj8BwYADAB9IwAAAADGAooK
+oQEMAKIjAAAAAEYDgQqVARAAtSMAAAAARgOhCpUBEQC3IwAAAAAGGPwHrQESAMYjAAAAAAYY/Aet
+ARMA1SMAAAAAERgCCG0BFADmIwAAAAAGGPwHBgAUAPAjAAAAABYIewS0ARQATCQAAAAAxgK/Cc0A
+FABaJAAAAADGAkcB0gAVAGIkAAAAAIMAogG5ARUAbiQAAAAAxgLJBNYAFQB4JAAAAAARAO0AvgEV
+AJgkAAAAAAEA2QDGARYAuiAAAAAABhj8BwYAFwCkJAAAAAADCC4BSgAXANgkAAAAAAYY/AcGABcA
+AAABAJgEAAABAL4KAAABAIYHAAACAI8JAAADAPgGAAABAJgEAAABAJgEAAABAJgEAAABAJgEAAAB
+AJgEAAABAJgEAAABAHsAAAACAHcBAAADAIYHAAAEAPgGAAABAIYHAAABAL4KAAABADkKAAABADkK
+AAABAOgGAAABAD4BAAABAD4BCQD8BwEAEQD8BwYAGQD8BwoAKQD8BxAAMQD8BxAAOQD8BxAAQQD8
+BxAASQD8BxAAUQD8BxAAWQD8BxUAYQD8BxUAaQD8BxAAcQD8BxAAeQD8BxAAgQD8BxoAkQD8ByAA
+qQD8BwYAsQD8BwYAuQD8BwYA0QD8ByYA6QD8BxAAAQH8BwYAQQH8BwYAmQD8BwYAoQD8BwYADAD8
+BwYAFAD8BwYAHAD8BwYAJAD8BwYADAAuAUoAFAAuAUoAHAAuAUoAJAAuAUoAwQD8BwYA2QBlAU8A
+2QDpClcA8QD8B10AMQFcBAYAMQFnBAYAWQGhB3AAYQHrBHUAYQHcBHoAaQH2AX8AEQH8B4YAEQGG
+B5IAEQGPCZcAGQHSBHoAEQESBpsAEQEhBqAAEQEZBgEAcQH8BxAAGQH2BKYAEQG6CrEAEQEECrEA
+MQH8BwYAYQG/CbUAMQGjCb0AgQGPBMMAOQH8BwYAiQHMB8gAiQEQCsgAwQC/Cc0AwQBHAdIAwQDJ
+BNYAkQEfAeIANACXCvkAPAB7BEoAPACFBBABPAD8BwYAKQCrAIsDLgALAAQCLgATAA0CLgAbACwC
+LgAjADUCLgArAF4CLgAzAF4CLgA7ADUCLgBDAGQCLgBLAF4CLgBTAHsCLgBbAF4CLgBjAIECLgBr
+AKsCLgBzALgCQACLAAIDQACDAAcDQwB7ABADQwCDAAcDSQCrAJwDYwB7ABADYwCDAAcDaQCrALAD
+gACLAAIDgwCTAAIDgwCbAAIDgwB7ABADiQCrAL0DoACLAAIDqQCDACwCwACLAAIDwwCzAAIDwwBT
+AF4CyQCDACwC4ACLAAID4wBTAF4CAwFTAF4CIwFTAF4CQwFTAF4CgwGDAAcDgwGjACkDowGDAAcD
+owFbAF4CaQK7AAIDIAVTAF4CQAVTAF4CwAWDAAcDwAWLAAID4AWDAAcD4AWLAAIDAAaDAAcDAAaL
+AAIDIAaDAAcDIAaLAAIDQAaLAAIDYAaLAAIDgAaLAAIDgAaDAAcDoAaLAAIDwAaLAAIDwAaDAAcD
+ZQCtANoA7QAEAAEABQAFAAcABwALABMADQAUAAAA4QfOAQAAawbTAQAAxwfYAQAAVAjdAQAAkQfi
+AQAAxgHnAQAAYgDsAQAAbQXwAQAAdgDsAQAAjwXwAQAA0ADsAQAACwbwAQAAhwDsAQAAnwXwAQAA
+tAD0AQAA4QXwAQAApwDsAQAAzQXwAQAAmAT6AQAAMgH/AQIABAADAAIABQAFAAIABgAHAAIABwAJ
+AAIACQALAAIACgANAAEACwANAAIAEQAPAAIAEgARAAIAEwATAAEAFAATAAIAFQAVAAEAFgAVAAIA
+FwAXAAEAGAAXAAIAGQAZAAEAGgAZAAIAGwAbAAIAHAAdAAIAHQAfAAIAHgAhAAIAHwAjAAEAIAAj
+AAIAIQAlAAEAIgAlAAIALQAnAAIANQApAC4ANQA8AEMA3wDyAAEBCAEEgAAAAQAAAAAAAAAAAAAA
+AAAxAAAABAAAAAAAAAAAAAAAFgEAAQAAAAAEAAAAAAAAAAAAAAAWASoGAAAAAAoAAAAAAAAAAAAA
+AB8BCQEAAAAAEAAAAAAAAAAAAAAAKAFDCgAAAAAQAAAAAAAAAAAAAAAoAWAKAAAAAAAAAAABAAAA
+PgkAAAwABAANAAQAAAAQABoA1wAAABAAZQDXAAAAAABnANcAgwDoAIMACwEAAABDb250ZXh0VmFs
+dWVgMQBUaHJlYWRTYWZlT2JqZWN0UHJvdmlkZXJgMQBJbnQzMgBTQ181MGE3MmVmNzYxYjA0NDI5
+YTczZTNiZjM0ZTQxZDk0MwA8TW9kdWxlPgBnZXRfU1NLTElEAGdldF9GWklEAHNldF9GWklEAElu
+cHV0SUQAZ2V0X0tBVEJFWkVJQ0hOVU5HAGdldF9BQ0hTWkFITABzZXRfQUNIU1pBSEwAZ2V0X01B
+VVRTQVRaSkVLTQBnZXRfQUNIU0VOAHNldF9BQ0hTRU4AVABEaXNwb3NlX19JbnN0YW5jZV9fAENy
+ZWF0ZV9fSW5zdGFuY2VfXwBtc2NvcmxpYgBNaWNyb3NvZnQuVmlzdWFsQmFzaWMAQ3JlYXRlSW5z
+dGFuY2UAZ2V0X0dldEluc3RhbmNlAGluc3RhbmNlAEdldEhhc2hDb2RlAFJ1bnRpbWVUeXBlSGFu
+ZGxlAEdldFR5cGVGcm9tSGFuZGxlAElucHV0TmFtZQBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5Q
+aXBlbGluZQBHZXRUeXBlAGdldF9DdWx0dXJlAHNldF9DdWx0dXJlAF9yZXNDdWx0dXJlAEFwcGxp
+Y2F0aW9uQmFzZQBBcHBsaWNhdGlvblNldHRpbmdzQmFzZQBUcnlQYXJzZQBFZGl0b3JCcm93c2Fi
+bGVTdGF0ZQBHdWlkQXR0cmlidXRlAEhlbHBLZXl3b3JkQXR0cmlidXRlAEdlbmVyYXRlZENvZGVB
+dHRyaWJ1dGUARGVidWdnZXJOb25Vc2VyQ29kZUF0dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0cmlidXRl
+AEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0ZQBDb21WaXNpYmxlQXR0cmlidXRlAEFzc2VtYmx5VGl0
+bGVBdHRyaWJ1dGUAU3RhbmRhcmRNb2R1bGVBdHRyaWJ1dGUASGlkZU1vZHVsZU5hbWVBdHRyaWJ1
+dGUAQXNzZW1ibHlUcmFkZW1hcmtBdHRyaWJ1dGUAVGFyZ2V0RnJhbWV3b3JrQXR0cmlidXRlAERl
+YnVnZ2VySGlkZGVuQXR0cmlidXRlAEFzc2VtYmx5RmlsZVZlcnNpb25BdHRyaWJ1dGUATXlHcm91
+cENvbGxlY3Rpb25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlvbkF0dHJpYnV0ZQBDb21waWxh
+dGlvblJlbGF4YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5UHJvZHVjdEF0dHJpYnV0ZQBBc3NlbWJs
+eUNvcHlyaWdodEF0dHJpYnV0ZQBDTFNDb21wbGlhbnRBdHRyaWJ1dGUAU1NJU1NjcmlwdENvbXBv
+bmVudEVudHJ5UG9pbnRBdHRyaWJ1dGUAQXNzZW1ibHlDb21wYW55QXR0cmlidXRlAFJ1bnRpbWVD
+b21wYXRpYmlsaXR5QXR0cmlidXRlAFByZUV4ZWN1dGUAUG9zdEV4ZWN1dGUAbV9WYWx1ZQBnZXRf
+VmFsdWUAc2V0X1ZhbHVlAEdldE9iamVjdFZhbHVlAFN5c3RlbS5UaHJlYWRpbmcAU3lzdGVtLlJ1
+bnRpbWUuVmVyc2lvbmluZwBUb1N0cmluZwBHZXRTdHJpbmcAU3Vic3RyaW5nAE1hdGgAU3RhcnRz
+V2l0aABHZXREZWNpbWFsAE1pY3Jvc29mdC5WaXN1YWxCYXNpYy5NeVNlcnZpY2VzLkludGVybmFs
+AFN5c3RlbS5Db21wb25lbnRNb2RlbABTQ181MGE3MmVmNzYxYjA0NDI5YTczZTNiZjM0ZTQxZDk0
+My5kbGwAZ2V0X1NTS0xJRF9Jc051bGwAZ2V0X0ZaSURfSXNOdWxsAHNldF9GWklEX0lzTnVsbABn
+ZXRfS0FUQkVaRUlDSE5VTkdfSXNOdWxsAGdldF9BQ0hTWkFITF9Jc051bGwAc2V0X0FDSFNaQUhM
+X0lzTnVsbABnZXRfTUFVVFNBVFpKRUtNX0lzTnVsbABnZXRfQUNIU0VOX0lzTnVsbABzZXRfQUNI
+U0VOX0lzTnVsbABTZXROdWxsAHNldF9JdGVtAFN5c3RlbQBTeXN0ZW0uQ29tcG9uZW50TW9kZWwu
+RGVzaWduAFNjcmlwdE1haW4AZ2V0X0FwcGxpY2F0aW9uAE15QXBwbGljYXRpb24AU3lzdGVtLkNv
+bmZpZ3VyYXRpb24AU3lzdGVtLkdsb2JhbGl6YXRpb24AU3lzdGVtLlJlZmxlY3Rpb24ASW52YWxp
+ZE9wZXJhdGlvbkV4Y2VwdGlvbgBTdHJpbmdDb21wYXJpc29uAEN1bHR1cmVJbmZvAE91dHB1dE5h
+bWVNYXAAT3V0cHV0TWFwAG1fQXBwT2JqZWN0UHJvdmlkZXIAbV9Vc2VyT2JqZWN0UHJvdmlkZXIA
+bV9Db21wdXRlck9iamVjdFByb3ZpZGVyAG1fTXlXZWJTZXJ2aWNlc09iamVjdFByb3ZpZGVyAEVp
+bmdhYmUwQnVmZmVyAFBpcGVsaW5lQnVmZmVyAFNjcmlwdEJ1ZmZlcgBnZXRfUmVzb3VyY2VNYW5h
+Z2VyAFRvSW50ZWdlcgBTeXN0ZW0uQ29kZURvbS5Db21waWxlcgBnZXRfVXNlcgBFbnRlcgBnZXRf
+Q29tcHV0ZXIATXlDb21wdXRlcgBfcmVzTWdyAEFjdGl2YXRvcgAuY3RvcgAuY2N0b3IATW9uaXRv
+cgBTeXN0ZW0uRGlhZ25vc3RpY3MATWljcm9zb2Z0LlZpc3VhbEJhc2ljLkRldmljZXMAZ2V0X1dl
+YlNlcnZpY2VzAE15V2ViU2VydmljZXMATWljcm9zb2Z0LlZpc3VhbEJhc2ljLkFwcGxpY2F0aW9u
+U2VydmljZXMAU3lzdGVtLlJ1bnRpbWUuSW50ZXJvcFNlcnZpY2VzAE1pY3Jvc29mdC5WaXN1YWxC
+YXNpYy5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMAU3lz
+dGVtLlJlc291cmNlcwBTQ181MGE3MmVmNzYxYjA0NDI5YTczZTNiZjM0ZTQxZDk0My5NeS5SZXNv
+dXJjZXMATXlSZXNvdXJjZXMAU0NfNTBhNzJlZjc2MWIwNDQyOWE3M2UzYmYzNGU0MWQ5NDMuUmVz
+b3VyY2VzLnJlc291cmNlcwBEZWJ1Z2dpbmdNb2RlcwBWYXJpYWJsZXMAQnVmZmVyQ29sdW1uSW5k
+ZXhlcwBHZXRDb2x1bW5JbmRleGVzAE15U2V0dGluZ3MARXF1YWxzAENvbnZlcnNpb25zAENvbm5l
+Y3Rpb25zAFJ1bnRpbWVIZWxwZXJzAG1fU3luY09iamVjdABNeVByb2plY3QARW5kT2ZSb3dzZXQA
+RXhpdABVc2VyQ29tcG9uZW50AFBhcmVudENvbXBvbmVudABTY3JpcHRDb21wb25lbnQATWljcm9z
+b2Z0LlNxbFNlcnZlci5UeFNjcmlwdABNaWNyb3NvZnQuU3FsU2VydmVyLlBpcGVsaW5lSG9zdABF
+aW5nYWJlMF9Qcm9jZXNzSW5wdXQAbV9Db250ZXh0AEVpbmdhYmUwX1Byb2Nlc3NJbnB1dFJvdwBO
+ZXh0Um93AFNDXzUwYTcyZWY3NjFiMDQ0MjlhNzNlM2JmMzRlNDFkOTQzLk15AGdldF9Bc3NlbWJs
+eQAAAAAxTQB5AC4AUgBlAHMAbwB1AHIAYwBlAHMALgBNAHkAUgBlAHMAbwB1AHIAYwBlAHMAAAU8
+AD0AAAM8AAAFPgA9AAADPgAAgNVEAGkAZQAgAEkAcwBOAHUAbABsAC0ARQBpAGcAZQBuAHMAYwBo
+AGEAZgB0ACAAawBhAG4AbgAgAG4AaQBjAGgAdAAgAGEAdQBmACAAIABmAGUAcwB0AGcAZQBsAGUA
+ZwB0ACAAdwBlAHIAZABlAG4ALgAgAE8AcgBkAG4AZQBuACAAUwBpAGUAIABzAHQAYQB0AHQAZABl
+AHMAcwBlAG4AIABkAGUAcgAgAFMAcABhAGwAdABlACAAZQBpAG4AZQBuACAAVwBlAHIAdAAgAHoA
+dQAuAAEXRQBpAG4AZwBhAGIAZQAgACIAMAAiAAAAALtavimPkq5LjGBOnQ962ngABCABAQgDIAAB
+BSABARERBCABAQ4EIAEBAgUgAgEODgUgAQERRQcgBAEODg4OBhUSNAESDAYVEjQBEggGFRI0ARJl
+BhUSNAESMAQgABMABwABEm0RgKUFIAASgKkHIAIBDhKAqQoHCA4IAggICAgIBAABCA4EIAECDgQg
+AQ4IBgACAg4QCAsgAwESgI0dCBKAkQQGEoCNAwYdCAQgAQIIBSACAQgcBiABEYCVCAMHAQIDIAAC
+ByACAg4RgL0FIAEdCAgEAAEcHAQAAQEcBCABAhwDIAAIAyAADgQHAR4AAh4ABRABAB4ABAoBHgAE
+BwETAAYVEjQBEwAHBhUScQETAAYVEnEBEwACEwAECgETAAUgAQETAAi3elxWGTTgiQiwP19/EdUK
+OgiJhF3NgIDMkQcGFRI0ARIMBwYVEjQBEggHBhUSNAESZQcGFRI0ARIwAwYSeQMGEn0DBhIkAwYS
+KAQGEoCZAwYSLAIGHAMAAAEEAAASDAQAABIIBAAAEmUEAAASMAQAABJ5BAAAEn0FAAEBEn0FIAEB
+EhwFIAARgJULIAQBCA4SgI0SgJEGIAEBEoCZBAAAEiwEIAASbQcQAQEeAB4ABzABAQEQHgAECAAS
+DAQIABIIBAgAEmUECAASMAQIABJ5BAgAEn0DKAAOAygAAgUoABGAlQQIABIsBCgAEwAIAQAIAAAA
+AAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJvd3MBCAEAAgAAAAAAKAEAI1NDXzUwYTcyZWY3
+NjFiMDQ0MjlhNzNlM2JmMzRlNDFkOTQzAAAFAQAAAAAWAQARQ29weXJpZ2h0IEAgIDIwMjQAAAUB
+AAEAACkBACQxNGYwNGQxNC1mNTNlLTRjMzctODQ5MC0yNzg5M2YxM2JmYjUAAAwBAAcxLjAuMC4w
+AABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjcBAFQOFEZyYW1ld29ya0Rpc3BsYXlOYW1l
+Ei5ORVQgRnJhbWV3b3JrIDQuNwQBAAAACAEAAQAAAAAAGAEACk15VGVtcGxhdGUIMTEuMC4wLjAA
+AGEBADRTeXN0ZW0uV2ViLlNlcnZpY2VzLlByb3RvY29scy5Tb2FwSHR0cENsaWVudFByb3RvY29s
+EkNyZWF0ZV9fSW5zdGFuY2VfXxNEaXNwb3NlX19JbnN0YW5jZV9fAAAAEAEAC015LkNvbXB1dGVy
+AAATAQAOTXkuQXBwbGljYXRpb24AAAwBAAdNeS5Vc2VyAAATAQAOTXkuV2ViU2VydmljZXMAAAAA
+ALQAAADOyu++AQAAAJEAAABsU3lzdGVtLlJlc291cmNlcy5SZXNvdXJjZVJlYWRlciwgbXNjb3Js
+aWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdh
+NWM1NjE5MzRlMDg5I1N5c3RlbS5SZXNvdXJjZXMuUnVudGltZVJlc291cmNlU2V0AgAAAAAAAAAA
+AAAAUEFEUEFEULQAAABkQQAAAAAAAAAAAAB+QQAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcEEA
+AAAAAAAAAAAAAABfQ29yRGxsTWFpbgBtc2NvcmVlLmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABABAA
+AAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABIAAAAWGAA
+AOwDAAAAAAAAAAAAAOwDNAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAAAAC9BO/+
+AAABAAAAAQAAAAAAAAABAAAAAAA/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAAAAEAVgBh
+AHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4AAAAAAAAA
+sARMAwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAAAoAwAAAQAwADAAMAAwADAANABi
+ADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABhAG4AeQBOAGEA
+bQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAAAFMAQwBf
+ADUAMABhADcAMgBlAGYANwA2ADEAYgAwADQANAAyADkAYQA3ADMAZQAzAGIAZgAzADQAZQA0ADEA
+ZAA5ADQAMwAAADAACAABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAALgAwAC4AMAAA
+AHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAAUwBDAF8ANQAwAGEANwAyAGUAZgA3ADYA
+MQBiADAANAA0ADIAOQBhADcAMwBlADMAYgBmADMANABlADQAMQBkADkANAAzAC4AZABsAGwAAABI
+ABIAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQAAABDAG8AcAB5AHIAaQBnAGgAdAAgAEAA
+IAAgADIAMAAyADQAAAAqAAEAAQBMAGUAZwBhAGwAVAByAGEAZABlAG0AYQByAGsAcwAAAAAAAAAA
+AHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4AYQBtAGUAAABTAEMAXwA1ADAAYQA3ADIA
+ZQBmADcANgAxAGIAMAA0ADQAMgA5AGEANwAzAGUAMwBiAGYAMwA0AGUANAAxAGQAOQA0ADMALgBk
+AGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0AZQAAAAAAUwBDAF8ANQAwAGEANwAyAGUA
+ZgA3ADYAMQBiADAANAA0ADIAOQBhADcAMwBlADMAYgBmADMANABlADQAMQBkADkANAAzAAAANAAI
+AAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAADgACAABAEEA
+cwBzAGUAbQBiAGwAeQAgAFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADAALgAwAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAwAAACQMQAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen des Projekts in Microsoft Visual Studio Tools for Applications an. Projektnamen müssen innerhalb eines Pakets eindeutig sein."
+                  name="VSTAProjectName"
+                  typeConverter="NOTBROWSABLE">SC_50a72ef761b04429a73e3bf34e41d943</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die im Skript verwendete Programmiersprache an."
+                  name="ScriptLanguage"
+                  typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">VisualBasic</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt eine durch Trennzeichen getrennte Liste mit Variablen für den Lesezugriff an."
+                  name="ReadOnlyVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="Gibt eine durch Trennzeichen getrennte Liste mit Variablen für den Lese- und Schreibzugriff an."
+                  name="ReadWriteVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="Liste der im Skript vorhandenen Breakpoints."
+                  isArray="true"
+                  name="BreakpointCollection"
+                  typeConverter="NOTBROWSABLE">
+                  <arrayElements
+                    arrayElementCount="0" />
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Prüfsumme zum Abgleichen der Komponentenmetadaten mit den kompilierten Codes."
+                  name="MetadataChecksum140"
+                  typeConverter="NOTBROWSABLE">69</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Lade Fahrzeugdaten\Skriptkomponente.Inputs[Eingabe &quot;0&quot;]"
+                  hasSideEffects="true"
+                  name="Eingabe &quot;0&quot;">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Skriptkomponente.Inputs[Eingabe &quot;0&quot;].Columns[SSKL_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SSKL_ID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[SSKL_ID]" />
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Skriptkomponente.Inputs[Eingabe &quot;0&quot;].Columns[FZ_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FZ_ID"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[FZ_ID]"
+                      usageType="readWrite" />
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Skriptkomponente.Inputs[Eingabe &quot;0&quot;].Columns[ACHSEN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ACHSEN"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[ACHSEN]"
+                      usageType="readWrite" />
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Skriptkomponente.Inputs[Eingabe &quot;0&quot;].Columns[KAT_BEZEICHNUNG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="KAT_BEZEICHNUNG"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[KAT_BEZEICHNUNG]" />
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Skriptkomponente.Inputs[Eingabe &quot;0&quot;].Columns[MAUTSATZ_JE_KM]"
+                      cachedDataType="decimal"
+                      cachedName="MAUTSATZ_JE_KM"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[MAUTSATZ_JE_KM]" />
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Skriptkomponente.Inputs[Eingabe &quot;0&quot;].Columns[ACHSZAHL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ACHSZAHL"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[ACHSZAHL]"
+                      usageType="readWrite" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Lade Fahrzeugdaten\Skriptkomponente.Outputs[Ausgabe 0]"
+                  name="Ausgabe 0"
+                  synchronousInputId="Package\Lade Fahrzeugdaten\Skriptkomponente.Inputs[Eingabe &quot;0&quot;]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
@@ -1035,7 +1999,7 @@ EXEC Update_Fahrzeug_DIMENSION
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="SSKL_ID"
-                      lineageId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[SSKL_ID]">
+                      lineageId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[SSKL_ID]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1053,7 +2017,7 @@ EXEC Update_Fahrzeug_DIMENSION
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="KAT_BEZEICHNUNG"
-                      lineageId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[KAT_BEZEICHNUNG]">
+                      lineageId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[KAT_BEZEICHNUNG]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1069,7 +2033,25 @@ EXEC Update_Fahrzeug_DIMENSION
                       refId="Package\Lade Fahrzeugdaten\Sortieren 2.Inputs[Sortiereingabe].Columns[MAUTSATZ_JE_KM]"
                       cachedDataType="decimal"
                       cachedName="MAUTSATZ_JE_KM"
-                      lineageId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[MAUTSATZ_JE_KM]">
+                      lineageId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[MAUTSATZ_JE_KM]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Sortierreihenfolge der Spalte an."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Sortieren 2.Inputs[Sortiereingabe].Columns[ACHSZAHL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ACHSZAHL"
+                      lineageId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[ACHSZAHL]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1104,7 +2086,7 @@ EXEC Update_Fahrzeug_DIMENSION
                           containsID="true"
                           dataType="System.Int32"
                           description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
-                          name="SortColumnId">#{Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[SSKL_ID]}</property>
+                          name="SortColumnId">#{Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[SSKL_ID]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -1119,7 +2101,7 @@ EXEC Update_Fahrzeug_DIMENSION
                           containsID="true"
                           dataType="System.Int32"
                           description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
-                          name="SortColumnId">#{Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[KAT_BEZEICHNUNG]}</property>
+                          name="SortColumnId">#{Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[KAT_BEZEICHNUNG]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -1132,7 +2114,22 @@ EXEC Update_Fahrzeug_DIMENSION
                           containsID="true"
                           dataType="System.Int32"
                           description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
-                          name="SortColumnId">#{Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[MAUTSATZ_JE_KM]}</property>
+                          name="SortColumnId">#{Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[MAUTSATZ_JE_KM]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Sortieren 2.Outputs[Sortierausgabe].Columns[ACHSZAHL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 2.Outputs[Sortierausgabe].Columns[ACHSZAHL]"
+                      name="ACHSZAHL">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
+                          name="SortColumnId">#{Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[ACHSZAHL]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -1178,7 +2175,7 @@ EXEC Update_Fahrzeug_DIMENSION
                         <property
                           dataType="System.Int32"
                           description="Gibt die Sortierreihenfolge der Spalte an."
-                          name="NewSortKeyPosition">0</property>
+                          name="NewSortKeyPosition">1</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -1197,7 +2194,7 @@ EXEC Update_Fahrzeug_DIMENSION
                         <property
                           dataType="System.Int32"
                           description="Gibt die Sortierreihenfolge der Spalte an."
-                          name="NewSortKeyPosition">1</property>
+                          name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -1304,7 +2301,8 @@ EXEC Update_Fahrzeug_DIMENSION
                       dataType="str"
                       length="50"
                       lineageId="Package\Lade Fahrzeugdaten\Sortieren 3.Outputs[Sortierausgabe].Columns[FZ_ID]"
-                      name="FZ_ID">
+                      name="FZ_ID"
+                      sortKeyPosition="1">
                       <properties>
                         <property
                           containsID="true"
@@ -1319,8 +2317,7 @@ EXEC Update_Fahrzeug_DIMENSION
                       dataType="str"
                       length="50"
                       lineageId="Package\Lade Fahrzeugdaten\Sortieren 3.Outputs[Sortierausgabe].Columns[SSKL_ID]"
-                      name="SSKL_ID"
-                      sortKeyPosition="1">
+                      name="SSKL_ID">
                       <properties>
                         <property
                           containsID="true"
@@ -1408,6 +2405,378 @@ EXEC Update_Fahrzeug_DIMENSION
               </outputs>
             </component>
             <component
+              refId="Package\Lade Fahrzeugdaten\Sortieren 4"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sortieren;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;1"
+              description="Sortiert Eingabedaten in aufsteigender oder absteigender Folge, wenn sie nicht am Quellort sortiert werden können. Sortieren Sie beispielsweise Umsatzzahlen nach &quot;customer id&quot;, bevor sie in eine Flatfile geschrieben und einer anderen Abteilung zur Verfügung gestellt werden. Hinweis: Für umfangreiche Datenflüsse wird diese Transformation nicht empfohlen."
+              name="Sortieren 4"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob die Sortiertransformation Zeilen mit doppelten Sortierwerten entfernt."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die maximale Anzahl der Threads an, die beim Sortieren verwendet werden können."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Lade Fahrzeugdaten\Sortieren 4.Inputs[Sortiereingabe]"
+                  name="Sortiereingabe">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Sortieren 4.Inputs[Sortiereingabe].Columns[SSKL_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SSKL_ID"
+                      lineageId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle].Columns[SSKL_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Sortierreihenfolge der Spalte an."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Sortieren 4.Inputs[Sortiereingabe].Columns[FZ_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FZ_ID"
+                      lineageId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle].Columns[FZ_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Sortierreihenfolge der Spalte an."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Sortieren 4.Inputs[Sortiereingabe].Columns[ACHSEN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ACHSEN"
+                      lineageId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle].Columns[ACHSEN]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Sortierreihenfolge der Spalte an."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Lade Fahrzeugdaten\Sortieren 4.Outputs[Sortierausgabe]"
+                  isSorted="true"
+                  name="Sortierausgabe">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Sortieren 4.Outputs[Sortierausgabe].Columns[SSKL_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 4.Outputs[Sortierausgabe].Columns[SSKL_ID]"
+                      name="SSKL_ID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
+                          name="SortColumnId">#{Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle].Columns[SSKL_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Sortieren 4.Outputs[Sortierausgabe].Columns[FZ_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 4.Outputs[Sortierausgabe].Columns[FZ_ID]"
+                      name="FZ_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
+                          name="SortColumnId">#{Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle].Columns[FZ_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Sortieren 4.Outputs[Sortierausgabe].Columns[ACHSEN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 4.Outputs[Sortierausgabe].Columns[ACHSEN]"
+                      name="ACHSEN">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
+                          name="SortColumnId">#{Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle].Columns[ACHSEN]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Lade Fahrzeugdaten\Sortieren 5"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sortieren;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;1"
+              description="Sortiert Eingabedaten in aufsteigender oder absteigender Folge, wenn sie nicht am Quellort sortiert werden können. Sortieren Sie beispielsweise Umsatzzahlen nach &quot;customer id&quot;, bevor sie in eine Flatfile geschrieben und einer anderen Abteilung zur Verfügung gestellt werden. Hinweis: Für umfangreiche Datenflüsse wird diese Transformation nicht empfohlen."
+              name="Sortieren 5"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob die Sortiertransformation Zeilen mit doppelten Sortierwerten entfernt."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die maximale Anzahl der Threads an, die beim Sortieren verwendet werden können."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Lade Fahrzeugdaten\Sortieren 5.Inputs[Sortiereingabe]"
+                  name="Sortiereingabe">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Sortieren 5.Inputs[Sortiereingabe].Columns[SSKL_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SSKL_ID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[SSKL_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Sortierreihenfolge der Spalte an."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Sortieren 5.Inputs[Sortiereingabe].Columns[FZ_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FZ_ID"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[FZ_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Sortierreihenfolge der Spalte an."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Sortieren 5.Inputs[Sortiereingabe].Columns[ACHSEN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ACHSEN"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[ACHSEN]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Sortierreihenfolge der Spalte an."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Sortieren 5.Inputs[Sortiereingabe].Columns[KAT_BEZEICHNUNG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="KAT_BEZEICHNUNG"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[KAT_BEZEICHNUNG]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Sortierreihenfolge der Spalte an."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Sortieren 5.Inputs[Sortiereingabe].Columns[MAUTSATZ_JE_KM]"
+                      cachedDataType="decimal"
+                      cachedName="MAUTSATZ_JE_KM"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[MAUTSATZ_JE_KM]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Sortierreihenfolge der Spalte an."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Sortieren 5.Inputs[Sortiereingabe].Columns[ACHSZAHL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ACHSZAHL"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[ACHSZAHL]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Sortierreihenfolge der Spalte an."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Lade Fahrzeugdaten\Sortieren 5.Outputs[Sortierausgabe]"
+                  isSorted="true"
+                  name="Sortierausgabe">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Sortieren 5.Outputs[Sortierausgabe].Columns[SSKL_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 5.Outputs[Sortierausgabe].Columns[SSKL_ID]"
+                      name="SSKL_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
+                          name="SortColumnId">#{Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[SSKL_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Sortieren 5.Outputs[Sortierausgabe].Columns[FZ_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 5.Outputs[Sortierausgabe].Columns[FZ_ID]"
+                      name="FZ_ID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
+                          name="SortColumnId">#{Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[FZ_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Sortieren 5.Outputs[Sortierausgabe].Columns[ACHSEN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 5.Outputs[Sortierausgabe].Columns[ACHSEN]"
+                      name="ACHSEN">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
+                          name="SortColumnId">#{Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[ACHSEN]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Sortieren 5.Outputs[Sortierausgabe].Columns[KAT_BEZEICHNUNG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 5.Outputs[Sortierausgabe].Columns[KAT_BEZEICHNUNG]"
+                      name="KAT_BEZEICHNUNG">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
+                          name="SortColumnId">#{Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[KAT_BEZEICHNUNG]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Sortieren 5.Outputs[Sortierausgabe].Columns[MAUTSATZ_JE_KM]"
+                      dataType="decimal"
+                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 5.Outputs[Sortierausgabe].Columns[MAUTSATZ_JE_KM]"
+                      name="MAUTSATZ_JE_KM">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
+                          name="SortColumnId">#{Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[MAUTSATZ_JE_KM]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Sortieren 5.Outputs[Sortierausgabe].Columns[ACHSZAHL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 5.Outputs[Sortierausgabe].Columns[ACHSZAHL]"
+                      name="ACHSZAHL">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
+                          name="SortColumnId">#{Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[ACHSZAHL]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Lade Fahrzeugdaten\Suche"
               componentClassID="Microsoft.Lookup"
               contactInfo="Suche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;6"
@@ -1464,7 +2833,7 @@ where [refTable].[FZ_ID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Gibt die Liste der Herkunftsbezeichner an, die den von der SQL-Anweisung in der SQLCommand-Eigenschaft verwendeten Parametern zugeordnet sind. Einträge in der Liste sind durch Semikolons getrennt."
-                  name="ParameterMap">#{Package\Lade Fahrzeugdaten\Flatfilequelle};</property>
+                  name="ParameterMap">#{Package\Lade Fahrzeugdaten\Upload Mautkategorie};</property>
                 <property
                   dataType="System.Int32"
                   description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
@@ -1493,6 +2862,7 @@ where [refTable].[FZ_ID] = ?</property>
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="FZ_ID"
+                      cachedSortKeyPosition="1"
                       lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[FZ_ID]">
                       <properties>
                         <property
@@ -1804,6 +3174,372 @@ where [refTable].[FZ_ID] = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flatfilequelle;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;1"
+              description="Flatfilequelle"
+              localeId="1031"
+              name="Upload Fahrzeugdaten2"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Gibt an, ob Spalten mit der Länge &quot;0&quot; als NULL behandelt werden."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen der Ausgabespalte an, die den Dateinamen enthält. Wenn kein Name angegeben wird, wird keine Ausgabespalte generiert, die den Dateinamen enthält."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Connections[FlatFileConnection]"
+                  connectionManagerID="{4DFF1492-7DC1-404D-BE1D-2248C4EC524A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Fahrzeug]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle]"
+                  name="Ausgabe der Flatfilequelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle].Columns[SSKL_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[SSKL_ID]"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle].Columns[SSKL_ID]"
+                      name="SSKL_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle].Columns[FZ_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[FZ_ID]"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle].Columns[FZ_ID]"
+                      name="FZ_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle].Columns[ACHSEN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[ACHSEN]"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle].Columns[ACHSEN]"
+                      name="ACHSEN"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[FZ_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FZ_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[SSKL_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SSKL_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[NUTZER_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NUTZER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[KENNZEICHEN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="KENNZEICHEN" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[FIN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FIN" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[ACHSEN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ACHSEN" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[GEWICHT]"
+                      dataType="decimal"
+                      name="GEWICHT" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[ANMELDEDATUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ANMELDEDATUM" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[ABMELDEDATUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ABMELDEDATUM" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[ZULASSUNGSLAND]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ZULASSUNGSLAND" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Fehlerausgabe der Flatfilequelle]"
+                  isErrorOut="true"
+                  name="Fehlerausgabe der Flatfilequelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Fehlerausgabe der Flatfilequelle].Columns[Fehlerausgabespalte der Flatfilequelle]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Fehlerausgabespalte der Flatfilequelle"
+                      lineageId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Fehlerausgabe der Flatfilequelle].Columns[Fehlerausgabespalte der Flatfilequelle]"
+                      name="Fehlerausgabespalte der Flatfilequelle" />
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flatfilequelle;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;1"
+              description="Flatfilequelle"
+              localeId="1031"
+              name="Upload Mautkategorie"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Gibt an, ob Spalten mit der Länge &quot;0&quot; als NULL behandelt werden."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen der Ausgabespalte an, die den Dateinamen enthält. Wenn kein Name angegeben wird, wird keine Ausgabespalte generiert, die den Dateinamen enthält."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Connections[FlatFileConnection]"
+                  connectionManagerID="{26F00807-5684-41EA-9936-44D89E9D633F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Mautkategorie]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle]"
+                  name="Ausgabe der Flatfilequelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[SSKL_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[SSKL_ID]"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[SSKL_ID]"
+                      name="SSKL_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[KAT_BEZEICHNUNG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[KAT_BEZEICHNUNG]"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[KAT_BEZEICHNUNG]"
+                      name="KAT_BEZEICHNUNG"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[MAUTSATZ_JE_KM]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[MAUTSATZ_JE_KM]"
+                      lineageId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[MAUTSATZ_JE_KM]"
+                      name="MAUTSATZ_JE_KM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[ACHSZAHL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[ACHSZAHL]"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[ACHSZAHL]"
+                      name="ACHSZAHL"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[KATEGORIE_ID]"
+                      dataType="ui8"
+                      name="KATEGORIE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[SSKL_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SSKL_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[KAT_BEZEICHNUNG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="KAT_BEZEICHNUNG" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[ACHSZAHL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ACHSZAHL" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[MAUTSATZ_JE_KM]"
+                      dataType="decimal"
+                      name="MAUTSATZ_JE_KM" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Fehlerausgabe der Flatfilequelle]"
+                  isErrorOut="true"
+                  name="Fehlerausgabe der Flatfilequelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Fehlerausgabe der Flatfilequelle].Columns[Fehlerausgabespalte der Flatfilequelle]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Fehlerausgabespalte der Flatfilequelle"
+                      lineageId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Fehlerausgabe der Flatfilequelle].Columns[Fehlerausgabespalte der Flatfilequelle]"
+                      name="Fehlerausgabespalte der Flatfilequelle" />
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Lade Fahrzeugdaten\Upload Schadstoffdummy"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flatfilequelle;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;1"
@@ -1963,20 +3699,20 @@ where [refTable].[FZ_ID] = ?</property>
                   name="Linke Eingabe des Zusammenführungsjoins">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[SSKL_ID]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="SSKL_ID"
-                      cachedSortKeyPosition="1"
-                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 3.Outputs[Sortierausgabe].Columns[SSKL_ID]" />
-                    <inputColumn
                       refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[FZ_ID]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="FZ_ID"
+                      cachedSortKeyPosition="1"
                       lineageId="Package\Lade Fahrzeugdaten\Sortieren 3.Outputs[Sortierausgabe].Columns[FZ_ID]" />
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[SSKL_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SSKL_ID"
+                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 3.Outputs[Sortierausgabe].Columns[SSKL_ID]" />
                     <inputColumn
                       refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[KENNZEICHEN]"
                       cachedCodepage="1252"
@@ -2019,25 +3755,25 @@ where [refTable].[FZ_ID] = ?</property>
                   name="Rechte Eingabe des Zusammenführungsjoins">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Inputs[Rechte Eingabe des Zusammenführungsjoins].Columns[SSKL_ID]"
+                      refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Inputs[Rechte Eingabe des Zusammenführungsjoins].Columns[FZ_ID]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="SSKL_ID"
+                      cachedName="FZ_ID"
                       cachedSortKeyPosition="1"
-                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 2.Outputs[Sortierausgabe].Columns[SSKL_ID]" />
+                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 5.Outputs[Sortierausgabe].Columns[FZ_ID]" />
                     <inputColumn
                       refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Inputs[Rechte Eingabe des Zusammenführungsjoins].Columns[KAT_BEZEICHNUNG]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="KAT_BEZEICHNUNG"
-                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 2.Outputs[Sortierausgabe].Columns[KAT_BEZEICHNUNG]" />
+                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 5.Outputs[Sortierausgabe].Columns[KAT_BEZEICHNUNG]" />
                     <inputColumn
                       refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Inputs[Rechte Eingabe des Zusammenführungsjoins].Columns[MAUTSATZ_JE_KM]"
                       cachedDataType="decimal"
                       cachedName="MAUTSATZ_JE_KM"
-                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 2.Outputs[Sortierausgabe].Columns[MAUTSATZ_JE_KM]" />
+                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 5.Outputs[Sortierausgabe].Columns[MAUTSATZ_JE_KM]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -2054,7 +3790,8 @@ where [refTable].[FZ_ID] = ?</property>
                       dataType="str"
                       length="50"
                       lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[FZ_ID]"
-                      name="FZ_ID">
+                      name="FZ_ID"
+                      sortKeyPosition="1">
                       <properties>
                         <property
                           containsID="true"
@@ -2069,8 +3806,7 @@ where [refTable].[FZ_ID] = ?</property>
                       dataType="str"
                       length="50"
                       lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[SSKL_ID]"
-                      name="SSKL_ID"
-                      sortKeyPosition="1">
+                      name="SSKL_ID">
                       <properties>
                         <property
                           containsID="true"
@@ -2400,8 +4136,206 @@ where [refTable].[FZ_ID] = ?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Zusammenführungsjoin;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;1"
+              description="Kombinieren Sie zwei sortierte Datenflüsse mithilfe eines der Joins FULL, LEFT oder INNER in einem Datenfluss. Diese Transformation wird empfohlen, wenn Datenflüsse an ihrem Quellort sortiert werden können."
+              name="Zusammenführungsjoin 2"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den Typ des auszuführenden Joins an."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die Anzahl der Spalten im Sortierschlüssel an."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob die NULL-Werte als gleichberechtigte Werte behandelt werden."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Zeigt die pro Eingabe maximal angeforderten Puffer vor dem Blockieren an."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Inputs[Linke Eingabe des Zusammenführungsjoins]"
+                  hasSideEffects="true"
+                  name="Linke Eingabe des Zusammenführungsjoins">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[SSKL_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SSKL_ID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 4.Outputs[Sortierausgabe].Columns[SSKL_ID]" />
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[FZ_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FZ_ID"
+                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 4.Outputs[Sortierausgabe].Columns[FZ_ID]" />
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[ACHSEN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ACHSEN"
+                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 4.Outputs[Sortierausgabe].Columns[ACHSEN]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Inputs[Rechte Eingabe des Zusammenführungsjoins]"
+                  hasSideEffects="true"
+                  name="Rechte Eingabe des Zusammenführungsjoins">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Inputs[Rechte Eingabe des Zusammenführungsjoins].Columns[SSKL_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SSKL_ID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 2.Outputs[Sortierausgabe].Columns[SSKL_ID]" />
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Inputs[Rechte Eingabe des Zusammenführungsjoins].Columns[KAT_BEZEICHNUNG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="KAT_BEZEICHNUNG"
+                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 2.Outputs[Sortierausgabe].Columns[KAT_BEZEICHNUNG]" />
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Inputs[Rechte Eingabe des Zusammenführungsjoins].Columns[MAUTSATZ_JE_KM]"
+                      cachedDataType="decimal"
+                      cachedName="MAUTSATZ_JE_KM"
+                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 2.Outputs[Sortierausgabe].Columns[MAUTSATZ_JE_KM]" />
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Inputs[Rechte Eingabe des Zusammenführungsjoins].Columns[ACHSZAHL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ACHSZAHL"
+                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 2.Outputs[Sortierausgabe].Columns[ACHSZAHL]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins]"
+                  isSorted="true"
+                  name="Ausgabe des Zusammenführungsjoins">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[SSKL_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[SSKL_ID]"
+                      name="SSKL_ID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Die mit dieser Ausgabespalte verbundene Eingabespalte"
+                          name="InputColumnID">#{Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[SSKL_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[FZ_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[FZ_ID]"
+                      name="FZ_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Die mit dieser Ausgabespalte verbundene Eingabespalte"
+                          name="InputColumnID">#{Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[FZ_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[ACHSEN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[ACHSEN]"
+                      name="ACHSEN">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Die mit dieser Ausgabespalte verbundene Eingabespalte"
+                          name="InputColumnID">#{Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[ACHSEN]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[KAT_BEZEICHNUNG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[KAT_BEZEICHNUNG]"
+                      name="KAT_BEZEICHNUNG">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Die mit dieser Ausgabespalte verbundene Eingabespalte"
+                          name="InputColumnID">#{Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Inputs[Rechte Eingabe des Zusammenführungsjoins].Columns[KAT_BEZEICHNUNG]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[MAUTSATZ_JE_KM]"
+                      dataType="decimal"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[MAUTSATZ_JE_KM]"
+                      name="MAUTSATZ_JE_KM">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Die mit dieser Ausgabespalte verbundene Eingabespalte"
+                          name="InputColumnID">#{Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Inputs[Rechte Eingabe des Zusammenführungsjoins].Columns[MAUTSATZ_JE_KM]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[ACHSZAHL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins].Columns[ACHSZAHL]"
+                      name="ACHSZAHL">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Die mit dieser Ausgabespalte verbundene Eingabespalte"
+                          name="InputColumnID">#{Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Inputs[Rechte Eingabe des Zusammenführungsjoins].Columns[ACHSZAHL]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
+            <path
+              refId="Package\Lade Fahrzeugdaten.Paths[Ausgabe 0]"
+              endId="Package\Lade Fahrzeugdaten\Sortieren 5.Inputs[Sortiereingabe]"
+              name="Ausgabe 0"
+              startId="Package\Lade Fahrzeugdaten\Skriptkomponente.Outputs[Ausgabe 0]" />
             <path
               refId="Package\Lade Fahrzeugdaten.Paths[Ausgabe der Flatfilequelle]"
               endId="Package\Lade Fahrzeugdaten\Sortieren.Inputs[Sortiereingabe]"
@@ -2416,7 +4350,12 @@ where [refTable].[FZ_ID] = ?</property>
               refId="Package\Lade Fahrzeugdaten.Paths[Ausgabe der Flatfilequelle2]"
               endId="Package\Lade Fahrzeugdaten\Sortieren 2.Inputs[Sortiereingabe]"
               name="Ausgabe der Flatfilequelle"
-              startId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle]" />
+              startId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle]" />
+            <path
+              refId="Package\Lade Fahrzeugdaten.Paths[Ausgabe der Flatfilequelle3]"
+              endId="Package\Lade Fahrzeugdaten\Sortieren 4.Inputs[Sortiereingabe]"
+              name="Ausgabe der Flatfilequelle"
+              startId="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2.Outputs[Ausgabe der Flatfilequelle]" />
             <path
               refId="Package\Lade Fahrzeugdaten.Paths[Ausgabe der Suchübereinstimmungen]"
               endId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls]"
@@ -2429,6 +4368,11 @@ where [refTable].[FZ_ID] = ?</property>
               startId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 1.Outputs[Ausgabe des Zusammenführungsjoins]" />
             <path
               refId="Package\Lade Fahrzeugdaten.Paths[Ausgabe des Zusammenführungsjoins1]"
+              endId="Package\Lade Fahrzeugdaten\Skriptkomponente.Inputs[Eingabe &quot;0&quot;]"
+              name="Ausgabe des Zusammenführungsjoins"
+              startId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Outputs[Ausgabe des Zusammenführungsjoins]" />
+            <path
+              refId="Package\Lade Fahrzeugdaten.Paths[Ausgabe des Zusammenführungsjoins2]"
               endId="Package\Lade Fahrzeugdaten\Suche.Inputs[Eingabe der Suche]"
               name="Ausgabe des Zusammenführungsjoins"
               startId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins]" />
@@ -2444,14 +4388,24 @@ where [refTable].[FZ_ID] = ?</property>
               startId="Package\Lade Fahrzeugdaten\Sortieren 1.Outputs[Sortierausgabe]" />
             <path
               refId="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe2]"
+              endId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Inputs[Linke Eingabe des Zusammenführungsjoins]"
+              name="Sortierausgabe"
+              startId="Package\Lade Fahrzeugdaten\Sortieren 4.Outputs[Sortierausgabe]" />
+            <path
+              refId="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe3]"
+              endId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2.Inputs[Rechte Eingabe des Zusammenführungsjoins]"
+              name="Sortierausgabe"
+              startId="Package\Lade Fahrzeugdaten\Sortieren 2.Outputs[Sortierausgabe]" />
+            <path
+              refId="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe4]"
               endId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Inputs[Linke Eingabe des Zusammenführungsjoins]"
               name="Sortierausgabe"
               startId="Package\Lade Fahrzeugdaten\Sortieren 3.Outputs[Sortierausgabe]" />
             <path
-              refId="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe3]"
+              refId="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe5]"
               endId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Inputs[Rechte Eingabe des Zusammenführungsjoins]"
               name="Sortierausgabe"
-              startId="Package\Lade Fahrzeugdaten\Sortieren 2.Outputs[Sortierausgabe]" />
+              startId="Package\Lade Fahrzeugdaten\Sortieren 5.Outputs[Sortierausgabe]" />
             <path
               refId="Package\Lade Fahrzeugdaten.Paths[Suchausgabe nicht übereinstimmender Einträge]"
               endId="Package\Lade Fahrzeugdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]"
@@ -2473,7 +4427,383 @@ where [refTable].[FZ_ID] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <pipeline
-          version="1" />
+          version="1">
+          <components>
+            <component
+              refId="Package\Lade Nutzerdaten\Upload Nutzerdaten"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flatfilequelle;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;1"
+              description="Flatfilequelle"
+              localeId="1031"
+              name="Upload Nutzerdaten"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Gibt an, ob Spalten mit der Länge &quot;0&quot; als NULL behandelt werden."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen der Ausgabespalte an, die den Dateinamen enthält. Wenn kein Name angegeben wird, wird keine Ausgabespalte generiert, die den Dateinamen enthält."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Connections[FlatFileConnection]"
+                  connectionManagerID="{CC969970-8C75-4B79-A86A-581F097FDCE5}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Nutzer]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle]"
+                  name="Ausgabe der Flatfilequelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[NUTZER_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[NUTZER_ID]"
+                      length="50"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[NUTZER_ID]"
+                      name="NUTZER_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[STATUS]"
+                      length="50"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[STATUS]"
+                      name="STATUS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[FIRMENNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[FIRMENNAME]"
+                      length="50"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[FIRMENNAME]"
+                      name="FIRMENNAME"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[VORNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[VORNAME]"
+                      length="50"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[VORNAME]"
+                      name="VORNAME"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[NACHNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[NACHNAME]"
+                      length="50"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[NACHNAME]"
+                      name="NACHNAME"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[LAND]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[LAND]"
+                      length="50"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[LAND]"
+                      name="LAND"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[STRASSE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[STRASSE]"
+                      length="50"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[STRASSE]"
+                      name="STRASSE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[HAUSNUMMER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[HAUSNUMMER]"
+                      length="50"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[HAUSNUMMER]"
+                      name="HAUSNUMMER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[POSTLEITZAHL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[POSTLEITZAHL]"
+                      length="50"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[POSTLEITZAHL]"
+                      name="POSTLEITZAHL"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[RECHNUNGSINTERVALL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[RECHNUNGSINTERVALL]"
+                      length="50"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[RECHNUNGSINTERVALL]"
+                      name="RECHNUNGSINTERVALL"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[RECHNUNGSZUSTELLUNG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[RECHNUNGSZUSTELLUNG]"
+                      length="50"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[RECHNUNGSZUSTELLUNG]"
+                      name="RECHNUNGSZUSTELLUNG"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[NUTZER_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NUTZER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[FIRMENNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FIRMENNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[VORNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VORNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[NACHNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NACHNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[LAND]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LAND" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[STRASSE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="STRASSE" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[HAUSNUMMER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HAUSNUMMER" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[POSTLEITZAHL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="POSTLEITZAHL" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[RECHNUNGSINTERVALL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RECHNUNGSINTERVALL" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[RECHNUNGSZUSTELLUNG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RECHNUNGSZUSTELLUNG" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Fehlerausgabe der Flatfilequelle]"
+                  isErrorOut="true"
+                  name="Fehlerausgabe der Flatfilequelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Fehlerausgabe der Flatfilequelle].Columns[Fehlerausgabespalte der Flatfilequelle]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Fehlerausgabespalte der Flatfilequelle"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Fehlerausgabe der Flatfilequelle].Columns[Fehlerausgabespalte der Flatfilequelle]"
+                      name="Fehlerausgabespalte der Flatfilequelle" />
+                    <outputColumn
+                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+        </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -2504,11 +4834,11 @@ where [refTable].[FZ_ID] = ?</property>
     design-time-name="Package\Lade Fahrzeugdaten">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="141,42"
           Id="Package\Lade Fahrzeugdaten\OLE DB-Ziel"
-          TopLeft="166,806" />
+          TopLeft="250.444444444444,867.111111111111" />
         <NodeLayout
           Size="124,42"
           Id="Package\Lade Fahrzeugdaten\Sortieren"
@@ -2516,7 +4846,7 @@ where [refTable].[FZ_ID] = ?</property>
         <NodeLayout
           Size="110,42"
           Id="Package\Lade Fahrzeugdaten\Suche"
-          TopLeft="426.666666666667,681.111111111111" />
+          TopLeft="511.111111111111,742.222222222222" />
         <NodeLayout
           Size="133,42"
           Id="Package\Lade Fahrzeugdaten\Sortieren 1"
@@ -2524,11 +4854,7 @@ where [refTable].[FZ_ID] = ?</property>
         <NodeLayout
           Size="133,42"
           Id="Package\Lade Fahrzeugdaten\Sortieren 3"
-          TopLeft="267,460" />
-        <NodeLayout
-          Size="194,42"
-          Id="Package\Lade Fahrzeugdaten\Zusammenführungsjoin"
-          TopLeft="368,562" />
+          TopLeft="271.444444444444,544.444444444444" />
         <NodeLayout
           Size="203,42"
           Id="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 1"
@@ -2544,79 +4870,11 @@ where [refTable].[FZ_ID] = ?</property>
         <NodeLayout
           Size="154,42"
           Id="Package\Lade Fahrzeugdaten\OLE DB-Befehl"
-          TopLeft="684,813" />
+          TopLeft="768.444444444444,874.111111111111" />
         <NodeLayout
           Size="163,42"
           Id="Package\Lade Fahrzeugdaten\Upload Fahrzeug"
           TopLeft="113.538461538462,153.461538461538" />
-        <EdgeLayout
-          Id="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe3]"
-          TopLeft="659.5,303">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-163.5,259"
-              Start="0,0"
-              End="-163.5,251.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,150.128834355828" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,150.128834355828"
-                    Point2="0,154.128834355828"
-                    Point3="-4,154.128834355828" />
-                  <mssgle:LineSegment
-                    End="-159.5,154.128834355828" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-159.5,154.128834355828"
-                    Point2="-163.5,154.128834355828"
-                    Point3="-163.5,158.128834355828" />
-                  <mssgle:LineSegment
-                    End="-163.5,251.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe2]"
-          TopLeft="333.5,502">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="100.5,60"
-              Start="0,0"
-              End="100.5,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.7055214723926" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.7055214723926"
-                    Point2="0,35.7055214723926"
-                    Point3="4,35.7055214723926" />
-                  <mssgle:LineSegment
-                    End="96.5,35.7055214723926" />
-                  <mssgle:CubicBezierSegment
-                    Point1="96.5,35.7055214723926"
-                    Point2="100.5,35.7055214723926"
-                    Point3="100.5,39.7055214723926" />
-                  <mssgle:LineSegment
-                    End="100.5,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe1]"
           TopLeft="423.5,307">
@@ -2686,53 +4944,19 @@ where [refTable].[FZ_ID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe des Zusammenführungsjoins1]"
-          TopLeft="465,604">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="16.666666666667,77.111111111111"
-              Start="0,0"
-              End="16.666666666667,69.611111111111">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.5555555555555" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34.5555555555555"
-                    Point2="0,38.5555555555555"
-                    Point3="4,38.5555555555555" />
-                  <mssgle:LineSegment
-                    End="12.666666666667,38.5555555555555" />
-                  <mssgle:CubicBezierSegment
-                    Point1="12.666666666667,38.5555555555555"
-                    Point2="16.666666666667,38.5555555555555"
-                    Point3="16.666666666667,42.5555555555555" />
-                  <mssgle:LineSegment
-                    End="16.666666666667,69.611111111111" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe des Zusammenführungsjoins]"
-          TopLeft="334,412">
+          TopLeft="336.222222222222,412">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,48"
+              EndConnector="0,132.444444444444"
               Start="0,0"
-              End="0,40.5">
+              End="0,124.944444444444">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.5" />
+                    End="0,124.944444444444" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2743,7 +4967,7 @@ where [refTable].[FZ_ID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe der Suchübereinstimmungen]"
-          TopLeft="498.666666666667,723.111111111111">
+          TopLeft="583.111111111111,784.222222222222">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2773,7 +4997,7 @@ where [refTable].[FZ_ID] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="46.8966666666665,41.7287933094385,168.54,11.6630859375"
+              BoundingBox="46.8966666666664,41.7287933094385,168.54,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2823,7 +5047,7 @@ where [refTable].[FZ_ID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Lade Fahrzeugdaten.Paths[Suchausgabe nicht übereinstimmender Einträge]"
-          TopLeft="464.666666666667,723.111111111111">
+          TopLeft="549.111111111111,784.222222222222">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2853,28 +5077,288 @@ where [refTable].[FZ_ID] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-220.100345052084,38.8685782556751,212.0340234375,11.6630859375"
+              BoundingBox="-220.100345052083,38.8685782556751,212.0340234375,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="141,42"
-          Id="Package\Lade Fahrzeugdaten\Flatfilequelle"
-          TopLeft="591,148" />
+          Size="187,42"
+          Id="Package\Lade Fahrzeugdaten\Upload Mautkategorie"
+          TopLeft="562,150" />
         <EdgeLayout
           Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe der Flatfilequelle2]"
-          TopLeft="660.5,190">
+          TopLeft="657.5,192">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,71"
+              EndConnector="0,69"
               Start="0,0"
-              End="0,63.5">
+              End="0,61.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,63.5" />
+                    End="0,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="197,42"
+          Id="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2"
+          TopLeft="826.666666666667,143.333333333333" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Lade Fahrzeugdaten\Sortieren 4"
+          TopLeft="842.222222222222,253.333333333333" />
+        <EdgeLayout
+          Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe der Flatfilequelle3]"
+          TopLeft="925.166666666667,185.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-16.4444444444446,68"
+              Start="0,0"
+              End="-16.4444444444446,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30"
+                    Point2="0,34"
+                    Point3="-4,34" />
+                  <mssgle:LineSegment
+                    End="-12.4444444444446,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12.4444444444446,34"
+                    Point2="-16.4444444444446,34"
+                    Point3="-16.4444444444446,38" />
+                  <mssgle:LineSegment
+                    End="-16.4444444444446,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="203,42"
+          Id="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2"
+          TopLeft="706.666666666667,381.111111111111" />
+        <EdgeLayout
+          Id="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe2]"
+          TopLeft="908.722222222222,295.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-68.0555555555554,85.7777777777778"
+              Start="0,0"
+              End="-68.0555555555554,78.2777777777778">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.0641902899968" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,47.0641902899968"
+                    Point2="0,51.0641902899968"
+                    Point3="-4,51.0641902899968" />
+                  <mssgle:LineSegment
+                    End="-64.0555555555554,51.0641902899968" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-64.0555555555554,51.0641902899968"
+                    Point2="-68.0555555555554,51.0641902899968"
+                    Point3="-68.0555555555554,55.0641902899968" />
+                  <mssgle:LineSegment
+                    End="-68.0555555555554,78.2777777777778" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe3]"
+          TopLeft="659.5,303">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="116.166666666667,78.1111111111111"
+              Start="0,0"
+              End="116.166666666667,70.6111111111111">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5001629195178" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.5001629195178"
+                    Point2="0,46.5001629195178"
+                    Point3="4,46.5001629195178" />
+                  <mssgle:LineSegment
+                    End="112.166666666667,46.5001629195178" />
+                  <mssgle:CubicBezierSegment
+                    Point1="112.166666666667,46.5001629195178"
+                    Point2="116.166666666667,46.5001629195178"
+                    Point3="116.166666666667,50.5001629195178" />
+                  <mssgle:LineSegment
+                    End="116.166666666667,70.6111111111111" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Lade Fahrzeugdaten\Skriptkomponente"
+          TopLeft="724.444444444445,463.333333333333" />
+        <EdgeLayout
+          Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe des Zusammenführungsjoins1]"
+          TopLeft="808.305555555556,423.111111111111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.2222222222222"
+              Start="0,0"
+              End="0,32.7222222222222">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.7222222222222" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Lade Fahrzeugdaten\Sortieren 5"
+          TopLeft="745.555555555556,544.444444444444" />
+        <EdgeLayout
+          Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe 0]"
+          TopLeft="810.25,505.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.111111111111"
+              Start="0,0"
+              End="0,31.611111111111">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.611111111111" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="194,42"
+          Id="Package\Lade Fahrzeugdaten\Zusammenführungsjoin"
+          TopLeft="472.222222222222,641.111111111111" />
+        <EdgeLayout
+          Id="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe4]"
+          TopLeft="337.944444444444,586.444444444444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="231.277777777778,54.6666666666666"
+              Start="0,0"
+              End="231.277777777778,47.1666666666666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.3333333333333"
+                    Point2="0,27.3333333333333"
+                    Point3="4,27.3333333333333" />
+                  <mssgle:LineSegment
+                    End="227.277777777778,27.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="227.277777777778,27.3333333333333"
+                    Point2="231.277777777778,27.3333333333333"
+                    Point3="231.277777777778,31.3333333333333" />
+                  <mssgle:LineSegment
+                    End="231.277777777778,47.1666666666666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe5]"
+          TopLeft="812.055555555556,586.444444444444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-211.833333333333,54.6666666666667"
+              Start="0,0"
+              End="-211.833333333333,47.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5316973415133" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.5316973415133"
+                    Point2="0,32.5316973415133"
+                    Point3="-4,32.5316973415133" />
+                  <mssgle:LineSegment
+                    End="-207.833333333333,32.5316973415133" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-207.833333333333,32.5316973415133"
+                    Point2="-211.833333333333,32.5316973415133"
+                    Point3="-211.833333333333,36.5316973415133" />
+                  <mssgle:LineSegment
+                    End="-211.833333333333,47.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe des Zusammenführungsjoins2]"
+          TopLeft="567.666666666667,683.111111111111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.111111111111"
+              Start="0,0"
+              End="0,51.611111111111">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.611111111111" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2922,5 +5406,17 @@ where [refTable].[FZ_ID] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Lade Nutzerdaten">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Lade Nutzerdaten\Upload Nutzerdaten"
+          TopLeft="147,137" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
