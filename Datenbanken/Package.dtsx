@@ -11,8 +11,8 @@
   DTS:LocaleID="1031"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="144"
-  DTS:VersionGUID="{E57843D8-6831-4ED9-874B-9FA5E3DE409F}">
+  DTS:VersionBuild="146"
+  DTS:VersionGUID="{F2C55EF2-5453-4D1A-90A3-FE3FCEF816F5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -43,6 +43,161 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Lade Fahrzeugdaten\Flatfilequelle"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flatfilequelle;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;1"
+              description="Flatfilequelle"
+              localeId="1031"
+              name="Flatfilequelle"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Gibt an, ob Spalten mit der Länge &quot;0&quot; als NULL behandelt werden."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen der Ausgabespalte an, die den Dateinamen enthält. Wenn kein Name angegeben wird, wird keine Ausgabespalte generiert, die den Dateinamen enthält."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Connections[FlatFileConnection]"
+                  connectionManagerID="{26F00807-5684-41EA-9936-44D89E9D633F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Mautkategorie]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle]"
+                  name="Ausgabe der Flatfilequelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[SSKL_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[SSKL_ID]"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[SSKL_ID]"
+                      name="SSKL_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[KAT_BEZEICHNUNG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[KAT_BEZEICHNUNG]"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[KAT_BEZEICHNUNG]"
+                      name="KAT_BEZEICHNUNG"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[MAUTSATZ_JE_KM]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[MAUTSATZ_JE_KM]"
+                      lineageId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[MAUTSATZ_JE_KM]"
+                      name="MAUTSATZ_JE_KM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[KATEGORIE_ID]"
+                      dataType="ui8"
+                      name="KATEGORIE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[SSKL_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SSKL_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[KAT_BEZEICHNUNG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="KAT_BEZEICHNUNG" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[ACHSZAHL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ACHSZAHL" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[MAUTSATZ_JE_KM]"
+                      dataType="decimal"
+                      name="MAUTSATZ_JE_KM" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle]"
+                  isErrorOut="true"
+                  name="Fehlerausgabe der Flatfilequelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[Fehlerausgabespalte der Flatfilequelle]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Fehlerausgabespalte der Flatfilequelle"
+                      lineageId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[Fehlerausgabespalte der Flatfilequelle]"
+                      name="Fehlerausgabespalte der Flatfilequelle" />
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Lade Fahrzeugdaten\OLE DB-Befehl"
               componentClassID="Microsoft.OLEDBCommand"
@@ -880,7 +1035,7 @@ EXEC Update_Fahrzeug_DIMENSION
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="SSKL_ID"
-                      lineageId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[SSKL_ID]">
+                      lineageId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[SSKL_ID]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -898,7 +1053,7 @@ EXEC Update_Fahrzeug_DIMENSION
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="KAT_BEZEICHNUNG"
-                      lineageId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[KAT_BEZEICHNUNG]">
+                      lineageId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[KAT_BEZEICHNUNG]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -914,7 +1069,7 @@ EXEC Update_Fahrzeug_DIMENSION
                       refId="Package\Lade Fahrzeugdaten\Sortieren 2.Inputs[Sortiereingabe].Columns[MAUTSATZ_JE_KM]"
                       cachedDataType="decimal"
                       cachedName="MAUTSATZ_JE_KM"
-                      lineageId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[MAUTSATZ_JE_KM]">
+                      lineageId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[MAUTSATZ_JE_KM]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -949,7 +1104,7 @@ EXEC Update_Fahrzeug_DIMENSION
                           containsID="true"
                           dataType="System.Int32"
                           description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
-                          name="SortColumnId">#{Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[SSKL_ID]}</property>
+                          name="SortColumnId">#{Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[SSKL_ID]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -964,7 +1119,7 @@ EXEC Update_Fahrzeug_DIMENSION
                           containsID="true"
                           dataType="System.Int32"
                           description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
-                          name="SortColumnId">#{Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[KAT_BEZEICHNUNG]}</property>
+                          name="SortColumnId">#{Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[KAT_BEZEICHNUNG]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -977,7 +1132,7 @@ EXEC Update_Fahrzeug_DIMENSION
                           containsID="true"
                           dataType="System.Int32"
                           description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
-                          name="SortColumnId">#{Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[MAUTSATZ_JE_KM]}</property>
+                          name="SortColumnId">#{Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle].Columns[MAUTSATZ_JE_KM]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -1309,7 +1464,7 @@ where [refTable].[FZ_ID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Gibt die Liste der Herkunftsbezeichner an, die den von der SQL-Anweisung in der SQLCommand-Eigenschaft verwendeten Parametern zugeordnet sind. Einträge in der Liste sind durch Semikolons getrennt."
-                  name="ParameterMap">#{Package\Lade Fahrzeugdaten\398:invalid};</property>
+                  name="ParameterMap">#{Package\Lade Fahrzeugdaten\Flatfilequelle};</property>
                 <property
                   dataType="System.Int32"
                   description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
@@ -1641,161 +1796,6 @@ where [refTable].[FZ_ID] = ?</property>
                       refId="Package\Lade Fahrzeugdaten\Upload Fahrzeug.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Lade Fahrzeugdaten\Upload Fahrzeug.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie"
-              componentClassID="Microsoft.FlatFileSource"
-              contactInfo="Flatfilequelle;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;1"
-              description="Flatfilequelle"
-              localeId="1031"
-              name="Upload Mautkategorie"
-              usesDispositions="true"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Gibt an, ob Spalten mit der Länge &quot;0&quot; als NULL behandelt werden."
-                  name="RetainNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Gibt den Namen der Ausgabespalte an, die den Dateinamen enthält. Wenn kein Name angegeben wird, wird keine Ausgabespalte generiert, die den Dateinamen enthält."
-                  name="FileNameColumnName"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Connections[FlatFileConnection]"
-                  connectionManagerID="{26F00807-5684-41EA-9936-44D89E9D633F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Mautkategorie]"
-                  name="FlatFileConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle]"
-                  name="Ausgabe der Flatfilequelle">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[SSKL_ID]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Konvertierung"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[SSKL_ID]"
-                      length="50"
-                      lineageId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[SSKL_ID]"
-                      name="SSKL_ID"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Gibt an, ob die Daten im Binärformat sind."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[KAT_BEZEICHNUNG]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Konvertierung"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[KAT_BEZEICHNUNG]"
-                      length="50"
-                      lineageId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[KAT_BEZEICHNUNG]"
-                      name="KAT_BEZEICHNUNG"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Gibt an, ob die Daten im Binärformat sind."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[MAUTSATZ_JE_KM]"
-                      dataType="decimal"
-                      errorOrTruncationOperation="Konvertierung"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[MAUTSATZ_JE_KM]"
-                      lineageId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].Columns[MAUTSATZ_JE_KM]"
-                      name="MAUTSATZ_JE_KM"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Gibt an, ob die Daten im Binärformat sind."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[KATEGORIE_ID]"
-                      dataType="ui8"
-                      name="KATEGORIE_ID" />
-                    <externalMetadataColumn
-                      refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[SSKL_ID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="SSKL_ID" />
-                    <externalMetadataColumn
-                      refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[KAT_BEZEICHNUNG]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="KAT_BEZEICHNUNG" />
-                    <externalMetadataColumn
-                      refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[ACHSZAHL]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="ACHSZAHL" />
-                    <externalMetadataColumn
-                      refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[MAUTSATZ_JE_KM]"
-                      dataType="decimal"
-                      name="MAUTSATZ_JE_KM" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Fehlerausgabe der Flatfilequelle]"
-                  isErrorOut="true"
-                  name="Fehlerausgabe der Flatfilequelle">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Fehlerausgabe der Flatfilequelle].Columns[Fehlerausgabespalte der Flatfilequelle]"
-                      codePage="1252"
-                      dataType="text"
-                      description="Fehlerausgabespalte der Flatfilequelle"
-                      lineageId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Fehlerausgabe der Flatfilequelle].Columns[Fehlerausgabespalte der Flatfilequelle]"
-                      name="Fehlerausgabespalte der Flatfilequelle" />
-                    <outputColumn
-                      refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -2416,7 +2416,7 @@ where [refTable].[FZ_ID] = ?</property>
               refId="Package\Lade Fahrzeugdaten.Paths[Ausgabe der Flatfilequelle2]"
               endId="Package\Lade Fahrzeugdaten\Sortieren 2.Inputs[Sortiereingabe]"
               name="Ausgabe der Flatfilequelle"
-              startId="Package\Lade Fahrzeugdaten\Upload Mautkategorie.Outputs[Ausgabe der Flatfilequelle]" />
+              startId="Package\Lade Fahrzeugdaten\Flatfilequelle.Outputs[Ausgabe der Flatfilequelle]" />
             <path
               refId="Package\Lade Fahrzeugdaten.Paths[Ausgabe der Suchübereinstimmungen]"
               endId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls]"
@@ -2461,6 +2461,21 @@ where [refTable].[FZ_ID] = ?</property>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Lade Nutzerdaten"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Datenflusstask"
+      DTS:DTSID="{776592CC-5C47-4237-ADF7-A36159C2D95E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Lade Nutzerdaten"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Dieser CDATA-Abschnitt enthält die Layoutinformationen des Pakets, z.B. Informationen wie X-/Y-Koordinaten, Breite und Höhe.-->
@@ -2478,6 +2493,10 @@ where [refTable].[FZ_ID] = ?</property>
           Size="180,42"
           Id="Package\Lade Fahrzeugdaten"
           TopLeft="132,84" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Lade Nutzerdaten"
+          TopLeft="135,179" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2487,209 +2506,109 @@ where [refTable].[FZ_ID] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="199,42"
-          Id="Package\Lade Fahrzeugdaten\Upload Schadstoffdummy"
-          TopLeft="326.384615384615,149.846153846154" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Lade Fahrzeugdaten\Upload Fahrzeug"
-          TopLeft="113.538461538462,153.461538461538" />
-        <NodeLayout
-          Size="110,42"
-          Id="Package\Lade Fahrzeugdaten\Suche"
-          TopLeft="426.666666666667,681.111111111111" />
-        <NodeLayout
           Size="141,42"
           Id="Package\Lade Fahrzeugdaten\OLE DB-Ziel"
           TopLeft="166,806" />
-        <EdgeLayout
-          Id="Package\Lade Fahrzeugdaten.Paths[Suchausgabe nicht übereinstimmender Einträge]"
-          TopLeft="464.666666666667,723.111111111111">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-228.166666666667,82.888888888889"
-              Start="0,0"
-              End="-228.166666666667,75.388888888889">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.8685782556751" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.8685782556751"
-                    Point2="0,33.8685782556751"
-                    Point3="-4,33.8685782556751" />
-                  <mssgle:LineSegment
-                    End="-224.166666666667,33.8685782556751" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-224.166666666667,33.8685782556751"
-                    Point2="-228.166666666667,33.8685782556751"
-                    Point3="-228.166666666667,37.8685782556751" />
-                  <mssgle:LineSegment
-                    End="-228.166666666667,75.388888888889" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-220.100345052084,38.8685782556751,212.0340234375,11.6630859375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Lade Fahrzeugdaten\OLE DB-Befehl"
-          TopLeft="684,813" />
-        <EdgeLayout
-          Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe der Suchübereinstimmungen]"
-          TopLeft="498.666666666667,723.111111111111">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="262.333333333333,89.888888888889"
-              Start="0,0"
-              End="262.333333333333,82.388888888889">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.7287933094385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32.7287933094385"
-                    Point2="0,36.7287933094385"
-                    Point3="4,36.7287933094385" />
-                  <mssgle:LineSegment
-                    End="258.333333333333,36.7287933094385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="258.333333333333,36.7287933094385"
-                    Point2="262.333333333333,36.7287933094385"
-                    Point3="262.333333333333,40.7287933094385" />
-                  <mssgle:LineSegment
-                    End="262.333333333333,82.388888888889" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="46.8966666666665,41.7287933094385,168.54,11.6630859375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="187,42"
-          Id="Package\Lade Fahrzeugdaten\Upload Mautkategorie"
-          TopLeft="566,152" />
         <NodeLayout
           Size="124,42"
           Id="Package\Lade Fahrzeugdaten\Sortieren"
           TopLeft="133,270" />
+        <NodeLayout
+          Size="110,42"
+          Id="Package\Lade Fahrzeugdaten\Suche"
+          TopLeft="426.666666666667,681.111111111111" />
         <NodeLayout
           Size="133,42"
           Id="Package\Lade Fahrzeugdaten\Sortieren 1"
           TopLeft="357,265" />
         <NodeLayout
           Size="133,42"
-          Id="Package\Lade Fahrzeugdaten\Sortieren 2"
-          TopLeft="593,261" />
-        <EdgeLayout
-          Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe der Flatfilequelle]"
-          TopLeft="195.019230769231,195.461538461538">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,74.538461538462"
-              Start="0,0"
-              End="0,67.038461538462">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,67.038461538462" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe der Flatfilequelle1]"
-          TopLeft="424.692307692308,191.846153846154">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,73.153846153846"
-              Start="0,0"
-              End="0,65.653846153846">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,65.653846153846" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe der Flatfilequelle2]"
-          TopLeft="659.5,194">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,67"
-              Start="0,0"
-              End="0,59.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,59.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Id="Package\Lade Fahrzeugdaten\Sortieren 3"
+          TopLeft="267,460" />
+        <NodeLayout
+          Size="194,42"
+          Id="Package\Lade Fahrzeugdaten\Zusammenführungsjoin"
+          TopLeft="368,562" />
         <NodeLayout
           Size="203,42"
           Id="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 1"
           TopLeft="233,370" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Lade Fahrzeugdaten\Sortieren 2"
+          TopLeft="593,261" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Lade Fahrzeugdaten\Upload Schadstoffdummy"
+          TopLeft="326.384615384615,149.846153846154" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Lade Fahrzeugdaten\OLE DB-Befehl"
+          TopLeft="684,813" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Lade Fahrzeugdaten\Upload Fahrzeug"
+          TopLeft="113.538461538462,153.461538461538" />
         <EdgeLayout
-          Id="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe]"
-          TopLeft="195,312">
+          Id="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe3]"
+          TopLeft="659.5,303">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="107,58"
+              EndConnector="-163.5,259"
               Start="0,0"
-              End="107,50.5">
+              End="-163.5,251.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5278592375367" />
+                    End="0,150.128834355828" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,30.5278592375367"
-                    Point2="0,34.5278592375367"
-                    Point3="4,34.5278592375367" />
+                    Point1="0,150.128834355828"
+                    Point2="0,154.128834355828"
+                    Point3="-4,154.128834355828" />
                   <mssgle:LineSegment
-                    End="103,34.5278592375367" />
+                    End="-159.5,154.128834355828" />
                   <mssgle:CubicBezierSegment
-                    Point1="103,34.5278592375367"
-                    Point2="107,34.5278592375367"
-                    Point3="107,38.5278592375367" />
+                    Point1="-159.5,154.128834355828"
+                    Point2="-163.5,154.128834355828"
+                    Point3="-163.5,158.128834355828" />
                   <mssgle:LineSegment
-                    End="107,50.5" />
+                    End="-163.5,251.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe2]"
+          TopLeft="333.5,502">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="100.5,60"
+              Start="0,0"
+              End="100.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.7055214723926" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.7055214723926"
+                    Point2="0,35.7055214723926"
+                    Point3="4,35.7055214723926" />
+                  <mssgle:LineSegment
+                    End="96.5,35.7055214723926" />
+                  <mssgle:CubicBezierSegment
+                    Point1="96.5,35.7055214723926"
+                    Point2="100.5,35.7055214723926"
+                    Point3="100.5,39.7055214723926" />
+                  <mssgle:LineSegment
+                    End="100.5,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2732,96 +2651,32 @@ where [refTable].[FZ_ID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="133,42"
-          Id="Package\Lade Fahrzeugdaten\Sortieren 3"
-          TopLeft="267,460" />
         <EdgeLayout
-          Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe des Zusammenführungsjoins]"
-          TopLeft="334,412">
+          Id="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe]"
+          TopLeft="195,312">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,48"
+              EndConnector="107,58"
               Start="0,0"
-              End="0,40.5">
+              End="107,50.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="194,42"
-          Id="Package\Lade Fahrzeugdaten\Zusammenführungsjoin"
-          TopLeft="368,562" />
-        <EdgeLayout
-          Id="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe2]"
-          TopLeft="333.5,502">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="100.5,60"
-              Start="0,0"
-              End="100.5,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.7055214723926" />
+                    End="0,30.5278592375367" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.7055214723926"
-                    Point2="0,35.7055214723926"
-                    Point3="4,35.7055214723926" />
+                    Point1="0,30.5278592375367"
+                    Point2="0,34.5278592375367"
+                    Point3="4,34.5278592375367" />
                   <mssgle:LineSegment
-                    End="96.5,35.7055214723926" />
+                    End="103,34.5278592375367" />
                   <mssgle:CubicBezierSegment
-                    Point1="96.5,35.7055214723926"
-                    Point2="100.5,35.7055214723926"
-                    Point3="100.5,39.7055214723926" />
+                    Point1="103,34.5278592375367"
+                    Point2="107,34.5278592375367"
+                    Point3="107,38.5278592375367" />
                   <mssgle:LineSegment
-                    End="100.5,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe3]"
-          TopLeft="659.5,303">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-163.5,259"
-              Start="0,0"
-              End="-163.5,251.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,150.128834355828" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,150.128834355828"
-                    Point2="0,154.128834355828"
-                    Point3="-4,154.128834355828" />
-                  <mssgle:LineSegment
-                    End="-159.5,154.128834355828" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-159.5,154.128834355828"
-                    Point2="-163.5,154.128834355828"
-                    Point3="-163.5,158.128834355828" />
-                  <mssgle:LineSegment
-                    End="-163.5,251.5" />
+                    End="107,50.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2864,6 +2719,170 @@ where [refTable].[FZ_ID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe des Zusammenführungsjoins]"
+          TopLeft="334,412">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe der Suchübereinstimmungen]"
+          TopLeft="498.666666666667,723.111111111111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="262.333333333333,89.888888888889"
+              Start="0,0"
+              End="262.333333333333,82.388888888889">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.7287933094385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.7287933094385"
+                    Point2="0,36.7287933094385"
+                    Point3="4,36.7287933094385" />
+                  <mssgle:LineSegment
+                    End="258.333333333333,36.7287933094385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="258.333333333333,36.7287933094385"
+                    Point2="262.333333333333,36.7287933094385"
+                    Point3="262.333333333333,40.7287933094385" />
+                  <mssgle:LineSegment
+                    End="262.333333333333,82.388888888889" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="46.8966666666665,41.7287933094385,168.54,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe der Flatfilequelle1]"
+          TopLeft="424.692307692308,191.846153846154">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73.153846153846"
+              Start="0,0"
+              End="0,65.653846153846">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.653846153846" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe der Flatfilequelle]"
+          TopLeft="195.019230769231,195.461538461538">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,74.538461538462"
+              Start="0,0"
+              End="0,67.038461538462">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67.038461538462" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Lade Fahrzeugdaten.Paths[Suchausgabe nicht übereinstimmender Einträge]"
+          TopLeft="464.666666666667,723.111111111111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-228.166666666667,82.888888888889"
+              Start="0,0"
+              End="-228.166666666667,75.388888888889">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.8685782556751" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.8685782556751"
+                    Point2="0,33.8685782556751"
+                    Point3="-4,33.8685782556751" />
+                  <mssgle:LineSegment
+                    End="-224.166666666667,33.8685782556751" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-224.166666666667,33.8685782556751"
+                    Point2="-228.166666666667,33.8685782556751"
+                    Point3="-228.166666666667,37.8685782556751" />
+                  <mssgle:LineSegment
+                    End="-228.166666666667,75.388888888889" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-220.100345052084,38.8685782556751,212.0340234375,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Lade Fahrzeugdaten\Flatfilequelle"
+          TopLeft="591,148" />
+        <EdgeLayout
+          Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe der Flatfilequelle2]"
+          TopLeft="660.5,190">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,71"
+              Start="0,0"
+              End="0,63.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -2873,7 +2892,7 @@ where [refTable].[FZ_ID] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2883,7 +2902,7 @@ where [refTable].[FZ_ID] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
