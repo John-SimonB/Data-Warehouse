@@ -22,7 +22,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="NUTZER_ID"
-          DTS:DTSID="{0ABB52E9-9E56-4578-B455-E3C6463C5FEE}"
+          DTS:DTSID="{9E9EB099-6F9D-478E-B1F5-C9919DEFBB90}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -31,16 +31,16 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="STATUS"
-          DTS:DTSID="{D7AF5C57-D563-44BE-A6E5-4A15227D9390}"
+          DTS:DTSID="{B5FF9D62-B956-4DCB-981E-517BF7B5C900}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
-          DTS:MaximumWidth="50"
+          DTS:MaximumWidth="100"
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="FIRMENNAME"
-          DTS:DTSID="{BB5C2490-4035-4E1E-B412-5571AF09BDF6}"
+          DTS:DTSID="{4CF2A888-27BE-4281-9289-241763A559E4}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -49,7 +49,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="VORNAME"
-          DTS:DTSID="{E4475589-FD97-4A55-8648-A82BC8685D51}"
+          DTS:DTSID="{AE9D3770-1017-4597-8478-4FC3FBA51D33}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -58,7 +58,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="NACHNAME"
-          DTS:DTSID="{C1B3EAED-EA1E-4E40-B978-69EA41808F1F}"
+          DTS:DTSID="{1C455C67-31C1-4641-913C-4D35E2B03558}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -67,7 +67,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="LAND"
-          DTS:DTSID="{285732EE-60CC-479F-A02D-3B88192F4655}"
+          DTS:DTSID="{3E9F0388-3FAF-4202-A942-176622D276E6}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -76,25 +76,25 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="STRASSE"
-          DTS:DTSID="{12F9249C-3EA1-418B-8B52-D6C02224E80D}"
+          DTS:DTSID="{C6E2CD17-EAFB-4BE9-9242-3FCADEF17BD1}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
-          DTS:MaximumWidth="50"
+          DTS:MaximumWidth="5"
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="HAUSNUMMER"
-          DTS:DTSID="{464A70E9-DDE3-4107-9221-F6C291ECD6B0}"
+          DTS:DTSID="{0621AF97-24B9-4CB7-83DB-D69102BC1224}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
-          DTS:MaximumWidth="50"
+          DTS:MaximumWidth="20"
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="POSTLEITZAHL"
-          DTS:DTSID="{19EED8F7-C81F-4E42-B737-D7CCD029D8BC}"
+          DTS:DTSID="{055FF9F0-697B-4A50-A091-BF1674B59CEF}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -103,7 +103,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="RECHNUNGSINTERVALL"
-          DTS:DTSID="{0F690CAE-7748-4098-ACF5-CB3D709441EF}"
+          DTS:DTSID="{09A5D8DA-09EC-4536-B434-283020BEB30A}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -112,7 +112,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="RECHNUNGSZUSTELLUNG"
-          DTS:DTSID="{734917D7-B286-4F86-8E6C-C9A0E9C9D744}"
+          DTS:DTSID="{BCE9F7BA-F763-4EA6-BD7E-B7DA5140623D}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

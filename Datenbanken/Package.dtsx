@@ -11,8 +11,8 @@
   DTS:LocaleID="1031"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="151"
-  DTS:VersionGUID="{523DCB8A-FD00-4687-BCB8-90EAC4E121B0}">
+  DTS:VersionBuild="156"
+  DTS:VersionGUID="{8777FFA7-BD97-4566-A9B6-6D0B18304396}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -4430,6 +4430,631 @@ where [refTable].[FZ_ID] = ?</property>
           version="1">
           <components>
             <component
+              refId="Package\Lade Nutzerdaten\OLE DB-Befehl"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB-Befehl;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;2"
+              description="Führt eine SQL-Anweisung für jede Zeile in einem Datenfluss aus. Rufen Sie beispielsweise die gespeicherte Prozedur &quot;new employee setup&quot; für jede Zeile in der Tabelle &quot;new employees&quot; auf. Hinweis: Wenn Sie für jede Zeile eines umfangreichen Datenflusses eine SQL-Anweisung ausführen, kann der Vorgang länger dauern."
+              name="OLE DB-Befehl"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">USE [u575710];
+EXEC Update_Nutzer_DIMENSION
+ 
+    @NUTZER_ID= ?,
+ 
+    @FIRMENNAME= ?,
+
+    @VORNAME= ?,
+
+    @NACHNAME= ?,
+
+    @LAND= ?,
+
+    @STRASSE= ?,
+
+    @HAUSNUMMER= ?,
+
+    @PLZ= ?;</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lade Nutzerdaten\OLE DB-Befehl.Connections[OleDbConnection]"
+                  connectionManagerID="{AE5456D4-1832-420E-9A14-51676366269F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[sqlservervier.f4.htw-berlin.de.u575710.u575710]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls]"
+                  errorOrTruncationOperation="Befehlsausführung"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Eingabe des OLE DB-Befehls">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[NUTZER_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NUTZER_ID"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@NUTZER_ID]"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[NUTZER_ID]" />
+                    <inputColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[FIRMENNAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FIRMENNAME"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@FIRMENNAME]"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[FIRMENNAME]" />
+                    <inputColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[VORNAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="VORNAME"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@VORNAME]"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[VORNAME]" />
+                    <inputColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[NACHNAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NACHNAME"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@NACHNAME]"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[NACHNAME]" />
+                    <inputColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[LAND]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LAND"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@LAND]"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[LAND]" />
+                    <inputColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[STRASSE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="STRASSE"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@STRASSE]"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[STRASSE]" />
+                    <inputColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[HAUSNUMMER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HAUSNUMMER"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@HAUSNUMMER]"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[HAUSNUMMER]" />
+                    <inputColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[POSTLEITZAHL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="POSTLEITZAHL"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@PLZ]"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[POSTLEITZAHL]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@NUTZER_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="@NUTZER_ID">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameterinformationen. Stimmt mit den DBPARAMFLAGSENUM-Werten von OLE DB überein."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@FIRMENNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="@FIRMENNAME">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameterinformationen. Stimmt mit den DBPARAMFLAGSENUM-Werten von OLE DB überein."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@VORNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="@VORNAME">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameterinformationen. Stimmt mit den DBPARAMFLAGSENUM-Werten von OLE DB überein."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@NACHNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="@NACHNAME">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameterinformationen. Stimmt mit den DBPARAMFLAGSENUM-Werten von OLE DB überein."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@LAND]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="@LAND">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameterinformationen. Stimmt mit den DBPARAMFLAGSENUM-Werten von OLE DB überein."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@STRASSE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="@STRASSE">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameterinformationen. Stimmt mit den DBPARAMFLAGSENUM-Werten von OLE DB überein."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@HAUSNUMMER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="@HAUSNUMMER">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameterinformationen. Stimmt mit den DBPARAMFLAGSENUM-Werten von OLE DB überein."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@PLZ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="@PLZ">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameterinformationen. Stimmt mit den DBPARAMFLAGSENUM-Werten von OLE DB überein."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Lade Nutzerdaten\OLE DB-Befehl.Outputs[Ausgabe des OLE DB-Befehls]"
+                  exclusionGroup="1"
+                  name="Ausgabe des OLE DB-Befehls"
+                  synchronousInputId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Lade Nutzerdaten\OLE DB-Befehl.Outputs[Fehlerausgabe des OLE DB-Befehls]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Fehlerausgabe des OLE DB-Befehls"
+                  synchronousInputId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Befehl.Outputs[Fehlerausgabe des OLE DB-Befehls].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Lade Nutzerdaten\OLE DB-Befehl.Outputs[Fehlerausgabe des OLE DB-Befehls].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Befehl.Outputs[Fehlerausgabe des OLE DB-Befehls].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Lade Nutzerdaten\OLE DB-Befehl.Outputs[Fehlerausgabe des OLE DB-Befehls].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Lade Nutzerdaten\OLE DB-Ziel"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB-Ziel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;4"
+              description="OLE DB-Ziel"
+              name="OLE DB-Ziel"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an."
+                  name="OpenRowset">[dbo].[Nutzer_DIMENSION]</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob die für Identitätsspalten übergebenen Werte zum Ziel kopiert werden. Bei &quot;False&quot; werden die Werte für Identitätsspalten am Ziel automatisch generiert. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob für Spalten, die NULL enthalten, NULL am Ziel eingefügt wird. Bei &quot;False&quot; werden für Spalten, die NULL enthalten, am Ziel die Standardwerte eingefügt. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die für die Option &quot;Schnelles Laden&quot; zu verwendenden Optionen an. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt an, wann beim Einfügen von Daten Commits ausgegeben werden. Der Wert &quot;0&quot; gibt an, dass ein Commit am Ende des Einfügens von Daten ausgegeben wird. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lade Nutzerdaten\OLE DB-Ziel.Connections[OleDbConnection]"
+                  connectionManagerID="{AE5456D4-1832-420E-9A14-51676366269F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[sqlservervier.f4.htw-berlin.de.u575710.u575710]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]"
+                  errorOrTruncationOperation="Einfügen"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Eingabe des OLE DB-Ziels">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[NUTZER_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NUTZER_ID"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[NUTZER_ID]"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[NUTZER_ID]" />
+                    <inputColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[FIRMENNAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FIRMENNAME"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[FIRMENNAME]"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[FIRMENNAME]" />
+                    <inputColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[VORNAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="VORNAME"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[VORNAME]"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[VORNAME]" />
+                    <inputColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[NACHNAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NACHNAME"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[NACHNAME]"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[NACHNAME]" />
+                    <inputColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[LAND]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LAND"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[LAND]"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[LAND]" />
+                    <inputColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[STRASSE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="STRASSE"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[STRASSE]"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[STRASSE]" />
+                    <inputColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[HAUSNUMMER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HAUSNUMMER"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[HAUSNUMMER]"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[HAUSNUMMER]" />
+                    <inputColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[POSTLEITZAHL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="POSTLEITZAHL"
+                      externalMetadataColumnId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[PLZ]"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[POSTLEITZAHL]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[NUTZER_DIM_ID]"
+                      dataType="i4"
+                      name="NUTZER_DIM_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[NUTZER_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NUTZER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[FIRMENNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="FIRMENNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[VORNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VORNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[NACHNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NACHNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[LAND]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LAND" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[STRASSE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="STRASSE" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[HAUSNUMMER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="HAUSNUMMER" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[PLZ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="PLZ" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Lade Nutzerdaten\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Fehlerausgabe des OLE DB-Ziels"
+                  synchronousInputId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Lade Nutzerdaten\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Lade Nutzerdaten\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Lade Nutzerdaten\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Lade Nutzerdaten\Suche"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Suche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;6"
+              description="Verknüpft zusätzliche Spalten mit dem Datenfluss, indem Werte in einer Tabelle gesucht werden. Verknüpfen Sie beispielsweise die Spalte &quot;employee id&quot; mit der Tabelle &quot;employees&quot;, um &quot;hire date&quot; und &quot;employee name&quot; zu erhalten. Diese Transformation wird empfohlen, wenn der Arbeitsspeicher die Nachschlagetabelle aufnehmen kann."
+              name="Suche"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Gibt die SQL-Anweisung an, die die Nachschlagetabelle generiert."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Nutzer_DIMENSION]</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt eine SQL-Anweisung an, die Parameter zum Generieren der Nachschlagetabelle verwendet."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Nutzer_DIMENSION]) [refTable]
+where [refTable].[NUTZER_ID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den Typ der Verbindung an, der zum Zugreifen auf das Verweisdataset verwendet wird."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den Cachetyp der Nachschlagetabelle an."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt an, wie die Suchtransformation Zeilen ohne übereinstimmende Einträge im Verweisdataset behandelt."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den Prozentwert des Caches an, der für Zeilen ohne übereinstimmende Einträge im Verweisdataset zugewiesen ist."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximale Speicherauslastung für den Verweiscache auf einer 32-Bit-Plattform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximale Speicherauslastung für den Verweiscache auf einer 64-Bit-Plattform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Zeigt an, ob auf Metadaten in einem XML-Format verwiesen werden soll."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="NUTZER_DIM_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NUTZER_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="FIRMENNAME" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="VORNAME" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="NACHNAME" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="LAND" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="STRASSE" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="HAUSNUMMER" dataType="DT_STR" length="5" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="PLZ" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Gibt die Liste der Herkunftsbezeichner an, die den von der SQL-Anweisung in der SQLCommand-Eigenschaft verwendeten Parametern zugeordnet sind. Einträge in der Liste sind durch Semikolons getrennt."
+                  name="ParameterMap">#{Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[NUTZER_ID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Bestimmt, ob doppelte Schlüssel in den Verweisdaten bei Verwendung des Vollcachemodus als Fehler behandelt werden sollen."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lade Nutzerdaten\Suche.Connections[OleDbConnection]"
+                  connectionManagerID="{AE5456D4-1832-420E-9A14-51676366269F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[sqlservervier.f4.htw-berlin.de.u575710.u575710]"
+                  description="Verbindungs-Manager für den Zugriff auf Suchdaten."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Lade Nutzerdaten\Suche.Inputs[Eingabe der Suche]"
+                  name="Eingabe der Suche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lade Nutzerdaten\Suche.Inputs[Eingabe der Suche].Columns[NUTZER_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NUTZER_ID"
+                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[NUTZER_ID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Gibt die Spalte in der Verweistabelle an, mit der eine Spalte verknüpft wird."
+                          name="JoinToReferenceColumn">NUTZER_ID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Gibt die Spalte in der Verweistabelle an, aus der eine Spalte kopiert ist."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Lade Nutzerdaten\Suche.Outputs[Ausgabe der Suchübereinstimmungen]"
+                  errorOrTruncationOperation="Suche"
+                  exclusionGroup="1"
+                  name="Ausgabe der Suchübereinstimmungen"
+                  synchronousInputId="Package\Lade Nutzerdaten\Suche.Inputs[Eingabe der Suche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Lade Nutzerdaten\Suche.Outputs[Suchausgabe nicht übereinstimmender Einträge]"
+                  description="Die Suchausgabe, die Zeilen ohne übereinstimmende Einträge im Verweisdataset behandelt. Verwenden Sie diese Ausgabe, wenn die NoMatchBehavior-Eigenschaft auf &quot;Zeilen ohne übereinstimmende Einträge an die Ausgabe nicht übereinstimmender Einträge senden&quot; festgelegt ist."
+                  exclusionGroup="1"
+                  name="Suchausgabe nicht übereinstimmender Einträge"
+                  synchronousInputId="Package\Lade Nutzerdaten\Suche.Inputs[Eingabe der Suche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Lade Nutzerdaten\Suche.Outputs[Fehlerausgabe der Suche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Fehlerausgabe der Suche"
+                  synchronousInputId="Package\Lade Nutzerdaten\Suche.Inputs[Eingabe der Suche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lade Nutzerdaten\Suche.Outputs[Fehlerausgabe der Suche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Lade Nutzerdaten\Suche.Outputs[Fehlerausgabe der Suche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Lade Nutzerdaten\Suche.Outputs[Fehlerausgabe der Suche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Lade Nutzerdaten\Suche.Outputs[Fehlerausgabe der Suche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Lade Nutzerdaten\Upload Nutzerdaten"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flatfilequelle;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;1"
@@ -4470,28 +5095,6 @@ where [refTable].[FZ_ID] = ?</property>
                       length="50"
                       lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[NUTZER_ID]"
                       name="NUTZER_ID"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Gibt an, ob die Daten im Binärformat sind."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[STATUS]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Konvertierung"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[STATUS]"
-                      length="50"
-                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[STATUS]"
-                      name="STATUS"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -4658,50 +5261,6 @@ where [refTable].[FZ_ID] = ?</property>
                           name="UseBinaryFormat">false</property>
                       </properties>
                     </outputColumn>
-                    <outputColumn
-                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[RECHNUNGSINTERVALL]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Konvertierung"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[RECHNUNGSINTERVALL]"
-                      length="50"
-                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[RECHNUNGSINTERVALL]"
-                      name="RECHNUNGSINTERVALL"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Gibt an, ob die Daten im Binärformat sind."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[RECHNUNGSZUSTELLUNG]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Konvertierung"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[RECHNUNGSZUSTELLUNG]"
-                      length="50"
-                      lineageId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].Columns[RECHNUNGSZUSTELLUNG]"
-                      name="RECHNUNGSZUSTELLUNG"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Gibt an, ob die Daten im Binärformat sind."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4803,6 +5362,23 @@ where [refTable].[FZ_ID] = ?</property>
               </outputs>
             </component>
           </components>
+          <paths>
+            <path
+              refId="Package\Lade Nutzerdaten.Paths[Ausgabe der Flatfilequelle]"
+              endId="Package\Lade Nutzerdaten\Suche.Inputs[Eingabe der Suche]"
+              name="Ausgabe der Flatfilequelle"
+              startId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle]" />
+            <path
+              refId="Package\Lade Nutzerdaten.Paths[Ausgabe der Suchübereinstimmungen]"
+              endId="Package\Lade Nutzerdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls]"
+              name="Ausgabe der Suchübereinstimmungen"
+              startId="Package\Lade Nutzerdaten\Suche.Outputs[Ausgabe der Suchübereinstimmungen]" />
+            <path
+              refId="Package\Lade Nutzerdaten.Paths[Suchausgabe nicht übereinstimmender Einträge]"
+              endId="Package\Lade Nutzerdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]"
+              name="Suchausgabe nicht übereinstimmender Einträge"
+              startId="Package\Lade Nutzerdaten\Suche.Outputs[Suchausgabe nicht übereinstimmender Einträge]" />
+          </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -5410,13 +5986,155 @@ where [refTable].[FZ_ID] = ?</property>
     design-time-name="Package\Lade Nutzerdaten">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="177,42"
           Id="Package\Lade Nutzerdaten\Upload Nutzerdaten"
-          TopLeft="147,137" />
+          TopLeft="295,135" />
+        <NodeLayout
+          Size="110,42"
+          Id="Package\Lade Nutzerdaten\Suche"
+          TopLeft="331,230" />
+        <EdgeLayout
+          Id="Package\Lade Nutzerdaten.Paths[Ausgabe der Flatfilequelle]"
+          TopLeft="384.75,177">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Lade Nutzerdaten\OLE DB-Ziel"
+          TopLeft="163,378" />
+        <EdgeLayout
+          Id="Package\Lade Nutzerdaten.Paths[Suchausgabe nicht übereinstimmender Einträge]"
+          TopLeft="369,272">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-135.5,106"
+              Start="0,0"
+              End="-135.5,98.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.3118279569892" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.3118279569892"
+                    Point2="0,43.3118279569892"
+                    Point3="-4,43.3118279569892" />
+                  <mssgle:LineSegment
+                    End="-131.5,43.3118279569892" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-131.5,43.3118279569892"
+                    Point2="-135.5,43.3118279569892"
+                    Point3="-135.5,47.3118279569892" />
+                  <mssgle:LineSegment
+                    End="-135.5,98.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-173.76701171875,48.3118279569892,212.0340234375,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Lade Nutzerdaten\OLE DB-Befehl"
+          TopLeft="495,382" />
+        <EdgeLayout
+          Id="Package\Lade Nutzerdaten.Paths[Ausgabe der Suchübereinstimmungen]"
+          TopLeft="403,272">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="169,110"
+              Start="0,0"
+              End="169,102.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.9462365591398" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.9462365591398"
+                    Point2="0,44.9462365591398"
+                    Point3="4,44.9462365591398" />
+                  <mssgle:LineSegment
+                    End="165,44.9462365591398" />
+                  <mssgle:CubicBezierSegment
+                    Point1="165,44.9462365591398"
+                    Point2="169,44.9462365591398"
+                    Point3="169,48.9462365591398" />
+                  <mssgle:LineSegment
+                    End="169,102.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0.229999999999976,49.9462365591398,168.54,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Lade Nutzerdaten\Suche">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Nutzer_DIMENSION]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Lade Nutzerdaten\OLE DB-Ziel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
