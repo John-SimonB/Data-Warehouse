@@ -11,8 +11,8 @@
   DTS:LocaleID="1031"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="156"
-  DTS:VersionGUID="{8777FFA7-BD97-4566-A9B6-6D0B18304396}">
+  DTS:VersionBuild="212"
+  DTS:VersionGUID="{D5387DB4-0D0F-4B5A-934C-96C01DACF29C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,6 +29,366 @@
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Faktentabelle"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Datenflusstask"
+      DTS:DTSID="{B372BBC8-FB9E-4BCD-A1E8-77EAB25EFC71}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Faktentabelle"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Faktentabelle\Lade FahrzeugDIM"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB-Quelle;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;7"
+              description="OLE DB-Quelle"
+              name="Lade FahrzeugDIM"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an."
+                  name="OpenRowset">[dbo].[Fahrzeug_DIMENSION]</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Die Variable, die den auszuführenden SQL-Befehl enthält."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Die Zuordnungen zwischen den Parametern im SQL-Befehl und den Variablen."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Faktentabelle\Lade FahrzeugDIM.Connections[OleDbConnection]"
+                  connectionManagerID="{6C800379-83A7-4B0C-A805-8C6F9A2718A8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[sqlservervier.f4.htw-berlin.de.u575710]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle]"
+                  name="Ausgabe der OLE DB-Quelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].Columns[FZ_DIM_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[FZ_DIM_ID]"
+                      lineageId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].Columns[FZ_DIM_ID]"
+                      name="FZ_DIM_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].Columns[FZ_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[FZ_ID]"
+                      length="50"
+                      lineageId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].Columns[FZ_ID]"
+                      name="FZ_ID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[FZ_DIM_ID]"
+                      dataType="i4"
+                      name="FZ_DIM_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[FZ_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FZ_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[SCHADSTOFFKLASSE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="SCHADSTOFFKLASSE" />
+                    <externalMetadataColumn
+                      refId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[ACHSEN]"
+                      dataType="i4"
+                      name="ACHSEN" />
+                    <externalMetadataColumn
+                      refId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[MAUTKATEGORIE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="MAUTKATEGORIE" />
+                    <externalMetadataColumn
+                      refId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[GEWICHT]"
+                      dataType="numeric"
+                      name="GEWICHT"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[MAUSATZ]"
+                      dataType="numeric"
+                      name="MAUSATZ"
+                      precision="15"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[FIN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FIN" />
+                    <externalMetadataColumn
+                      refId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[KENNZEICHEN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="KENNZEICHEN" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Fehlerausgabe der OLE DB-Quelle]"
+                  isErrorOut="true"
+                  name="Fehlerausgabe der OLE DB-Quelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[FZ_DIM_ID]"
+                      dataType="i4"
+                      lineageId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[FZ_DIM_ID]"
+                      name="FZ_DIM_ID" />
+                    <outputColumn
+                      refId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[FZ_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[FZ_ID]"
+                      name="FZ_ID" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Faktentabelle\Lade NutzerDIM"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB-Quelle;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;7"
+              description="OLE DB-Quelle"
+              name="Lade NutzerDIM"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an."
+                  name="OpenRowset">[dbo].[Nutzer_DIMENSION]</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Die Variable, die den auszuführenden SQL-Befehl enthält."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Die Zuordnungen zwischen den Parametern im SQL-Befehl und den Variablen."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Faktentabelle\Lade NutzerDIM.Connections[OleDbConnection]"
+                  connectionManagerID="{6C800379-83A7-4B0C-A805-8C6F9A2718A8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[sqlservervier.f4.htw-berlin.de.u575710]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Ausgabe der OLE DB-Quelle]"
+                  name="Ausgabe der OLE DB-Quelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Ausgabe der OLE DB-Quelle].Columns[NUTZER_DIM_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[NUTZER_DIM_ID]"
+                      lineageId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Ausgabe der OLE DB-Quelle].Columns[NUTZER_DIM_ID]"
+                      name="NUTZER_DIM_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Ausgabe der OLE DB-Quelle].Columns[NUTZER_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[NUTZER_ID]"
+                      length="50"
+                      lineageId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Ausgabe der OLE DB-Quelle].Columns[NUTZER_ID]"
+                      name="NUTZER_ID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[NUTZER_DIM_ID]"
+                      dataType="i4"
+                      name="NUTZER_DIM_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[NUTZER_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NUTZER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[FIRMENNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="FIRMENNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[VORNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VORNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[NACHNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NACHNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[LAND]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LAND" />
+                    <externalMetadataColumn
+                      refId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[STRASSE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="STRASSE" />
+                    <externalMetadataColumn
+                      refId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[HAUSNUMMER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="HAUSNUMMER" />
+                    <externalMetadataColumn
+                      refId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[PLZ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="PLZ" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Fehlerausgabe der OLE DB-Quelle]"
+                  isErrorOut="true"
+                  name="Fehlerausgabe der OLE DB-Quelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[NUTZER_DIM_ID]"
+                      dataType="i4"
+                      lineageId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[NUTZER_DIM_ID]"
+                      name="NUTZER_DIM_ID" />
+                    <outputColumn
+                      refId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[NUTZER_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[NUTZER_ID]"
+                      name="NUTZER_ID" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Lade Fahrzeugdaten"
       DTS:CreationName="Microsoft.Pipeline"
@@ -87,8 +447,8 @@ EXEC Update_Fahrzeug_DIMENSION
               <connections>
                 <connection
                   refId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Connections[OleDbConnection]"
-                  connectionManagerID="{AE5456D4-1832-420E-9A14-51676366269F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[sqlservervier.f4.htw-berlin.de.u575710.u575710]"
+                  connectionManagerID="{6C800379-83A7-4B0C-A805-8C6F9A2718A8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[sqlservervier.f4.htw-berlin.de.u575710]"
                   description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
                   name="OleDbConnection" />
               </connections>
@@ -181,7 +541,7 @@ EXEC Update_Fahrzeug_DIMENSION
                       refId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@SCHADSTOFFKLASSE]"
                       codePage="1252"
                       dataType="str"
-                      length="20"
+                      length="5"
                       name="@SCHADSTOFFKLASSE">
                       <properties>
                         <property
@@ -360,8 +720,8 @@ EXEC Update_Fahrzeug_DIMENSION
               <connections>
                 <connection
                   refId="Package\Lade Fahrzeugdaten\OLE DB-Ziel.Connections[OleDbConnection]"
-                  connectionManagerID="{AE5456D4-1832-420E-9A14-51676366269F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[sqlservervier.f4.htw-berlin.de.u575710.u575710]"
+                  connectionManagerID="{6C800379-83A7-4B0C-A805-8C6F9A2718A8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[sqlservervier.f4.htw-berlin.de.u575710]"
                   description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
                   name="OleDbConnection" />
               </connections>
@@ -2828,12 +3188,12 @@ where [refTable].[FZ_ID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Zeigt an, ob auf Metadaten in einem XML-Format verwiesen werden soll."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="FZ_DIM_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FZ_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="SCHADSTOFFKLASSE" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ACHSEN" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MAUTKATEGORIE" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GEWICHT" dataType="DT_NUMERIC" length="0" precision="15" scale="2" codePage="0"/&gt;&lt;referenceColumn name="MAUSATZ" dataType="DT_NUMERIC" length="0" precision="15" scale="2" codePage="0"/&gt;&lt;referenceColumn name="FIN" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="KENNZEICHEN" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="FZ_DIM_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FZ_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="SCHADSTOFFKLASSE" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ACHSEN" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MAUTKATEGORIE" dataType="DT_STR" length="5" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="GEWICHT" dataType="DT_NUMERIC" length="0" precision="15" scale="2" codePage="0"/&gt;&lt;referenceColumn name="MAUSATZ" dataType="DT_NUMERIC" length="0" precision="15" scale="3" codePage="0"/&gt;&lt;referenceColumn name="FIN" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="KENNZEICHEN" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Gibt die Liste der Herkunftsbezeichner an, die den von der SQL-Anweisung in der SQLCommand-Eigenschaft verwendeten Parametern zugeordnet sind. Einträge in der Liste sind durch Semikolons getrennt."
-                  name="ParameterMap">#{Package\Lade Fahrzeugdaten\Upload Mautkategorie};</property>
+                  name="ParameterMap">#{Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[FZ_ID]};</property>
                 <property
                   dataType="System.Int32"
                   description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
@@ -2846,8 +3206,8 @@ where [refTable].[FZ_ID] = ?</property>
               <connections>
                 <connection
                   refId="Package\Lade Fahrzeugdaten\Suche.Connections[OleDbConnection]"
-                  connectionManagerID="{AE5456D4-1832-420E-9A14-51676366269F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[sqlservervier.f4.htw-berlin.de.u575710.u575710]"
+                  connectionManagerID="{6C800379-83A7-4B0C-A805-8C6F9A2718A8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[sqlservervier.f4.htw-berlin.de.u575710]"
                   description="Verbindungs-Manager für den Zugriff auf Suchdaten."
                   name="OleDbConnection" />
               </connections>
@@ -4416,6 +4776,581 @@ where [refTable].[FZ_ID] = ?</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Lade Fahrzeuggerät"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Datenflusstask"
+      DTS:DTSID="{3FBB53A5-37E2-4E40-8948-39F1204B2130}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Lade Fahrzeuggerät"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Lade Fahrzeuggerät\OLE DB-Befehl"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB-Befehl;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;2"
+              description="Führt eine SQL-Anweisung für jede Zeile in einem Datenfluss aus. Rufen Sie beispielsweise die gespeicherte Prozedur &quot;new employee setup&quot; für jede Zeile in der Tabelle &quot;new employees&quot; auf. Hinweis: Wenn Sie für jede Zeile eines umfangreichen Datenflusses eine SQL-Anweisung ausführen, kann der Vorgang länger dauern."
+              name="OLE DB-Befehl"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">USE [u575710];
+EXEC Update_Fahrzeuggeraet_DIMENSION
+ 
+    @FZG_ID= ?,
+ 
+    @GERAETETYP= ?;</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lade Fahrzeuggerät\OLE DB-Befehl.Connections[OleDbConnection]"
+                  connectionManagerID="{6C800379-83A7-4B0C-A805-8C6F9A2718A8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[sqlservervier.f4.htw-berlin.de.u575710]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Lade Fahrzeuggerät\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls]"
+                  errorOrTruncationOperation="Befehlsausführung"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Eingabe des OLE DB-Befehls">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lade Fahrzeuggerät\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[FZG_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FZG_ID"
+                      externalMetadataColumnId="Package\Lade Fahrzeuggerät\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@FZG_ID]"
+                      lineageId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].Columns[FZG_ID]" />
+                    <inputColumn
+                      refId="Package\Lade Fahrzeuggerät\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[TYP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TYP"
+                      externalMetadataColumnId="Package\Lade Fahrzeuggerät\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@GERAETETYP]"
+                      lineageId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].Columns[TYP]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeuggerät\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@FZG_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="@FZG_ID">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameterinformationen. Stimmt mit den DBPARAMFLAGSENUM-Werten von OLE DB überein."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeuggerät\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@GERAETETYP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="@GERAETETYP">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameterinformationen. Stimmt mit den DBPARAMFLAGSENUM-Werten von OLE DB überein."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Lade Fahrzeuggerät\OLE DB-Befehl.Outputs[Ausgabe des OLE DB-Befehls]"
+                  exclusionGroup="1"
+                  name="Ausgabe des OLE DB-Befehls"
+                  synchronousInputId="Package\Lade Fahrzeuggerät\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Lade Fahrzeuggerät\OLE DB-Befehl.Outputs[Fehlerausgabe des OLE DB-Befehls]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Fehlerausgabe des OLE DB-Befehls"
+                  synchronousInputId="Package\Lade Fahrzeuggerät\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeuggerät\OLE DB-Befehl.Outputs[Fehlerausgabe des OLE DB-Befehls].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Lade Fahrzeuggerät\OLE DB-Befehl.Outputs[Fehlerausgabe des OLE DB-Befehls].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Lade Fahrzeuggerät\OLE DB-Befehl.Outputs[Fehlerausgabe des OLE DB-Befehls].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Lade Fahrzeuggerät\OLE DB-Befehl.Outputs[Fehlerausgabe des OLE DB-Befehls].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Lade Fahrzeuggerät\OLE DB-Ziel"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB-Ziel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;4"
+              description="OLE DB-Ziel"
+              name="OLE DB-Ziel"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an."
+                  name="OpenRowset">[dbo].[Fahrzeuggeraet_DIMENSION]</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob die für Identitätsspalten übergebenen Werte zum Ziel kopiert werden. Bei &quot;False&quot; werden die Werte für Identitätsspalten am Ziel automatisch generiert. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob für Spalten, die NULL enthalten, NULL am Ziel eingefügt wird. Bei &quot;False&quot; werden für Spalten, die NULL enthalten, am Ziel die Standardwerte eingefügt. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die für die Option &quot;Schnelles Laden&quot; zu verwendenden Optionen an. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt an, wann beim Einfügen von Daten Commits ausgegeben werden. Der Wert &quot;0&quot; gibt an, dass ein Commit am Ende des Einfügens von Daten ausgegeben wird. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lade Fahrzeuggerät\OLE DB-Ziel.Connections[OleDbConnection]"
+                  connectionManagerID="{6C800379-83A7-4B0C-A805-8C6F9A2718A8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[sqlservervier.f4.htw-berlin.de.u575710]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Lade Fahrzeuggerät\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]"
+                  errorOrTruncationOperation="Einfügen"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Eingabe des OLE DB-Ziels">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lade Fahrzeuggerät\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[FZG_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FZG_ID"
+                      externalMetadataColumnId="Package\Lade Fahrzeuggerät\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[FZG_ID]"
+                      lineageId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].Columns[FZG_ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeuggerät\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[FZG_DIM_ID]"
+                      dataType="i4"
+                      name="FZG_DIM_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeuggerät\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[FZG_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FZG_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeuggerät\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[GERAETETYP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="GERAETETYP" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Lade Fahrzeuggerät\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Fehlerausgabe des OLE DB-Ziels"
+                  synchronousInputId="Package\Lade Fahrzeuggerät\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeuggerät\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Lade Fahrzeuggerät\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Lade Fahrzeuggerät\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Lade Fahrzeuggerät\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Lade Fahrzeuggerät\Suche"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Suche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;6"
+              description="Verknüpft zusätzliche Spalten mit dem Datenfluss, indem Werte in einer Tabelle gesucht werden. Verknüpfen Sie beispielsweise die Spalte &quot;employee id&quot; mit der Tabelle &quot;employees&quot;, um &quot;hire date&quot; und &quot;employee name&quot; zu erhalten. Diese Transformation wird empfohlen, wenn der Arbeitsspeicher die Nachschlagetabelle aufnehmen kann."
+              name="Suche"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Gibt die SQL-Anweisung an, die die Nachschlagetabelle generiert."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Fahrzeuggeraet_DIMENSION]</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt eine SQL-Anweisung an, die Parameter zum Generieren der Nachschlagetabelle verwendet."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Fahrzeuggeraet_DIMENSION]) [refTable]
+where [refTable].[FZG_ID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den Typ der Verbindung an, der zum Zugreifen auf das Verweisdataset verwendet wird."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den Cachetyp der Nachschlagetabelle an."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt an, wie die Suchtransformation Zeilen ohne übereinstimmende Einträge im Verweisdataset behandelt."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den Prozentwert des Caches an, der für Zeilen ohne übereinstimmende Einträge im Verweisdataset zugewiesen ist."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximale Speicherauslastung für den Verweiscache auf einer 32-Bit-Plattform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximale Speicherauslastung für den Verweiscache auf einer 64-Bit-Plattform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Zeigt an, ob auf Metadaten in einem XML-Format verwiesen werden soll."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="FZG_DIM_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FZG_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="GERAETETYP" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Gibt die Liste der Herkunftsbezeichner an, die den von der SQL-Anweisung in der SQLCommand-Eigenschaft verwendeten Parametern zugeordnet sind. Einträge in der Liste sind durch Semikolons getrennt."
+                  name="ParameterMap">#{Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].Columns[FZG_ID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Bestimmt, ob doppelte Schlüssel in den Verweisdaten bei Verwendung des Vollcachemodus als Fehler behandelt werden sollen."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lade Fahrzeuggerät\Suche.Connections[OleDbConnection]"
+                  connectionManagerID="{6C800379-83A7-4B0C-A805-8C6F9A2718A8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[sqlservervier.f4.htw-berlin.de.u575710]"
+                  description="Verbindungs-Manager für den Zugriff auf Suchdaten."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Lade Fahrzeuggerät\Suche.Inputs[Eingabe der Suche]"
+                  name="Eingabe der Suche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lade Fahrzeuggerät\Suche.Inputs[Eingabe der Suche].Columns[FZG_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FZG_ID"
+                      lineageId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].Columns[FZG_ID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Gibt die Spalte in der Verweistabelle an, mit der eine Spalte verknüpft wird."
+                          name="JoinToReferenceColumn">FZG_ID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Gibt die Spalte in der Verweistabelle an, aus der eine Spalte kopiert ist."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Lade Fahrzeuggerät\Suche.Outputs[Ausgabe der Suchübereinstimmungen]"
+                  errorOrTruncationOperation="Suche"
+                  exclusionGroup="1"
+                  name="Ausgabe der Suchübereinstimmungen"
+                  synchronousInputId="Package\Lade Fahrzeuggerät\Suche.Inputs[Eingabe der Suche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Lade Fahrzeuggerät\Suche.Outputs[Suchausgabe nicht übereinstimmender Einträge]"
+                  description="Die Suchausgabe, die Zeilen ohne übereinstimmende Einträge im Verweisdataset behandelt. Verwenden Sie diese Ausgabe, wenn die NoMatchBehavior-Eigenschaft auf &quot;Zeilen ohne übereinstimmende Einträge an die Ausgabe nicht übereinstimmender Einträge senden&quot; festgelegt ist."
+                  exclusionGroup="1"
+                  name="Suchausgabe nicht übereinstimmender Einträge"
+                  synchronousInputId="Package\Lade Fahrzeuggerät\Suche.Inputs[Eingabe der Suche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Lade Fahrzeuggerät\Suche.Outputs[Fehlerausgabe der Suche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Fehlerausgabe der Suche"
+                  synchronousInputId="Package\Lade Fahrzeuggerät\Suche.Inputs[Eingabe der Suche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeuggerät\Suche.Outputs[Fehlerausgabe der Suche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Lade Fahrzeuggerät\Suche.Outputs[Fehlerausgabe der Suche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Lade Fahrzeuggerät\Suche.Outputs[Fehlerausgabe der Suche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Lade Fahrzeuggerät\Suche.Outputs[Fehlerausgabe der Suche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flatfilequelle;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;1"
+              description="Flatfilequelle"
+              localeId="1031"
+              name="Upload Fahrzeuggerät"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Gibt an, ob Spalten mit der Länge &quot;0&quot; als NULL behandelt werden."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen der Ausgabespalte an, die den Dateinamen enthält. Wenn kein Name angegeben wird, wird keine Ausgabespalte generiert, die den Dateinamen enthält."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Connections[FlatFileConnection]"
+                  connectionManagerID="{93696DB9-4120-42AF-B849-D5A8E5BDAD62}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Fahrzeuggerät]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle]"
+                  name="Ausgabe der Flatfilequelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].Columns[FZG_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[FZG_ID]"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].Columns[FZG_ID]"
+                      name="FZG_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].Columns[TYP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[TYP]"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].Columns[TYP]"
+                      name="TYP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[FZG_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FZG_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[FZ_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FZ_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[TYP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TYP" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[EINBAUDATUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EINBAUDATUM" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[AUSBAUDATUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AUSBAUDATUM" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Fehlerausgabe der Flatfilequelle]"
+                  isErrorOut="true"
+                  name="Fehlerausgabe der Flatfilequelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Fehlerausgabe der Flatfilequelle].Columns[Fehlerausgabespalte der Flatfilequelle]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Fehlerausgabespalte der Flatfilequelle"
+                      lineageId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Fehlerausgabe der Flatfilequelle].Columns[Fehlerausgabespalte der Flatfilequelle]"
+                      name="Fehlerausgabespalte der Flatfilequelle" />
+                    <outputColumn
+                      refId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Lade Fahrzeuggerät.Paths[Ausgabe der Flatfilequelle]"
+              endId="Package\Lade Fahrzeuggerät\Suche.Inputs[Eingabe der Suche]"
+              name="Ausgabe der Flatfilequelle"
+              startId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle]" />
+            <path
+              refId="Package\Lade Fahrzeuggerät.Paths[Ausgabe der Suchübereinstimmungen]"
+              endId="Package\Lade Fahrzeuggerät\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls]"
+              name="Ausgabe der Suchübereinstimmungen"
+              startId="Package\Lade Fahrzeuggerät\Suche.Outputs[Ausgabe der Suchübereinstimmungen]" />
+            <path
+              refId="Package\Lade Fahrzeuggerät.Paths[Suchausgabe nicht übereinstimmender Einträge]"
+              endId="Package\Lade Fahrzeuggerät\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]"
+              name="Suchausgabe nicht übereinstimmender Einträge"
+              startId="Package\Lade Fahrzeuggerät\Suche.Outputs[Suchausgabe nicht übereinstimmender Einträge]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Lade Nutzerdaten"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Datenflusstask"
@@ -4473,8 +5408,8 @@ EXEC Update_Nutzer_DIMENSION
               <connections>
                 <connection
                   refId="Package\Lade Nutzerdaten\OLE DB-Befehl.Connections[OleDbConnection]"
-                  connectionManagerID="{AE5456D4-1832-420E-9A14-51676366269F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[sqlservervier.f4.htw-berlin.de.u575710.u575710]"
+                  connectionManagerID="{6C800379-83A7-4B0C-A805-8C6F9A2718A8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[sqlservervier.f4.htw-berlin.de.u575710]"
                   description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
                   name="OleDbConnection" />
               </connections>
@@ -4751,8 +5686,8 @@ EXEC Update_Nutzer_DIMENSION
               <connections>
                 <connection
                   refId="Package\Lade Nutzerdaten\OLE DB-Ziel.Connections[OleDbConnection]"
-                  connectionManagerID="{AE5456D4-1832-420E-9A14-51676366269F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[sqlservervier.f4.htw-berlin.de.u575710.u575710]"
+                  connectionManagerID="{6C800379-83A7-4B0C-A805-8C6F9A2718A8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[sqlservervier.f4.htw-berlin.de.u575710]"
                   description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
                   name="OleDbConnection" />
               </connections>
@@ -4981,8 +5916,8 @@ where [refTable].[NUTZER_ID] = ?</property>
               <connections>
                 <connection
                   refId="Package\Lade Nutzerdaten\Suche.Connections[OleDbConnection]"
-                  connectionManagerID="{AE5456D4-1832-420E-9A14-51676366269F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[sqlservervier.f4.htw-berlin.de.u575710.u575710]"
+                  connectionManagerID="{6C800379-83A7-4B0C-A805-8C6F9A2718A8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[sqlservervier.f4.htw-berlin.de.u575710]"
                   description="Verbindungs-Manager für den Zugriff auf Suchdaten."
                   name="OleDbConnection" />
               </connections>
@@ -5280,7 +6215,7 @@ where [refTable].[NUTZER_ID] = ?</property>
                       refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[FIRMENNAME]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="100"
                       name="FIRMENNAME" />
                     <externalMetadataColumn
                       refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[VORNAME]"
@@ -5310,13 +6245,13 @@ where [refTable].[NUTZER_ID] = ?</property>
                       refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[HAUSNUMMER]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="5"
                       name="HAUSNUMMER" />
                     <externalMetadataColumn
                       refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[POSTLEITZAHL]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="20"
                       name="POSTLEITZAHL" />
                     <externalMetadataColumn
                       refId="Package\Lade Nutzerdaten\Upload Nutzerdaten.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[RECHNUNGSINTERVALL]"
@@ -5382,6 +6317,699 @@ where [refTable].[NUTZER_ID] = ?</property>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Mautabschnitt"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Datenflusstask"
+      DTS:DTSID="{9F3CA5FD-754C-424B-B2DD-CE2CECF8CA86}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Mautabschnitt"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Mautabschnitt\OLE DB-Befehl"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB-Befehl;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;2"
+              description="Führt eine SQL-Anweisung für jede Zeile in einem Datenfluss aus. Rufen Sie beispielsweise die gespeicherte Prozedur &quot;new employee setup&quot; für jede Zeile in der Tabelle &quot;new employees&quot; auf. Hinweis: Wenn Sie für jede Zeile eines umfangreichen Datenflusses eine SQL-Anweisung ausführen, kann der Vorgang länger dauern."
+              name="OLE DB-Befehl"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">USE [u575710];
+EXEC Update_Mautabschnitt_DIMENSION
+ 
+    @ABSCHNITTS_ID = ?,
+ 
+    @ABSCHNITTSLAENGE = ?,
+
+    @ABSCHNITTSNAME = ?,
+
+    @STRASSENTYP = ?;</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Mautabschnitt\OLE DB-Befehl.Connections[OleDbConnection]"
+                  connectionManagerID="{6C800379-83A7-4B0C-A805-8C6F9A2718A8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[sqlservervier.f4.htw-berlin.de.u575710]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls]"
+                  errorOrTruncationOperation="Befehlsausführung"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Eingabe des OLE DB-Befehls">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[ABSCHNITTS_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ABSCHNITTS_ID"
+                      externalMetadataColumnId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@ABSCHNITTS_ID]"
+                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[ABSCHNITTS_ID]" />
+                    <inputColumn
+                      refId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[LAENGE]"
+                      cachedDataType="decimal"
+                      cachedName="LAENGE"
+                      externalMetadataColumnId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@ABSCHNITTSLAENGE]"
+                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[LAENGE]" />
+                    <inputColumn
+                      refId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NAME"
+                      externalMetadataColumnId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@ABSCHNITTSNAME]"
+                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[NAME]" />
+                    <inputColumn
+                      refId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[ABSCHNITTSTYP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ABSCHNITTSTYP"
+                      externalMetadataColumnId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@STRASSENTYP]"
+                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[ABSCHNITTSTYP]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@ABSCHNITTS_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="@ABSCHNITTS_ID">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameterinformationen. Stimmt mit den DBPARAMFLAGSENUM-Werten von OLE DB überein."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@ABSCHNITTSLAENGE]"
+                      dataType="numeric"
+                      name="@ABSCHNITTSLAENGE"
+                      precision="15"
+                      scale="2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameterinformationen. Stimmt mit den DBPARAMFLAGSENUM-Werten von OLE DB überein."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@ABSCHNITTSNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="@ABSCHNITTSNAME">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameterinformationen. Stimmt mit den DBPARAMFLAGSENUM-Werten von OLE DB überein."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@STRASSENTYP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="@STRASSENTYP">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameterinformationen. Stimmt mit den DBPARAMFLAGSENUM-Werten von OLE DB überein."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Mautabschnitt\OLE DB-Befehl.Outputs[Ausgabe des OLE DB-Befehls]"
+                  exclusionGroup="1"
+                  name="Ausgabe des OLE DB-Befehls"
+                  synchronousInputId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Mautabschnitt\OLE DB-Befehl.Outputs[Fehlerausgabe des OLE DB-Befehls]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Fehlerausgabe des OLE DB-Befehls"
+                  synchronousInputId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Mautabschnitt\OLE DB-Befehl.Outputs[Fehlerausgabe des OLE DB-Befehls].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Mautabschnitt\OLE DB-Befehl.Outputs[Fehlerausgabe des OLE DB-Befehls].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Mautabschnitt\OLE DB-Befehl.Outputs[Fehlerausgabe des OLE DB-Befehls].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Mautabschnitt\OLE DB-Befehl.Outputs[Fehlerausgabe des OLE DB-Befehls].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Mautabschnitt\OLE DB-Ziel 1"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB-Ziel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;4"
+              description="OLE DB-Ziel"
+              name="OLE DB-Ziel 1"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Die Anzahl der Sekunden für das Timeout eines Befehls. Der Wert &quot;0&quot; zeigt einen unendlichen Timeoutwert an."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts an."
+                  name="OpenRowset">[dbo].[Mautabschnitt_DIMENSION]</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die Variable an, die den Namen des zum Öffnen eines Rowsets verwendeten Datenbankobjekts enthält."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Der auszuführende SQL-Befehl."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Erzwingt die Verwendung des DefaultCodePage-Eigenschaftswerts beim Beschreiben von Zeichendaten."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den zum Zugreifen auf die Datenbank verwendeten Modus an."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob die für Identitätsspalten übergebenen Werte zum Ziel kopiert werden. Bei &quot;False&quot; werden die Werte für Identitätsspalten am Ziel automatisch generiert. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob für Spalten, die NULL enthalten, NULL am Ziel eingefügt wird. Bei &quot;False&quot; werden für Spalten, die NULL enthalten, am Ziel die Standardwerte eingefügt. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt die für die Option &quot;Schnelles Laden&quot; zu verwendenden Optionen an. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt an, wann beim Einfügen von Daten Commits ausgegeben werden. Der Wert &quot;0&quot; gibt an, dass ein Commit am Ende des Einfügens von Daten ausgegeben wird. Trifft nur zu, wenn die Option &quot;Schnelles Laden&quot; aktiviert ist."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Mautabschnitt\OLE DB-Ziel 1.Connections[OleDbConnection]"
+                  connectionManagerID="{6C800379-83A7-4B0C-A805-8C6F9A2718A8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[sqlservervier.f4.htw-berlin.de.u575710]"
+                  description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels]"
+                  errorOrTruncationOperation="Einfügen"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Eingabe des OLE DB-Ziels">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].Columns[ABSCHNITTS_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ABSCHNITTS_ID"
+                      externalMetadataColumnId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[ABSCHNITTS_ID]"
+                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[ABSCHNITTS_ID]" />
+                    <inputColumn
+                      refId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].Columns[LAENGE]"
+                      cachedDataType="decimal"
+                      cachedName="LAENGE"
+                      externalMetadataColumnId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[ABSCHNITTSLAENGE]"
+                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[LAENGE]" />
+                    <inputColumn
+                      refId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].Columns[NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NAME"
+                      externalMetadataColumnId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[ABSCHNITTSNAME]"
+                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[NAME]" />
+                    <inputColumn
+                      refId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].Columns[ABSCHNITTSTYP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ABSCHNITTSTYP"
+                      externalMetadataColumnId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[STRASSENTYP]"
+                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[ABSCHNITTSTYP]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[ABSCHNITTS__DIM_ID]"
+                      dataType="i4"
+                      name="ABSCHNITTS__DIM_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[ABSCHNITTS_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ABSCHNITTS_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[ABSCHNITTSLAENGE]"
+                      dataType="numeric"
+                      name="ABSCHNITTSLAENGE"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[ABSCHNITTSNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ABSCHNITTSNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[STRASSENTYP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="STRASSENTYP" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Mautabschnitt\OLE DB-Ziel 1.Outputs[Fehlerausgabe des OLE DB-Ziels]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Fehlerausgabe des OLE DB-Ziels"
+                  synchronousInputId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Mautabschnitt\OLE DB-Ziel 1.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Mautabschnitt\OLE DB-Ziel 1.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Mautabschnitt\OLE DB-Ziel 1.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Mautabschnitt\OLE DB-Ziel 1.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Mautabschnitt\Suche"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Suche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;6"
+              description="Verknüpft zusätzliche Spalten mit dem Datenfluss, indem Werte in einer Tabelle gesucht werden. Verknüpfen Sie beispielsweise die Spalte &quot;employee id&quot; mit der Tabelle &quot;employees&quot;, um &quot;hire date&quot; und &quot;employee name&quot; zu erhalten. Diese Transformation wird empfohlen, wenn der Arbeitsspeicher die Nachschlagetabelle aufnehmen kann."
+              name="Suche"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Gibt die SQL-Anweisung an, die die Nachschlagetabelle generiert."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Mautabschnitt_DIMENSION]</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt eine SQL-Anweisung an, die Parameter zum Generieren der Nachschlagetabelle verwendet."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Mautabschnitt_DIMENSION]) [refTable]
+where [refTable].[ABSCHNITTS_ID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den Typ der Verbindung an, der zum Zugreifen auf das Verweisdataset verwendet wird."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den Cachetyp der Nachschlagetabelle an."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt an, wie die Suchtransformation Zeilen ohne übereinstimmende Einträge im Verweisdataset behandelt."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den Prozentwert des Caches an, der für Zeilen ohne übereinstimmende Einträge im Verweisdataset zugewiesen ist."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximale Speicherauslastung für den Verweiscache auf einer 32-Bit-Plattform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximale Speicherauslastung für den Verweiscache auf einer 64-Bit-Plattform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Zeigt an, ob auf Metadaten in einem XML-Format verwiesen werden soll."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ABSCHNITTS__DIM_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ABSCHNITTS_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ABSCHNITTSLAENGE" dataType="DT_NUMERIC" length="0" precision="15" scale="2" codePage="0"/&gt;&lt;referenceColumn name="ABSCHNITTSNAME" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="STRASSENTYP" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Gibt die Liste der Herkunftsbezeichner an, die den von der SQL-Anweisung in der SQLCommand-Eigenschaft verwendeten Parametern zugeordnet sind. Einträge in der Liste sind durch Semikolons getrennt."
+                  name="ParameterMap">#{Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[ABSCHNITTS_ID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Bestimmt, ob doppelte Schlüssel in den Verweisdaten bei Verwendung des Vollcachemodus als Fehler behandelt werden sollen."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Mautabschnitt\Suche.Connections[OleDbConnection]"
+                  connectionManagerID="{6C800379-83A7-4B0C-A805-8C6F9A2718A8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[sqlservervier.f4.htw-berlin.de.u575710]"
+                  description="Verbindungs-Manager für den Zugriff auf Suchdaten."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Mautabschnitt\Suche.Inputs[Eingabe der Suche]"
+                  name="Eingabe der Suche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Mautabschnitt\Suche.Inputs[Eingabe der Suche].Columns[ABSCHNITTS_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ABSCHNITTS_ID"
+                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[ABSCHNITTS_ID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Gibt die Spalte in der Verweistabelle an, mit der eine Spalte verknüpft wird."
+                          name="JoinToReferenceColumn">ABSCHNITTS_ID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Gibt die Spalte in der Verweistabelle an, aus der eine Spalte kopiert ist."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Mautabschnitt\Suche.Outputs[Ausgabe der Suchübereinstimmungen]"
+                  errorOrTruncationOperation="Suche"
+                  exclusionGroup="1"
+                  name="Ausgabe der Suchübereinstimmungen"
+                  synchronousInputId="Package\Mautabschnitt\Suche.Inputs[Eingabe der Suche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Mautabschnitt\Suche.Outputs[Suchausgabe nicht übereinstimmender Einträge]"
+                  description="Die Suchausgabe, die Zeilen ohne übereinstimmende Einträge im Verweisdataset behandelt. Verwenden Sie diese Ausgabe, wenn die NoMatchBehavior-Eigenschaft auf &quot;Zeilen ohne übereinstimmende Einträge an die Ausgabe nicht übereinstimmender Einträge senden&quot; festgelegt ist."
+                  exclusionGroup="1"
+                  name="Suchausgabe nicht übereinstimmender Einträge"
+                  synchronousInputId="Package\Mautabschnitt\Suche.Inputs[Eingabe der Suche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Mautabschnitt\Suche.Outputs[Fehlerausgabe der Suche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Fehlerausgabe der Suche"
+                  synchronousInputId="Package\Mautabschnitt\Suche.Inputs[Eingabe der Suche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Mautabschnitt\Suche.Outputs[Fehlerausgabe der Suche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Mautabschnitt\Suche.Outputs[Fehlerausgabe der Suche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Mautabschnitt\Suche.Outputs[Fehlerausgabe der Suche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Mautabschnitt\Suche.Outputs[Fehlerausgabe der Suche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Mautabschnitt\Upload Mautabschnitt"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flatfilequelle;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;1"
+              description="Flatfilequelle"
+              localeId="1031"
+              name="Upload Mautabschnitt"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Gibt an, ob Spalten mit der Länge &quot;0&quot; als NULL behandelt werden."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen der Ausgabespalte an, die den Dateinamen enthält. Wenn kein Name angegeben wird, wird keine Ausgabespalte generiert, die den Dateinamen enthält."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Mautabschnitt\Upload Mautabschnitt.Connections[FlatFileConnection]"
+                  connectionManagerID="{A423DA1F-F647-46B2-AB41-FE275FEC3C1A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Mautabschnitt]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle]"
+                  name="Ausgabe der Flatfilequelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[ABSCHNITTS_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[ABSCHNITTS_ID]"
+                      length="50"
+                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[ABSCHNITTS_ID]"
+                      name="ABSCHNITTS_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[LAENGE]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[LAENGE]"
+                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[LAENGE]"
+                      name="LAENGE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[NAME]"
+                      length="50"
+                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[NAME]"
+                      name="NAME"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[ABSCHNITTSTYP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[ABSCHNITTSTYP]"
+                      length="50"
+                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[ABSCHNITTSTYP]"
+                      name="ABSCHNITTSTYP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[ABSCHNITTS_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ABSCHNITTS_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[LAENGE]"
+                      dataType="decimal"
+                      name="LAENGE" />
+                    <externalMetadataColumn
+                      refId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[START_KOORDINATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="START_KOORDINATE" />
+                    <externalMetadataColumn
+                      refId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[ZIEL_KOORDINATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ZIEL_KOORDINATE" />
+                    <externalMetadataColumn
+                      refId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[ABSCHNITTSTYP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ABSCHNITTSTYP" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Fehlerausgabe der Flatfilequelle]"
+                  isErrorOut="true"
+                  name="Fehlerausgabe der Flatfilequelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Fehlerausgabe der Flatfilequelle].Columns[Fehlerausgabespalte der Flatfilequelle]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Fehlerausgabespalte der Flatfilequelle"
+                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Fehlerausgabe der Flatfilequelle].Columns[Fehlerausgabespalte der Flatfilequelle]"
+                      name="Fehlerausgabespalte der Flatfilequelle" />
+                    <outputColumn
+                      refId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Mautabschnitt.Paths[Ausgabe der Flatfilequelle]"
+              endId="Package\Mautabschnitt\Suche.Inputs[Eingabe der Suche]"
+              name="Ausgabe der Flatfilequelle"
+              startId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle]" />
+            <path
+              refId="Package\Mautabschnitt.Paths[Ausgabe der Suchübereinstimmungen]"
+              endId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls]"
+              name="Ausgabe der Suchübereinstimmungen"
+              startId="Package\Mautabschnitt\Suche.Outputs[Ausgabe der Suchübereinstimmungen]" />
+            <path
+              refId="Package\Mautabschnitt.Paths[Suchausgabe nicht übereinstimmender Einträge]"
+              endId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels]"
+              name="Suchausgabe nicht übereinstimmender Einträge"
+              startId="Package\Mautabschnitt\Suche.Outputs[Suchausgabe nicht übereinstimmender Einträge]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Dieser CDATA-Abschnitt enthält die Layoutinformationen des Pakets, z.B. Informationen wie X-/Y-Koordinaten, Breite und Höhe.-->
@@ -5394,15 +7022,27 @@ where [refTable].[NUTZER_ID] = ?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="180,42"
           Id="Package\Lade Fahrzeugdaten"
           TopLeft="132,84" />
         <NodeLayout
+          Size="178,42"
+          Id="Package\Lade Fahrzeuggerät"
+          TopLeft="132,250" />
+        <NodeLayout
           Size="166,42"
           Id="Package\Lade Nutzerdaten"
           TopLeft="135,179" />
+        <NodeLayout
+          Size="148,42"
+          Id="Package\Mautabschnitt"
+          TopLeft="138,334" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Faktentabelle"
+          TopLeft="140,437" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -5416,29 +7056,57 @@ where [refTable].[NUTZER_ID] = ?</property>
           Id="Package\Lade Fahrzeugdaten\OLE DB-Ziel"
           TopLeft="250.444444444444,867.111111111111" />
         <NodeLayout
-          Size="124,42"
-          Id="Package\Lade Fahrzeugdaten\Sortieren"
-          TopLeft="133,270" />
+          Size="168,42"
+          Id="Package\Lade Fahrzeugdaten\Skriptkomponente"
+          TopLeft="724.444444444445,463.333333333333" />
         <NodeLayout
           Size="110,42"
           Id="Package\Lade Fahrzeugdaten\Suche"
           TopLeft="511.111111111111,742.222222222222" />
         <NodeLayout
-          Size="133,42"
-          Id="Package\Lade Fahrzeugdaten\Sortieren 1"
-          TopLeft="357,265" />
+          Size="197,42"
+          Id="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2"
+          TopLeft="826.666666666667,143.333333333333" />
         <NodeLayout
           Size="133,42"
-          Id="Package\Lade Fahrzeugdaten\Sortieren 3"
-          TopLeft="271.444444444444,544.444444444444" />
+          Id="Package\Lade Fahrzeugdaten\Sortieren 2"
+          TopLeft="593,261" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2"
+          TopLeft="706.666666666667,381.111111111111" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Lade Fahrzeugdaten\Upload Fahrzeug"
+          TopLeft="113.538461538462,153.461538461538" />
+        <NodeLayout
+          Size="194,42"
+          Id="Package\Lade Fahrzeugdaten\Zusammenführungsjoin"
+          TopLeft="472.222222222222,641.111111111111" />
         <NodeLayout
           Size="203,42"
           Id="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 1"
           TopLeft="233,370" />
         <NodeLayout
           Size="133,42"
-          Id="Package\Lade Fahrzeugdaten\Sortieren 2"
-          TopLeft="593,261" />
+          Id="Package\Lade Fahrzeugdaten\Sortieren 4"
+          TopLeft="842.222222222222,253.333333333333" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Lade Fahrzeugdaten\Sortieren 3"
+          TopLeft="271.444444444444,544.444444444444" />
+        <NodeLayout
+          Size="124,42"
+          Id="Package\Lade Fahrzeugdaten\Sortieren"
+          TopLeft="133,270" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Lade Fahrzeugdaten\Upload Mautkategorie"
+          TopLeft="562,150" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Lade Fahrzeugdaten\Sortieren 1"
+          TopLeft="357,265" />
         <NodeLayout
           Size="199,42"
           Id="Package\Lade Fahrzeugdaten\Upload Schadstoffdummy"
@@ -5448,9 +7116,181 @@ where [refTable].[NUTZER_ID] = ?</property>
           Id="Package\Lade Fahrzeugdaten\OLE DB-Befehl"
           TopLeft="768.444444444444,874.111111111111" />
         <NodeLayout
-          Size="163,42"
-          Id="Package\Lade Fahrzeugdaten\Upload Fahrzeug"
-          TopLeft="113.538461538462,153.461538461538" />
+          Size="133,42"
+          Id="Package\Lade Fahrzeugdaten\Sortieren 5"
+          TopLeft="745.555555555556,544.444444444444" />
+        <EdgeLayout
+          Id="Package\Lade Fahrzeugdaten.Paths[Suchausgabe nicht übereinstimmender Einträge]"
+          TopLeft="549.111111111111,784.222222222222">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-228.166666666667,82.888888888889"
+              Start="0,0"
+              End="-228.166666666667,75.388888888889">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.8685782556751" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.8685782556751"
+                    Point2="0,33.8685782556751"
+                    Point3="-4,33.8685782556751" />
+                  <mssgle:LineSegment
+                    End="-224.166666666667,33.8685782556751" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-224.166666666667,33.8685782556751"
+                    Point2="-228.166666666667,33.8685782556751"
+                    Point3="-228.166666666667,37.8685782556751" />
+                  <mssgle:LineSegment
+                    End="-228.166666666667,75.388888888889" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-220.100345052083,38.8685782556751,212.0340234375,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe5]"
+          TopLeft="812.055555555556,586.444444444444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-211.833333333333,54.6666666666667"
+              Start="0,0"
+              End="-211.833333333333,47.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5316973415133" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.5316973415133"
+                    Point2="0,32.5316973415133"
+                    Point3="-4,32.5316973415133" />
+                  <mssgle:LineSegment
+                    End="-207.833333333333,32.5316973415133" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-207.833333333333,32.5316973415133"
+                    Point2="-211.833333333333,32.5316973415133"
+                    Point3="-211.833333333333,36.5316973415133" />
+                  <mssgle:LineSegment
+                    End="-211.833333333333,47.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe4]"
+          TopLeft="337.944444444444,586.444444444444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="231.277777777778,54.6666666666666"
+              Start="0,0"
+              End="231.277777777778,47.1666666666666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.3333333333333"
+                    Point2="0,27.3333333333333"
+                    Point3="4,27.3333333333333" />
+                  <mssgle:LineSegment
+                    End="227.277777777778,27.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="227.277777777778,27.3333333333333"
+                    Point2="231.277777777778,27.3333333333333"
+                    Point3="231.277777777778,31.3333333333333" />
+                  <mssgle:LineSegment
+                    End="231.277777777778,47.1666666666666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe3]"
+          TopLeft="659.5,303">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="116.166666666667,78.1111111111111"
+              Start="0,0"
+              End="116.166666666667,70.6111111111111">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5001629195178" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.5001629195178"
+                    Point2="0,46.5001629195178"
+                    Point3="4,46.5001629195178" />
+                  <mssgle:LineSegment
+                    End="112.166666666667,46.5001629195178" />
+                  <mssgle:CubicBezierSegment
+                    Point1="112.166666666667,46.5001629195178"
+                    Point2="116.166666666667,46.5001629195178"
+                    Point3="116.166666666667,50.5001629195178" />
+                  <mssgle:LineSegment
+                    End="116.166666666667,70.6111111111111" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe2]"
+          TopLeft="908.722222222222,295.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-68.0555555555554,85.7777777777778"
+              Start="0,0"
+              End="-68.0555555555554,78.2777777777778">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.0641902899968" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,47.0641902899968"
+                    Point2="0,51.0641902899968"
+                    Point3="-4,51.0641902899968" />
+                  <mssgle:LineSegment
+                    End="-64.0555555555554,51.0641902899968" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-64.0555555555554,51.0641902899968"
+                    Point2="-68.0555555555554,51.0641902899968"
+                    Point3="-68.0555555555554,55.0641902899968" />
+                  <mssgle:LineSegment
+                    End="-68.0555555555554,78.2777777777778" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe1]"
           TopLeft="423.5,307">
@@ -5520,6 +7360,28 @@ where [refTable].[NUTZER_ID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe des Zusammenführungsjoins1]"
+          TopLeft="808.305555555556,423.111111111111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.2222222222222"
+              Start="0,0"
+              End="0,32.7222222222222">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.7222222222222" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe des Zusammenführungsjoins]"
           TopLeft="336.222222222222,412">
           <EdgeLayout.Curve>
@@ -5573,8 +7435,64 @@ where [refTable].[NUTZER_ID] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="46.8966666666664,41.7287933094385,168.54,11.6630859375"
+              BoundingBox="46.8966666666665,41.7287933094385,168.54,11.6630859375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe der Flatfilequelle3]"
+          TopLeft="925.166666666667,185.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-16.4444444444446,68"
+              Start="0,0"
+              End="-16.4444444444446,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30"
+                    Point2="0,34"
+                    Point3="-4,34" />
+                  <mssgle:LineSegment
+                    End="-12.4444444444446,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12.4444444444446,34"
+                    Point2="-16.4444444444446,34"
+                    Point3="-16.4444444444446,38" />
+                  <mssgle:LineSegment
+                    End="-16.4444444444446,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe der Flatfilequelle2]"
+          TopLeft="657.5,192">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,69"
+              Start="0,0"
+              End="0,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5622,212 +7540,6 @@ where [refTable].[NUTZER_ID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Lade Fahrzeugdaten.Paths[Suchausgabe nicht übereinstimmender Einträge]"
-          TopLeft="549.111111111111,784.222222222222">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-228.166666666667,82.888888888889"
-              Start="0,0"
-              End="-228.166666666667,75.388888888889">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.8685782556751" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.8685782556751"
-                    Point2="0,33.8685782556751"
-                    Point3="-4,33.8685782556751" />
-                  <mssgle:LineSegment
-                    End="-224.166666666667,33.8685782556751" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-224.166666666667,33.8685782556751"
-                    Point2="-228.166666666667,33.8685782556751"
-                    Point3="-228.166666666667,37.8685782556751" />
-                  <mssgle:LineSegment
-                    End="-228.166666666667,75.388888888889" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-220.100345052083,38.8685782556751,212.0340234375,11.6630859375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="187,42"
-          Id="Package\Lade Fahrzeugdaten\Upload Mautkategorie"
-          TopLeft="562,150" />
-        <EdgeLayout
-          Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe der Flatfilequelle2]"
-          TopLeft="657.5,192">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,69"
-              Start="0,0"
-              End="0,61.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,61.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="197,42"
-          Id="Package\Lade Fahrzeugdaten\Upload Fahrzeugdaten2"
-          TopLeft="826.666666666667,143.333333333333" />
-        <NodeLayout
-          Size="133,42"
-          Id="Package\Lade Fahrzeugdaten\Sortieren 4"
-          TopLeft="842.222222222222,253.333333333333" />
-        <EdgeLayout
-          Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe der Flatfilequelle3]"
-          TopLeft="925.166666666667,185.333333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-16.4444444444446,68"
-              Start="0,0"
-              End="-16.4444444444446,60.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30"
-                    Point2="0,34"
-                    Point3="-4,34" />
-                  <mssgle:LineSegment
-                    End="-12.4444444444446,34" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-12.4444444444446,34"
-                    Point2="-16.4444444444446,34"
-                    Point3="-16.4444444444446,38" />
-                  <mssgle:LineSegment
-                    End="-16.4444444444446,60.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="203,42"
-          Id="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 2"
-          TopLeft="706.666666666667,381.111111111111" />
-        <EdgeLayout
-          Id="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe2]"
-          TopLeft="908.722222222222,295.333333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-68.0555555555554,85.7777777777778"
-              Start="0,0"
-              End="-68.0555555555554,78.2777777777778">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.0641902899968" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,47.0641902899968"
-                    Point2="0,51.0641902899968"
-                    Point3="-4,51.0641902899968" />
-                  <mssgle:LineSegment
-                    End="-64.0555555555554,51.0641902899968" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-64.0555555555554,51.0641902899968"
-                    Point2="-68.0555555555554,51.0641902899968"
-                    Point3="-68.0555555555554,55.0641902899968" />
-                  <mssgle:LineSegment
-                    End="-68.0555555555554,78.2777777777778" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe3]"
-          TopLeft="659.5,303">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="116.166666666667,78.1111111111111"
-              Start="0,0"
-              End="116.166666666667,70.6111111111111">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.5001629195178" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,42.5001629195178"
-                    Point2="0,46.5001629195178"
-                    Point3="4,46.5001629195178" />
-                  <mssgle:LineSegment
-                    End="112.166666666667,46.5001629195178" />
-                  <mssgle:CubicBezierSegment
-                    Point1="112.166666666667,46.5001629195178"
-                    Point2="116.166666666667,46.5001629195178"
-                    Point3="116.166666666667,50.5001629195178" />
-                  <mssgle:LineSegment
-                    End="116.166666666667,70.6111111111111" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="168,42"
-          Id="Package\Lade Fahrzeugdaten\Skriptkomponente"
-          TopLeft="724.444444444445,463.333333333333" />
-        <EdgeLayout
-          Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe des Zusammenführungsjoins1]"
-          TopLeft="808.305555555556,423.111111111111">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40.2222222222222"
-              Start="0,0"
-              End="0,32.7222222222222">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.7222222222222" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="133,42"
-          Id="Package\Lade Fahrzeugdaten\Sortieren 5"
-          TopLeft="745.555555555556,544.444444444444" />
-        <EdgeLayout
           Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe 0]"
           TopLeft="810.25,505.333333333333">
           <EdgeLayout.Curve>
@@ -5841,78 +7553,6 @@ where [refTable].[NUTZER_ID] = ?</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,31.611111111111" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="194,42"
-          Id="Package\Lade Fahrzeugdaten\Zusammenführungsjoin"
-          TopLeft="472.222222222222,641.111111111111" />
-        <EdgeLayout
-          Id="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe4]"
-          TopLeft="337.944444444444,586.444444444444">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="231.277777777778,54.6666666666666"
-              Start="0,0"
-              End="231.277777777778,47.1666666666666">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.3333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.3333333333333"
-                    Point2="0,27.3333333333333"
-                    Point3="4,27.3333333333333" />
-                  <mssgle:LineSegment
-                    End="227.277777777778,27.3333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="227.277777777778,27.3333333333333"
-                    Point2="231.277777777778,27.3333333333333"
-                    Point3="231.277777777778,31.3333333333333" />
-                  <mssgle:LineSegment
-                    End="231.277777777778,47.1666666666666" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Lade Fahrzeugdaten.Paths[Sortierausgabe5]"
-          TopLeft="812.055555555556,586.444444444444">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-211.833333333333,54.6666666666667"
-              Start="0,0"
-              End="-211.833333333333,47.1666666666667">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5316973415133" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.5316973415133"
-                    Point2="0,32.5316973415133"
-                    Point3="-4,32.5316973415133" />
-                  <mssgle:LineSegment
-                    End="-207.833333333333,32.5316973415133" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-207.833333333333,32.5316973415133"
-                    Point2="-211.833333333333,32.5316973415133"
-                    Point3="-211.833333333333,36.5316973415133" />
-                  <mssgle:LineSegment
-                    End="-211.833333333333,47.1666666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5947,29 +7587,6 @@ where [refTable].[NUTZER_ID] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Lade Fahrzeugdaten\Suche">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Fahrzeug_DIMENSION]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Lade Fahrzeugdaten\OLE DB-Ziel">
     <Properties>
       <Property>
@@ -5979,6 +7596,183 @@ where [refTable].[NUTZER_ID] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Lade Fahrzeugdaten\Suche">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Fahrzeug_DIMENSION]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Lade Fahrzeuggerät">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät"
+          TopLeft="341,111" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Lade Fahrzeuggerät\OLE DB-Ziel"
+          TopLeft="213,378" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Lade Fahrzeuggerät\OLE DB-Befehl"
+          TopLeft="542,392" />
+        <NodeLayout
+          Size="110,42"
+          Id="Package\Lade Fahrzeuggerät\Suche"
+          TopLeft="375,235" />
+        <EdgeLayout
+          Id="Package\Lade Fahrzeuggerät.Paths[Ausgabe der Flatfilequelle]"
+          TopLeft="432.5,153">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,82"
+              Start="0,0"
+              End="0,74.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,74.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Lade Fahrzeuggerät.Paths[Suchausgabe nicht übereinstimmender Einträge]"
+          TopLeft="413,277">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-129.5,101"
+              Start="0,0"
+              End="-129.5,93.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.2688172043011" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.2688172043011"
+                    Point2="0,41.2688172043011"
+                    Point3="-4,41.2688172043011" />
+                  <mssgle:LineSegment
+                    End="-125.5,41.2688172043011" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-125.5,41.2688172043011"
+                    Point2="-129.5,41.2688172043011"
+                    Point3="-129.5,45.2688172043011" />
+                  <mssgle:LineSegment
+                    End="-129.5,93.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-170.76701171875,46.2688172043011,212.0340234375,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Lade Fahrzeuggerät.Paths[Ausgabe der Suchübereinstimmungen]"
+          TopLeft="447,277">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="172,115"
+              Start="0,0"
+              End="172,107.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.989247311828" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.989247311828"
+                    Point2="0,46.989247311828"
+                    Point3="4,46.989247311828" />
+                  <mssgle:LineSegment
+                    End="168,46.989247311828" />
+                  <mssgle:CubicBezierSegment
+                    Point1="168,46.989247311828"
+                    Point2="172,46.989247311828"
+                    Point3="172,50.989247311828" />
+                  <mssgle:LineSegment
+                    End="172,107.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="1.72999999999998,51.989247311828,168.54,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Lade Fahrzeuggerät\OLE DB-Ziel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Lade Fahrzeuggerät\Suche">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Fahrzeuggeraet_DIMENSION]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -5992,35 +7786,17 @@ where [refTable].[NUTZER_ID] = ?</property>
           Id="Package\Lade Nutzerdaten\Upload Nutzerdaten"
           TopLeft="295,135" />
         <NodeLayout
-          Size="110,42"
-          Id="Package\Lade Nutzerdaten\Suche"
-          TopLeft="331,230" />
-        <EdgeLayout
-          Id="Package\Lade Nutzerdaten.Paths[Ausgabe der Flatfilequelle]"
-          TopLeft="384.75,177">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,53"
-              Start="0,0"
-              End="0,45.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="154,42"
+          Id="Package\Lade Nutzerdaten\OLE DB-Befehl"
+          TopLeft="495,382" />
         <NodeLayout
           Size="141,42"
           Id="Package\Lade Nutzerdaten\OLE DB-Ziel"
           TopLeft="163,378" />
+        <NodeLayout
+          Size="110,42"
+          Id="Package\Lade Nutzerdaten\Suche"
+          TopLeft="331,230" />
         <EdgeLayout
           Id="Package\Lade Nutzerdaten.Paths[Suchausgabe nicht übereinstimmender Einträge]"
           TopLeft="369,272">
@@ -6057,10 +7833,6 @@ where [refTable].[NUTZER_ID] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Lade Nutzerdaten\OLE DB-Befehl"
-          TopLeft="495,382" />
         <EdgeLayout
           Id="Package\Lade Nutzerdaten.Paths[Ausgabe der Suchübereinstimmungen]"
           TopLeft="403,272">
@@ -6097,9 +7869,44 @@ where [refTable].[NUTZER_ID] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Lade Nutzerdaten.Paths[Ausgabe der Flatfilequelle]"
+          TopLeft="384.75,177">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Lade Nutzerdaten\OLE DB-Ziel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Lade Nutzerdaten\Suche">
     <Properties>
@@ -6123,8 +7930,191 @@ where [refTable].[NUTZER_ID] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Mautabschnitt">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Mautabschnitt\OLE DB-Ziel 1"
+          TopLeft="195,420" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Mautabschnitt\Upload Mautabschnitt"
+          TopLeft="348,139" />
+        <NodeLayout
+          Size="110,42"
+          Id="Package\Mautabschnitt\Suche"
+          TopLeft="384,241" />
+        <EdgeLayout
+          Id="Package\Mautabschnitt.Paths[Suchausgabe nicht übereinstimmender Einträge]"
+          TopLeft="422,283">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-152,137"
+              Start="0,0"
+              End="-152,129.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.9784946236559" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,51.9784946236559"
+                    Point2="0,55.9784946236559"
+                    Point3="-4,55.9784946236559" />
+                  <mssgle:LineSegment
+                    End="-148,55.9784946236559" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-148,55.9784946236559"
+                    Point2="-152,55.9784946236559"
+                    Point3="-152,59.9784946236559" />
+                  <mssgle:LineSegment
+                    End="-152,129.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-182.01701171875,60.9784946236559,212.0340234375,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Mautabschnitt.Paths[Ausgabe der Flatfilequelle]"
+          TopLeft="439.75,181">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Mautabschnitt\OLE DB-Befehl"
+          TopLeft="556,427" />
+        <EdgeLayout
+          Id="Package\Mautabschnitt.Paths[Ausgabe der Suchübereinstimmungen]"
+          TopLeft="456,283">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="177,144"
+              Start="0,0"
+              End="177,136.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.8387096774194" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,54.8387096774194"
+                    Point2="0,58.8387096774194"
+                    Point3="4,58.8387096774194" />
+                  <mssgle:LineSegment
+                    End="173,58.8387096774194" />
+                  <mssgle:CubicBezierSegment
+                    Point1="173,58.8387096774194"
+                    Point2="177,58.8387096774194"
+                    Point3="177,62.8387096774194" />
+                  <mssgle:LineSegment
+                    End="177,136.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="4.22999999999998,63.8387096774194,168.54,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Lade Nutzerdaten\OLE DB-Ziel">
+    design-time-name="Package\Mautabschnitt\OLE DB-Ziel 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Mautabschnitt\Suche">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Mautabschnitt_DIMENSION]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Faktentabelle">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Faktentabelle\Lade NutzerDIM"
+          TopLeft="152,122" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Faktentabelle\Lade FahrzeugDIM"
+          TopLeft="379,119" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Faktentabelle\Lade NutzerDIM">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Faktentabelle\Lade FahrzeugDIM">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
