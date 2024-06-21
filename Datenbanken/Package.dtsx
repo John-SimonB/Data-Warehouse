@@ -11,8 +11,8 @@
   DTS:LocaleID="1031"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="212"
-  DTS:VersionGUID="{D5387DB4-0D0F-4B5A-934C-96C01DACF29C}">
+  DTS:VersionBuild="223"
+  DTS:VersionGUID="{D7CB1244-7692-4C90-B8DB-8219B2796380}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -425,6 +425,8 @@
 EXEC Update_Fahrzeug_DIMENSION
  
     @FZ_ID = ?,
+
+    @FZ_NUTZER_ID = ?,
  
     @SCHADSTOFFKLASSE = ?,
 
@@ -461,14 +463,6 @@ EXEC Update_Fahrzeug_DIMENSION
                   name="Eingabe des OLE DB-Befehls">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[ACHSEN]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="ACHSEN"
-                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@ACHSEN]"
-                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[ACHSEN]" />
-                    <inputColumn
                       refId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[FZ_ID]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -478,27 +472,13 @@ EXEC Update_Fahrzeug_DIMENSION
                       externalMetadataColumnId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@FZ_ID]"
                       lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[FZ_ID]" />
                     <inputColumn
-                      refId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[KENNZEICHEN]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="200"
-                      cachedName="KENNZEICHEN"
-                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@KENNZEICHEN]"
-                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[KENNZEICHEN]" />
-                    <inputColumn
-                      refId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[GEWICHT]"
-                      cachedDataType="decimal"
-                      cachedName="GEWICHT"
-                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@GEWICHT]"
-                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[GEWICHT]" />
-                    <inputColumn
-                      refId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[FIN]"
+                      refId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[NUTZER_ID]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="FIN"
-                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@FIN]"
-                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[FIN]" />
+                      cachedName="NUTZER_ID"
+                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@FZ_NUTZER_ID]"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[NUTZER_ID]" />
                     <inputColumn
                       refId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[MAUTSCHADSTOFFKLASSE]"
                       cachedCodepage="1252"
@@ -508,6 +488,14 @@ EXEC Update_Fahrzeug_DIMENSION
                       externalMetadataColumnId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@SCHADSTOFFKLASSE]"
                       lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[MAUTSCHADSTOFFKLASSE]" />
                     <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[ACHSEN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ACHSEN"
+                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@ACHSEN]"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[ACHSEN]" />
+                    <inputColumn
                       refId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[KAT_BEZEICHNUNG]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -516,11 +504,33 @@ EXEC Update_Fahrzeug_DIMENSION
                       externalMetadataColumnId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@MAUTKATEGORIE]"
                       lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[KAT_BEZEICHNUNG]" />
                     <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[GEWICHT]"
+                      cachedDataType="decimal"
+                      cachedName="GEWICHT"
+                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@GEWICHT]"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[GEWICHT]" />
+                    <inputColumn
                       refId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[MAUTSATZ_JE_KM]"
                       cachedDataType="decimal"
                       cachedName="MAUTSATZ_JE_KM"
                       externalMetadataColumnId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@MAUSATZ]"
                       lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[MAUTSATZ_JE_KM]" />
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[FIN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FIN"
+                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@FIN]"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[FIN]" />
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[KENNZEICHEN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="KENNZEICHEN"
+                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@KENNZEICHEN]"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[KENNZEICHEN]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -538,10 +548,23 @@ EXEC Update_Fahrzeug_DIMENSION
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
+                      refId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@FZ_NUTZER_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="@FZ_NUTZER_ID">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameterinformationen. Stimmt mit den DBPARAMFLAGSENUM-Werten von OLE DB überein."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
                       refId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@SCHADSTOFFKLASSE]"
                       codePage="1252"
                       dataType="str"
-                      length="5"
+                      length="20"
                       name="@SCHADSTOFFKLASSE">
                       <properties>
                         <property
@@ -562,9 +585,35 @@ EXEC Update_Fahrzeug_DIMENSION
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
+                      refId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@MAUTKATEGORIE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="@MAUTKATEGORIE">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameterinformationen. Stimmt mit den DBPARAMFLAGSENUM-Werten von OLE DB überein."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
                       refId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@GEWICHT]"
                       dataType="numeric"
                       name="@GEWICHT"
+                      precision="15"
+                      scale="2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameterinformationen. Stimmt mit den DBPARAMFLAGSENUM-Werten von OLE DB überein."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@MAUSATZ]"
+                      dataType="numeric"
+                      name="@MAUSATZ"
                       precision="15"
                       scale="2">
                       <properties>
@@ -598,32 +647,6 @@ EXEC Update_Fahrzeug_DIMENSION
                           dataType="System.Int32"
                           description="Parameterinformationen. Stimmt mit den DBPARAMFLAGSENUM-Werten von OLE DB überein."
                           name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@MAUTKATEGORIE]"
-                      codePage="1252"
-                      dataType="str"
-                      length="5"
-                      name="@MAUTKATEGORIE">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameterinformationen. Stimmt mit den DBPARAMFLAGSENUM-Werten von OLE DB überein."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Lade Fahrzeugdaten\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@MAUSATZ]"
-                      dataType="numeric"
-                      name="@MAUSATZ"
-                      precision="15"
-                      scale="2">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameterinformationen. Stimmt mit den DBPARAMFLAGSENUM-Werten von OLE DB überein."
-                          name="DBParamInfoFlags">81</property>
                       </properties>
                     </externalMetadataColumn>
                   </externalMetadataColumns>
@@ -794,6 +817,14 @@ EXEC Update_Fahrzeug_DIMENSION
                       cachedName="MAUTSATZ_JE_KM"
                       externalMetadataColumnId="Package\Lade Fahrzeugdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[MAUSATZ]"
                       lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[MAUTSATZ_JE_KM]" />
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[NUTZER_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NUTZER_ID"
+                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[FZ_NUTZER_ID]"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[NUTZER_ID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -834,7 +865,7 @@ EXEC Update_Fahrzeug_DIMENSION
                       dataType="numeric"
                       name="MAUSATZ"
                       precision="15"
-                      scale="3" />
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\Lade Fahrzeugdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[FIN]"
                       codePage="1252"
@@ -847,6 +878,12 @@ EXEC Update_Fahrzeug_DIMENSION
                       dataType="str"
                       length="20"
                       name="KENNZEICHEN" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeugdaten\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[FZ_NUTZER_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FZ_NUTZER_ID" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2121,6 +2158,24 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Sortieren.Inputs[Sortiereingabe].Columns[NUTZER_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NUTZER_ID"
+                      lineageId="Package\Lade Fahrzeugdaten\Upload Fahrzeug.Outputs[Ausgabe der Flatfilequelle].Columns[NUTZER_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Sortierreihenfolge der Spalte an."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -2218,6 +2273,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           dataType="System.Int32"
                           description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
                           name="SortColumnId">#{Package\Lade Fahrzeugdaten\Upload Fahrzeug.Outputs[Ausgabe der Flatfilequelle].Columns[GEWICHT]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Sortieren.Outputs[Sortierausgabe].Columns[NUTZER_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Sortieren.Outputs[Sortierausgabe].Columns[NUTZER_ID]"
+                      name="NUTZER_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
+                          name="SortColumnId">#{Package\Lade Fahrzeugdaten\Upload Fahrzeug.Outputs[Ausgabe der Flatfilequelle].Columns[NUTZER_ID]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -2645,6 +2715,24 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Sortieren 3.Inputs[Sortiereingabe].Columns[NUTZER_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NUTZER_ID"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 1.Outputs[Ausgabe des Zusammenführungsjoins].Columns[NUTZER_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Sortierreihenfolge der Spalte an."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -2757,6 +2845,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           dataType="System.Int32"
                           description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
                           name="SortColumnId">#{Package\Lade Fahrzeugdaten\Zusammenführungsjoin 1.Outputs[Ausgabe des Zusammenführungsjoins].Columns[MAUTSCHADSTOFFKLASSE]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Sortieren 3.Outputs[Sortierausgabe].Columns[NUTZER_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 3.Outputs[Sortierausgabe].Columns[NUTZER_ID]"
+                      name="NUTZER_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
+                          name="SortColumnId">#{Package\Lade Fahrzeugdaten\Zusammenführungsjoin 1.Outputs[Ausgabe des Zusammenführungsjoins].Columns[NUTZER_ID]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -3188,7 +3291,7 @@ where [refTable].[FZ_ID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Zeigt an, ob auf Metadaten in einem XML-Format verwiesen werden soll."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="FZ_DIM_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FZ_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="SCHADSTOFFKLASSE" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ACHSEN" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MAUTKATEGORIE" dataType="DT_STR" length="5" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="GEWICHT" dataType="DT_NUMERIC" length="0" precision="15" scale="2" codePage="0"/&gt;&lt;referenceColumn name="MAUSATZ" dataType="DT_NUMERIC" length="0" precision="15" scale="3" codePage="0"/&gt;&lt;referenceColumn name="FIN" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="KENNZEICHEN" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="FZ_DIM_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FZ_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="FZ_NUTZER_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="SCHADSTOFFKLASSE" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ACHSEN" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MAUTKATEGORIE" dataType="DT_STR" length="5" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="GEWICHT" dataType="DT_NUMERIC" length="0" precision="15" scale="2" codePage="0"/&gt;&lt;referenceColumn name="MAUSATZ" dataType="DT_NUMERIC" length="0" precision="15" scale="2" codePage="0"/&gt;&lt;referenceColumn name="FIN" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="KENNZEICHEN" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -3429,6 +3532,28 @@ where [refTable].[FZ_ID] = ?</property>
                       externalMetadataColumnId="Package\Lade Fahrzeugdaten\Upload Fahrzeug.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[GEWICHT]"
                       lineageId="Package\Lade Fahrzeugdaten\Upload Fahrzeug.Outputs[Ausgabe der Flatfilequelle].Columns[GEWICHT]"
                       name="GEWICHT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Upload Fahrzeug.Outputs[Ausgabe der Flatfilequelle].Columns[NUTZER_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lade Fahrzeugdaten\Upload Fahrzeug.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[NUTZER_ID]"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Upload Fahrzeug.Outputs[Ausgabe der Flatfilequelle].Columns[NUTZER_ID]"
+                      name="NUTZER_ID"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -4106,6 +4231,13 @@ where [refTable].[FZ_ID] = ?</property>
                       cachedLength="200"
                       cachedName="MAUTSCHADSTOFFKLASSE"
                       lineageId="Package\Lade Fahrzeugdaten\Sortieren 3.Outputs[Sortierausgabe].Columns[MAUTSCHADSTOFFKLASSE]" />
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[NUTZER_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NUTZER_ID"
+                      lineageId="Package\Lade Fahrzeugdaten\Sortieren 3.Outputs[Sortierausgabe].Columns[NUTZER_ID]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -4276,6 +4408,21 @@ where [refTable].[FZ_ID] = ?</property>
                           name="InputColumnID">#{Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Inputs[Rechte Eingabe des Zusammenführungsjoins].Columns[MAUTSATZ_JE_KM]}</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[NUTZER_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[NUTZER_ID]"
+                      name="NUTZER_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Die mit dieser Ausgabespalte verbundene Eingabespalte"
+                          name="InputColumnID">#{Package\Lade Fahrzeugdaten\Zusammenführungsjoin.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[NUTZER_ID]}</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -4354,6 +4501,13 @@ where [refTable].[FZ_ID] = ?</property>
                       cachedDataType="decimal"
                       cachedName="GEWICHT"
                       lineageId="Package\Lade Fahrzeugdaten\Sortieren.Outputs[Sortierausgabe].Columns[GEWICHT]" />
+                    <inputColumn
+                      refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 1.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[NUTZER_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NUTZER_ID"
+                      lineageId="Package\Lade Fahrzeugdaten\Sortieren.Outputs[Sortierausgabe].Columns[NUTZER_ID]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -4489,6 +4643,21 @@ where [refTable].[FZ_ID] = ?</property>
                           dataType="System.Int32"
                           description="Die mit dieser Ausgabespalte verbundene Eingabespalte"
                           name="InputColumnID">#{Package\Lade Fahrzeugdaten\Zusammenführungsjoin 1.Inputs[Rechte Eingabe des Zusammenführungsjoins].Columns[MAUTSCHADSTOFFKLASSE]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 1.Outputs[Ausgabe des Zusammenführungsjoins].Columns[NUTZER_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeugdaten\Zusammenführungsjoin 1.Outputs[Ausgabe des Zusammenführungsjoins].Columns[NUTZER_ID]"
+                      name="NUTZER_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Die mit dieser Ausgabespalte verbundene Eingabespalte"
+                          name="InputColumnID">#{Package\Lade Fahrzeugdaten\Zusammenführungsjoin 1.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[NUTZER_ID]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -7042,7 +7211,7 @@ where [refTable].[ABSCHNITTS_ID] = ?</property>
         <NodeLayout
           Size="145,42"
           Id="Package\Faktentabelle"
-          TopLeft="140,437" />
+          TopLeft="138,451" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -7111,10 +7280,6 @@ where [refTable].[ABSCHNITTS_ID] = ?</property>
           Size="199,42"
           Id="Package\Lade Fahrzeugdaten\Upload Schadstoffdummy"
           TopLeft="326.384615384615,149.846153846154" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Lade Fahrzeugdaten\OLE DB-Befehl"
-          TopLeft="768.444444444444,874.111111111111" />
         <NodeLayout
           Size="133,42"
           Id="Package\Lade Fahrzeugdaten\Sortieren 5"
@@ -7404,42 +7569,6 @@ where [refTable].[ABSCHNITTS_ID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe der Suchübereinstimmungen]"
-          TopLeft="583.111111111111,784.222222222222">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="262.333333333333,89.888888888889"
-              Start="0,0"
-              End="262.333333333333,82.388888888889">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.7287933094385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32.7287933094385"
-                    Point2="0,36.7287933094385"
-                    Point3="4,36.7287933094385" />
-                  <mssgle:LineSegment
-                    End="258.333333333333,36.7287933094385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="258.333333333333,36.7287933094385"
-                    Point2="262.333333333333,36.7287933094385"
-                    Point3="262.333333333333,40.7287933094385" />
-                  <mssgle:LineSegment
-                    End="262.333333333333,82.388888888889" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="46.8966666666665,41.7287933094385,168.54,11.6630859375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe der Flatfilequelle3]"
           TopLeft="925.166666666667,185.333333333333">
           <EdgeLayout.Curve>
@@ -7581,6 +7710,46 @@ where [refTable].[ABSCHNITTS_ID] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Lade Fahrzeugdaten\OLE DB-Befehl"
+          TopLeft="775,881" />
+        <EdgeLayout
+          Id="Package\Lade Fahrzeugdaten.Paths[Ausgabe der Suchübereinstimmungen]"
+          TopLeft="583.111111111111,784.222222222222">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="268.888888888889,96.7777777777781"
+              Start="0,0"
+              End="268.888888888889,89.2777777777781">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5436081242534" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.5436081242534"
+                    Point2="0,39.5436081242534"
+                    Point3="4,39.5436081242534" />
+                  <mssgle:LineSegment
+                    End="264.888888888889,39.5436081242534" />
+                  <mssgle:CubicBezierSegment
+                    Point1="264.888888888889,39.5436081242534"
+                    Point2="268.888888888889,39.5436081242534"
+                    Point3="268.888888888889,43.5436081242534" />
+                  <mssgle:LineSegment
+                    End="268.888888888889,89.2777777777781" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="50.1744444444445,44.5436081242534,168.54,11.6630859375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8096,7 +8265,7 @@ where [refTable].[ABSCHNITTS_ID] = ?</property>
         <NodeLayout
           Size="173,42"
           Id="Package\Faktentabelle\Lade FahrzeugDIM"
-          TopLeft="379,119" />
+          TopLeft="381,124" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
