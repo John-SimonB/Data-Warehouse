@@ -11,8 +11,8 @@
   DTS:LocaleID="1031"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="226"
-  DTS:VersionGUID="{C4D3C42F-76D7-430A-BBEC-6CFA8F91EB25}">
+  DTS:VersionBuild="235"
+  DTS:VersionGUID="{2206DE5F-580A-44A8-B79F-E0ED8A629620}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -5333,6 +5333,8 @@ where [refTable].[FZ_ID] = ?</property>
 EXEC Update_Fahrzeuggeraet_DIMENSION
  
     @FZG_ID= ?,
+
+    @FZ_ID= ?,
  
     @GERAETETYP= ?;</property>
                 <property
@@ -5365,6 +5367,14 @@ EXEC Update_Fahrzeuggeraet_DIMENSION
                       externalMetadataColumnId="Package\Lade Fahrzeuggerät\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@FZG_ID]"
                       lineageId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].Columns[FZG_ID]" />
                     <inputColumn
+                      refId="Package\Lade Fahrzeuggerät\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[FZ_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FZ_ID"
+                      externalMetadataColumnId="Package\Lade Fahrzeuggerät\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@FZ_ID]"
+                      lineageId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].Columns[FZ_ID]" />
+                    <inputColumn
                       refId="Package\Lade Fahrzeuggerät\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[TYP]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -5381,6 +5391,19 @@ EXEC Update_Fahrzeuggeraet_DIMENSION
                       dataType="str"
                       length="50"
                       name="@FZG_ID">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameterinformationen. Stimmt mit den DBPARAMFLAGSENUM-Werten von OLE DB überein."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeuggerät\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@FZ_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="@FZ_ID">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5516,6 +5539,22 @@ EXEC Update_Fahrzeuggeraet_DIMENSION
                       cachedName="FZG_ID"
                       externalMetadataColumnId="Package\Lade Fahrzeuggerät\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[FZG_ID]"
                       lineageId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].Columns[FZG_ID]" />
+                    <inputColumn
+                      refId="Package\Lade Fahrzeuggerät\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[TYP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TYP"
+                      externalMetadataColumnId="Package\Lade Fahrzeuggerät\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[GERAETETYP]"
+                      lineageId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].Columns[TYP]" />
+                    <inputColumn
+                      refId="Package\Lade Fahrzeuggerät\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[FZ_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FZ_ID"
+                      externalMetadataColumnId="Package\Lade Fahrzeuggerät\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[FZ_ID]"
+                      lineageId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].Columns[FZ_ID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -5535,6 +5574,12 @@ EXEC Update_Fahrzeuggeraet_DIMENSION
                       dataType="str"
                       length="50"
                       name="GERAETETYP" />
+                    <externalMetadataColumn
+                      refId="Package\Lade Fahrzeuggerät\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[FZ_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FZ_ID" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -5769,6 +5814,28 @@ where [refTable].[FZG_ID] = ?</property>
                       length="50"
                       lineageId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].Columns[TYP]"
                       name="TYP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].Columns[FZ_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[FZ_ID]"
+                      length="50"
+                      lineageId="Package\Lade Fahrzeuggerät\Upload Fahrzeuggerät.Outputs[Ausgabe der Flatfilequelle].Columns[FZ_ID]"
+                      name="FZ_ID"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -6875,6 +6942,8 @@ where [refTable].[NUTZER_ID] = ?</property>
 EXEC Update_Mautabschnitt_DIMENSION
  
     @ABSCHNITTS_ID = ?,
+
+    @FZG_ID = ?,
  
     @ABSCHNITTSLAENGE = ?,
 
@@ -6908,14 +6977,15 @@ EXEC Update_Mautabschnitt_DIMENSION
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="ABSCHNITTS_ID"
+                      cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@ABSCHNITTS_ID]"
-                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[ABSCHNITTS_ID]" />
+                      lineageId="Package\Mautabschnitt\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[ABSCHNITTS_ID]" />
                     <inputColumn
                       refId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[LAENGE]"
                       cachedDataType="decimal"
                       cachedName="LAENGE"
                       externalMetadataColumnId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@ABSCHNITTSLAENGE]"
-                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[LAENGE]" />
+                      lineageId="Package\Mautabschnitt\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[LAENGE]" />
                     <inputColumn
                       refId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[NAME]"
                       cachedCodepage="1252"
@@ -6923,7 +6993,15 @@ EXEC Update_Mautabschnitt_DIMENSION
                       cachedLength="50"
                       cachedName="NAME"
                       externalMetadataColumnId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@ABSCHNITTSNAME]"
-                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[NAME]" />
+                      lineageId="Package\Mautabschnitt\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[NAME]" />
+                    <inputColumn
+                      refId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[FZG_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FZG_ID"
+                      externalMetadataColumnId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@FZG_ID]"
+                      lineageId="Package\Mautabschnitt\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[FZG_ID]" />
                     <inputColumn
                       refId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].Columns[ABSCHNITTSTYP]"
                       cachedCodepage="1252"
@@ -6931,7 +7009,7 @@ EXEC Update_Mautabschnitt_DIMENSION
                       cachedLength="50"
                       cachedName="ABSCHNITTSTYP"
                       externalMetadataColumnId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@STRASSENTYP]"
-                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[ABSCHNITTSTYP]" />
+                      lineageId="Package\Mautabschnitt\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[ABSCHNITTSTYP]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -6967,6 +7045,19 @@ EXEC Update_Mautabschnitt_DIMENSION
                       dataType="str"
                       length="50"
                       name="@ABSCHNITTSNAME">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameterinformationen. Stimmt mit den DBPARAMFLAGSENUM-Werten von OLE DB überein."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Mautabschnitt\OLE DB-Befehl.Inputs[Eingabe des OLE DB-Befehls].ExternalColumns[@FZG_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="@FZG_ID">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -7023,11 +7114,11 @@ EXEC Update_Mautabschnitt_DIMENSION
               </outputs>
             </component>
             <component
-              refId="Package\Mautabschnitt\OLE DB-Ziel 1"
+              refId="Package\Mautabschnitt\OLE DB-Ziel"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB-Ziel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;4"
               description="OLE DB-Ziel"
-              name="OLE DB-Ziel 1"
+              name="OLE DB-Ziel"
               usesDispositions="true"
               version="4">
               <properties>
@@ -7080,7 +7171,7 @@ EXEC Update_Mautabschnitt_DIMENSION
               </properties>
               <connections>
                 <connection
-                  refId="Package\Mautabschnitt\OLE DB-Ziel 1.Connections[OleDbConnection]"
+                  refId="Package\Mautabschnitt\OLE DB-Ziel.Connections[OleDbConnection]"
                   connectionManagerID="{6C800379-83A7-4B0C-A805-8C6F9A2718A8}:external"
                   connectionManagerRefId="Project.ConnectionManagers[sqlservervier.f4.htw-berlin.de.u575710]"
                   description="Die für den Zugriff auf die Datenbank verwendete OLE DB-Laufzeitverbindung."
@@ -7088,69 +7179,84 @@ EXEC Update_Mautabschnitt_DIMENSION
               </connections>
               <inputs>
                 <input
-                  refId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels]"
+                  refId="Package\Mautabschnitt\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]"
                   errorOrTruncationOperation="Einfügen"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="Eingabe des OLE DB-Ziels">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].Columns[ABSCHNITTS_ID]"
+                      refId="Package\Mautabschnitt\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[ABSCHNITTS_ID]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="ABSCHNITTS_ID"
-                      externalMetadataColumnId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[ABSCHNITTS_ID]"
-                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[ABSCHNITTS_ID]" />
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Mautabschnitt\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[ABSCHNITTS_ID]"
+                      lineageId="Package\Mautabschnitt\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[ABSCHNITTS_ID]" />
                     <inputColumn
-                      refId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].Columns[LAENGE]"
+                      refId="Package\Mautabschnitt\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[FZG_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FZG_ID"
+                      externalMetadataColumnId="Package\Mautabschnitt\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[FZG_ID]"
+                      lineageId="Package\Mautabschnitt\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[FZG_ID]" />
+                    <inputColumn
+                      refId="Package\Mautabschnitt\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[LAENGE]"
                       cachedDataType="decimal"
                       cachedName="LAENGE"
-                      externalMetadataColumnId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[ABSCHNITTSLAENGE]"
-                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[LAENGE]" />
+                      externalMetadataColumnId="Package\Mautabschnitt\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[ABSCHNITTSLAENGE]"
+                      lineageId="Package\Mautabschnitt\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[LAENGE]" />
                     <inputColumn
-                      refId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].Columns[NAME]"
+                      refId="Package\Mautabschnitt\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[NAME]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="NAME"
-                      externalMetadataColumnId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[ABSCHNITTSNAME]"
-                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[NAME]" />
+                      externalMetadataColumnId="Package\Mautabschnitt\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[ABSCHNITTSNAME]"
+                      lineageId="Package\Mautabschnitt\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[NAME]" />
                     <inputColumn
-                      refId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].Columns[ABSCHNITTSTYP]"
+                      refId="Package\Mautabschnitt\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].Columns[ABSCHNITTSTYP]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="ABSCHNITTSTYP"
-                      externalMetadataColumnId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[STRASSENTYP]"
-                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[ABSCHNITTSTYP]" />
+                      externalMetadataColumnId="Package\Mautabschnitt\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[STRASSENTYP]"
+                      lineageId="Package\Mautabschnitt\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[ABSCHNITTSTYP]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[ABSCHNITTS__DIM_ID]"
+                      refId="Package\Mautabschnitt\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[ABSCHNITTS__DIM_ID]"
                       dataType="i4"
                       name="ABSCHNITTS__DIM_ID" />
                     <externalMetadataColumn
-                      refId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[ABSCHNITTS_ID]"
+                      refId="Package\Mautabschnitt\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[ABSCHNITTS_ID]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="ABSCHNITTS_ID" />
                     <externalMetadataColumn
-                      refId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[ABSCHNITTSLAENGE]"
+                      refId="Package\Mautabschnitt\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[FZG_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FZG_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Mautabschnitt\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[ABSCHNITTSLAENGE]"
                       dataType="numeric"
                       name="ABSCHNITTSLAENGE"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[ABSCHNITTSNAME]"
+                      refId="Package\Mautabschnitt\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[ABSCHNITTSNAME]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="ABSCHNITTSNAME" />
                     <externalMetadataColumn
-                      refId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[STRASSENTYP]"
+                      refId="Package\Mautabschnitt\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels].ExternalColumns[STRASSENTYP]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -7160,24 +7266,296 @@ EXEC Update_Mautabschnitt_DIMENSION
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Mautabschnitt\OLE DB-Ziel 1.Outputs[Fehlerausgabe des OLE DB-Ziels]"
+                  refId="Package\Mautabschnitt\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Fehlerausgabe des OLE DB-Ziels"
-                  synchronousInputId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels]">
+                  synchronousInputId="Package\Mautabschnitt\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Mautabschnitt\OLE DB-Ziel 1.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      refId="Package\Mautabschnitt\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Mautabschnitt\OLE DB-Ziel 1.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
+                      lineageId="Package\Mautabschnitt\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Mautabschnitt\OLE DB-Ziel 1.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      refId="Package\Mautabschnitt\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Mautabschnitt\OLE DB-Ziel 1.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
+                      lineageId="Package\Mautabschnitt\OLE DB-Ziel.Outputs[Fehlerausgabe des OLE DB-Ziels].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Mautabschnitt\Sortieren"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sortieren;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;1"
+              description="Sortiert Eingabedaten in aufsteigender oder absteigender Folge, wenn sie nicht am Quellort sortiert werden können. Sortieren Sie beispielsweise Umsatzzahlen nach &quot;customer id&quot;, bevor sie in eine Flatfile geschrieben und einer anderen Abteilung zur Verfügung gestellt werden. Hinweis: Für umfangreiche Datenflüsse wird diese Transformation nicht empfohlen."
+              name="Sortieren"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob die Sortiertransformation Zeilen mit doppelten Sortierwerten entfernt."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die maximale Anzahl der Threads an, die beim Sortieren verwendet werden können."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Mautabschnitt\Sortieren.Inputs[Sortiereingabe]"
+                  name="Sortiereingabe">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Mautabschnitt\Sortieren.Inputs[Sortiereingabe].Columns[ABSCHNITTS_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ABSCHNITTS_ID"
+                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[ABSCHNITTS_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Sortierreihenfolge der Spalte an."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Mautabschnitt\Sortieren.Inputs[Sortiereingabe].Columns[LAENGE]"
+                      cachedDataType="decimal"
+                      cachedName="LAENGE"
+                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[LAENGE]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Sortierreihenfolge der Spalte an."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Mautabschnitt\Sortieren.Inputs[Sortiereingabe].Columns[NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NAME"
+                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[NAME]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Sortierreihenfolge der Spalte an."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Mautabschnitt\Sortieren.Inputs[Sortiereingabe].Columns[ABSCHNITTSTYP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ABSCHNITTSTYP"
+                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[ABSCHNITTSTYP]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Sortierreihenfolge der Spalte an."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Mautabschnitt\Sortieren.Outputs[Sortierausgabe]"
+                  isSorted="true"
+                  name="Sortierausgabe">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Mautabschnitt\Sortieren.Outputs[Sortierausgabe].Columns[ABSCHNITTS_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Mautabschnitt\Sortieren.Outputs[Sortierausgabe].Columns[ABSCHNITTS_ID]"
+                      name="ABSCHNITTS_ID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
+                          name="SortColumnId">#{Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[ABSCHNITTS_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Mautabschnitt\Sortieren.Outputs[Sortierausgabe].Columns[LAENGE]"
+                      dataType="decimal"
+                      lineageId="Package\Mautabschnitt\Sortieren.Outputs[Sortierausgabe].Columns[LAENGE]"
+                      name="LAENGE">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
+                          name="SortColumnId">#{Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[LAENGE]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Mautabschnitt\Sortieren.Outputs[Sortierausgabe].Columns[NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Mautabschnitt\Sortieren.Outputs[Sortierausgabe].Columns[NAME]"
+                      name="NAME">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
+                          name="SortColumnId">#{Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[NAME]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Mautabschnitt\Sortieren.Outputs[Sortierausgabe].Columns[ABSCHNITTSTYP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Mautabschnitt\Sortieren.Outputs[Sortierausgabe].Columns[ABSCHNITTSTYP]"
+                      name="ABSCHNITTSTYP">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
+                          name="SortColumnId">#{Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[ABSCHNITTSTYP]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Mautabschnitt\Sortieren 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sortieren;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;1"
+              description="Sortiert Eingabedaten in aufsteigender oder absteigender Folge, wenn sie nicht am Quellort sortiert werden können. Sortieren Sie beispielsweise Umsatzzahlen nach &quot;customer id&quot;, bevor sie in eine Flatfile geschrieben und einer anderen Abteilung zur Verfügung gestellt werden. Hinweis: Für umfangreiche Datenflüsse wird diese Transformation nicht empfohlen."
+              name="Sortieren 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob die Sortiertransformation Zeilen mit doppelten Sortierwerten entfernt."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die maximale Anzahl der Threads an, die beim Sortieren verwendet werden können."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Mautabschnitt\Sortieren 1.Inputs[Sortiereingabe]"
+                  name="Sortiereingabe">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Mautabschnitt\Sortieren 1.Inputs[Sortiereingabe].Columns[ABSCHNITTS_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ABSCHNITTS_ID"
+                      lineageId="Package\Mautabschnitt\Upload Mauterhebung.Outputs[Ausgabe der Flatfilequelle].Columns[ABSCHNITTS_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Sortierreihenfolge der Spalte an."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Mautabschnitt\Sortieren 1.Inputs[Sortiereingabe].Columns[FZG_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FZG_ID"
+                      lineageId="Package\Mautabschnitt\Upload Mauterhebung.Outputs[Ausgabe der Flatfilequelle].Columns[FZG_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Sortierreihenfolge der Spalte an."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Mautabschnitt\Sortieren 1.Outputs[Sortierausgabe]"
+                  isSorted="true"
+                  name="Sortierausgabe">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Mautabschnitt\Sortieren 1.Outputs[Sortierausgabe].Columns[ABSCHNITTS_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Mautabschnitt\Sortieren 1.Outputs[Sortierausgabe].Columns[ABSCHNITTS_ID]"
+                      name="ABSCHNITTS_ID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
+                          name="SortColumnId">#{Package\Mautabschnitt\Upload Mauterhebung.Outputs[Ausgabe der Flatfilequelle].Columns[ABSCHNITTS_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Mautabschnitt\Sortieren 1.Outputs[Sortierausgabe].Columns[FZG_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Mautabschnitt\Sortieren 1.Outputs[Sortierausgabe].Columns[FZG_ID]"
+                      name="FZG_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
+                          name="SortColumnId">#{Package\Mautabschnitt\Upload Mauterhebung.Outputs[Ausgabe der Flatfilequelle].Columns[FZG_ID]}</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -7240,7 +7618,7 @@ where [refTable].[ABSCHNITTS_ID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Gibt die Liste der Herkunftsbezeichner an, die den von der SQL-Anweisung in der SQLCommand-Eigenschaft verwendeten Parametern zugeordnet sind. Einträge in der Liste sind durch Semikolons getrennt."
-                  name="ParameterMap">#{Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[ABSCHNITTS_ID]};</property>
+                  name="ParameterMap">#{Package\Mautabschnitt\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[ABSCHNITTS_ID]};</property>
                 <property
                   dataType="System.Int32"
                   description="Gibt die zu verwendende Spaltencodepage an, wenn keine Codepageinformationen von der Datenquelle verfügbar sind."
@@ -7269,7 +7647,8 @@ where [refTable].[ABSCHNITTS_ID] = ?</property>
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="ABSCHNITTS_ID"
-                      lineageId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle].Columns[ABSCHNITTS_ID]">
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Mautabschnitt\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[ABSCHNITTS_ID]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -7511,11 +7890,326 @@ where [refTable].[ABSCHNITTS_ID] = ?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Mautabschnitt\Upload Mauterhebung"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flatfilequelle;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;1"
+              description="Flatfilequelle"
+              localeId="1031"
+              name="Upload Mauterhebung"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Gibt an, ob Spalten mit der Länge &quot;0&quot; als NULL behandelt werden."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Gibt den Namen der Ausgabespalte an, die den Dateinamen enthält. Wenn kein Name angegeben wird, wird keine Ausgabespalte generiert, die den Dateinamen enthält."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Mautabschnitt\Upload Mauterhebung.Connections[FlatFileConnection]"
+                  connectionManagerID="{D8E15BE6-35BE-48B4-9D1E-B22F21BBD93D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Mauterhebung]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Mautabschnitt\Upload Mauterhebung.Outputs[Ausgabe der Flatfilequelle]"
+                  name="Ausgabe der Flatfilequelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Mautabschnitt\Upload Mauterhebung.Outputs[Ausgabe der Flatfilequelle].Columns[ABSCHNITTS_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Mautabschnitt\Upload Mauterhebung.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[ABSCHNITTS_ID]"
+                      length="50"
+                      lineageId="Package\Mautabschnitt\Upload Mauterhebung.Outputs[Ausgabe der Flatfilequelle].Columns[ABSCHNITTS_ID]"
+                      name="ABSCHNITTS_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Mautabschnitt\Upload Mauterhebung.Outputs[Ausgabe der Flatfilequelle].Columns[FZG_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Konvertierung"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Mautabschnitt\Upload Mauterhebung.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[FZG_ID]"
+                      length="50"
+                      lineageId="Package\Mautabschnitt\Upload Mauterhebung.Outputs[Ausgabe der Flatfilequelle].Columns[FZG_ID]"
+                      name="FZG_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Zeigt an, ob die Spalte die schnelleren gebietsschemaneutralen Analyseroutinen verwendet."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Gibt an, ob die Daten im Binärformat sind."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Mautabschnitt\Upload Mauterhebung.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[MAUT_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MAUT_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Mautabschnitt\Upload Mauterhebung.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[ABSCHNITTS_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ABSCHNITTS_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Mautabschnitt\Upload Mauterhebung.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[FZG_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FZG_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Mautabschnitt\Upload Mauterhebung.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[KATEGORIE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="KATEGORIE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Mautabschnitt\Upload Mauterhebung.Outputs[Ausgabe der Flatfilequelle].ExternalColumns[BEFAHRUNGSDATUM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BEFAHRUNGSDATUM" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Mautabschnitt\Upload Mauterhebung.Outputs[Fehlerausgabe der Flatfilequelle]"
+                  isErrorOut="true"
+                  name="Fehlerausgabe der Flatfilequelle">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Mautabschnitt\Upload Mauterhebung.Outputs[Fehlerausgabe der Flatfilequelle].Columns[Fehlerausgabespalte der Flatfilequelle]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Fehlerausgabespalte der Flatfilequelle"
+                      lineageId="Package\Mautabschnitt\Upload Mauterhebung.Outputs[Fehlerausgabe der Flatfilequelle].Columns[Fehlerausgabespalte der Flatfilequelle]"
+                      name="Fehlerausgabespalte der Flatfilequelle" />
+                    <outputColumn
+                      refId="Package\Mautabschnitt\Upload Mauterhebung.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Mautabschnitt\Upload Mauterhebung.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Mautabschnitt\Upload Mauterhebung.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Mautabschnitt\Upload Mauterhebung.Outputs[Fehlerausgabe der Flatfilequelle].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Mautabschnitt\Zusammenführungsjoin"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Zusammenführungsjoin;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;1"
+              description="Kombinieren Sie zwei sortierte Datenflüsse mithilfe eines der Joins FULL, LEFT oder INNER in einem Datenfluss. Diese Transformation wird empfohlen, wenn Datenflüsse an ihrem Quellort sortiert werden können."
+              name="Zusammenführungsjoin"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den Typ des auszuführenden Joins an."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die Anzahl der Spalten im Sortierschlüssel an."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob die NULL-Werte als gleichberechtigte Werte behandelt werden."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Zeigt die pro Eingabe maximal angeforderten Puffer vor dem Blockieren an."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Mautabschnitt\Zusammenführungsjoin.Inputs[Linke Eingabe des Zusammenführungsjoins]"
+                  hasSideEffects="true"
+                  name="Linke Eingabe des Zusammenführungsjoins">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Mautabschnitt\Zusammenführungsjoin.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[ABSCHNITTS_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ABSCHNITTS_ID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Mautabschnitt\Sortieren.Outputs[Sortierausgabe].Columns[ABSCHNITTS_ID]" />
+                    <inputColumn
+                      refId="Package\Mautabschnitt\Zusammenführungsjoin.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[LAENGE]"
+                      cachedDataType="decimal"
+                      cachedName="LAENGE"
+                      lineageId="Package\Mautabschnitt\Sortieren.Outputs[Sortierausgabe].Columns[LAENGE]" />
+                    <inputColumn
+                      refId="Package\Mautabschnitt\Zusammenführungsjoin.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NAME"
+                      lineageId="Package\Mautabschnitt\Sortieren.Outputs[Sortierausgabe].Columns[NAME]" />
+                    <inputColumn
+                      refId="Package\Mautabschnitt\Zusammenführungsjoin.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[ABSCHNITTSTYP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ABSCHNITTSTYP"
+                      lineageId="Package\Mautabschnitt\Sortieren.Outputs[Sortierausgabe].Columns[ABSCHNITTSTYP]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Mautabschnitt\Zusammenführungsjoin.Inputs[Rechte Eingabe des Zusammenführungsjoins]"
+                  hasSideEffects="true"
+                  name="Rechte Eingabe des Zusammenführungsjoins">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Mautabschnitt\Zusammenführungsjoin.Inputs[Rechte Eingabe des Zusammenführungsjoins].Columns[ABSCHNITTS_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ABSCHNITTS_ID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Mautabschnitt\Sortieren 1.Outputs[Sortierausgabe].Columns[ABSCHNITTS_ID]" />
+                    <inputColumn
+                      refId="Package\Mautabschnitt\Zusammenführungsjoin.Inputs[Rechte Eingabe des Zusammenführungsjoins].Columns[FZG_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FZG_ID"
+                      lineageId="Package\Mautabschnitt\Sortieren 1.Outputs[Sortierausgabe].Columns[FZG_ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Mautabschnitt\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins]"
+                  isSorted="true"
+                  name="Ausgabe des Zusammenführungsjoins">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Mautabschnitt\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[ABSCHNITTS_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Mautabschnitt\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[ABSCHNITTS_ID]"
+                      name="ABSCHNITTS_ID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Die mit dieser Ausgabespalte verbundene Eingabespalte"
+                          name="InputColumnID">#{Package\Mautabschnitt\Zusammenführungsjoin.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[ABSCHNITTS_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Mautabschnitt\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[LAENGE]"
+                      dataType="decimal"
+                      lineageId="Package\Mautabschnitt\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[LAENGE]"
+                      name="LAENGE">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Die mit dieser Ausgabespalte verbundene Eingabespalte"
+                          name="InputColumnID">#{Package\Mautabschnitt\Zusammenführungsjoin.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[LAENGE]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Mautabschnitt\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Mautabschnitt\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[NAME]"
+                      name="NAME">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Die mit dieser Ausgabespalte verbundene Eingabespalte"
+                          name="InputColumnID">#{Package\Mautabschnitt\Zusammenführungsjoin.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[NAME]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Mautabschnitt\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[ABSCHNITTSTYP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Mautabschnitt\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[ABSCHNITTSTYP]"
+                      name="ABSCHNITTSTYP">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Die mit dieser Ausgabespalte verbundene Eingabespalte"
+                          name="InputColumnID">#{Package\Mautabschnitt\Zusammenführungsjoin.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[ABSCHNITTSTYP]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Mautabschnitt\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[FZG_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Mautabschnitt\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[FZG_ID]"
+                      name="FZG_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Die mit dieser Ausgabespalte verbundene Eingabespalte"
+                          name="InputColumnID">#{Package\Mautabschnitt\Zusammenführungsjoin.Inputs[Rechte Eingabe des Zusammenführungsjoins].Columns[FZG_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
               refId="Package\Mautabschnitt.Paths[Ausgabe der Flatfilequelle]"
-              endId="Package\Mautabschnitt\Suche.Inputs[Eingabe der Suche]"
+              endId="Package\Mautabschnitt\Sortieren 1.Inputs[Sortiereingabe]"
+              name="Ausgabe der Flatfilequelle"
+              startId="Package\Mautabschnitt\Upload Mauterhebung.Outputs[Ausgabe der Flatfilequelle]" />
+            <path
+              refId="Package\Mautabschnitt.Paths[Ausgabe der Flatfilequelle1]"
+              endId="Package\Mautabschnitt\Sortieren.Inputs[Sortiereingabe]"
               name="Ausgabe der Flatfilequelle"
               startId="Package\Mautabschnitt\Upload Mautabschnitt.Outputs[Ausgabe der Flatfilequelle]" />
             <path
@@ -7524,8 +8218,23 @@ where [refTable].[ABSCHNITTS_ID] = ?</property>
               name="Ausgabe der Suchübereinstimmungen"
               startId="Package\Mautabschnitt\Suche.Outputs[Ausgabe der Suchübereinstimmungen]" />
             <path
+              refId="Package\Mautabschnitt.Paths[Ausgabe des Zusammenführungsjoins]"
+              endId="Package\Mautabschnitt\Suche.Inputs[Eingabe der Suche]"
+              name="Ausgabe des Zusammenführungsjoins"
+              startId="Package\Mautabschnitt\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins]" />
+            <path
+              refId="Package\Mautabschnitt.Paths[Sortierausgabe]"
+              endId="Package\Mautabschnitt\Zusammenführungsjoin.Inputs[Linke Eingabe des Zusammenführungsjoins]"
+              name="Sortierausgabe"
+              startId="Package\Mautabschnitt\Sortieren.Outputs[Sortierausgabe]" />
+            <path
+              refId="Package\Mautabschnitt.Paths[Sortierausgabe1]"
+              endId="Package\Mautabschnitt\Zusammenführungsjoin.Inputs[Rechte Eingabe des Zusammenführungsjoins]"
+              name="Sortierausgabe"
+              startId="Package\Mautabschnitt\Sortieren 1.Outputs[Sortierausgabe]" />
+            <path
               refId="Package\Mautabschnitt.Paths[Suchausgabe nicht übereinstimmender Einträge]"
-              endId="Package\Mautabschnitt\OLE DB-Ziel 1.Inputs[Eingabe des OLE DB-Ziels]"
+              endId="Package\Mautabschnitt\OLE DB-Ziel.Inputs[Eingabe des OLE DB-Ziels]"
               name="Suchausgabe nicht übereinstimmender Einträge"
               startId="Package\Mautabschnitt\Suche.Outputs[Suchausgabe nicht übereinstimmender Einträge]" />
           </paths>
@@ -8456,69 +9165,103 @@ where [refTable].[ABSCHNITTS_ID] = ?</property>
     design-time-name="Package\Mautabschnitt">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Mautabschnitt\OLE DB-Ziel 1"
-          TopLeft="195,420" />
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="185,42"
           Id="Package\Mautabschnitt\Upload Mautabschnitt"
-          TopLeft="348,139" />
+          TopLeft="347,140" />
         <NodeLayout
           Size="110,42"
           Id="Package\Mautabschnitt\Suche"
-          TopLeft="384,241" />
+          TopLeft="586,470" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Mautabschnitt\OLE DB-Befehl"
+          TopLeft="762,703" />
         <EdgeLayout
-          Id="Package\Mautabschnitt.Paths[Suchausgabe nicht übereinstimmender Einträge]"
-          TopLeft="422,283">
+          Id="Package\Mautabschnitt.Paths[Ausgabe der Suchübereinstimmungen]"
+          TopLeft="658,512">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-152,137"
+              EndConnector="181,191"
               Start="0,0"
-              End="-152,129.5">
+              End="181,183.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.9784946236559" />
+                    End="0,74.0430107526881" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,51.9784946236559"
-                    Point2="0,55.9784946236559"
-                    Point3="-4,55.9784946236559" />
+                    Point1="0,74.0430107526881"
+                    Point2="0,78.0430107526881"
+                    Point3="4,78.0430107526881" />
                   <mssgle:LineSegment
-                    End="-148,55.9784946236559" />
+                    End="177,78.0430107526881" />
                   <mssgle:CubicBezierSegment
-                    Point1="-148,55.9784946236559"
-                    Point2="-152,55.9784946236559"
-                    Point3="-152,59.9784946236559" />
+                    Point1="177,78.0430107526881"
+                    Point2="181,78.0430107526881"
+                    Point3="181,82.0430107526881" />
                   <mssgle:LineSegment
-                    End="-152,129.5" />
+                    End="181,183.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-182.01701171875,60.9784946236559,212.0340234375,11.6630859375"
+              BoundingBox="6.22999999999998,83.0430107526881,168.54,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Mautabschnitt\Upload Mauterhebung"
+          TopLeft="648,141" />
+        <NodeLayout
+          Size="124,42"
+          Id="Package\Mautabschnitt\Sortieren"
+          TopLeft="379.5,214.5" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Mautabschnitt\Sortieren 1"
+          TopLeft="674,220" />
         <EdgeLayout
           Id="Package\Mautabschnitt.Paths[Ausgabe der Flatfilequelle]"
-          TopLeft="439.75,181">
+          TopLeft="741.25,183">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,37"
               Start="0,0"
-              End="0,52.5">
+              End="0,29.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Mautabschnitt.Paths[Ausgabe der Flatfilequelle1]"
+          TopLeft="440.5,182">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.5"
+              Start="0,0"
+              End="0,25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8528,61 +9271,142 @@ where [refTable].[ABSCHNITTS_ID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="154,42"
-          Id="Package\Mautabschnitt\OLE DB-Befehl"
-          TopLeft="553,424" />
+          Size="194,42"
+          Id="Package\Mautabschnitt\Zusammenführungsjoin"
+          TopLeft="546,336" />
         <EdgeLayout
-          Id="Package\Mautabschnitt.Paths[Ausgabe der Suchübereinstimmungen]"
-          TopLeft="456,283">
+          Id="Package\Mautabschnitt.Paths[Sortierausgabe]"
+          TopLeft="441.5,256.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="174,141"
+              EndConnector="201.5,79.5"
               Start="0,0"
-              End="174,133.5">
+              End="201.5,72">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.6129032258065" />
+                    End="0,35.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,53.6129032258065"
-                    Point2="0,57.6129032258065"
-                    Point3="4,57.6129032258065" />
+                    Point1="0,35.75"
+                    Point2="0,39.75"
+                    Point3="4,39.75" />
                   <mssgle:LineSegment
-                    End="170,57.6129032258065" />
+                    End="197.5,39.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="170,57.6129032258065"
-                    Point2="174,57.6129032258065"
-                    Point3="174,61.6129032258065" />
+                    Point1="197.5,39.75"
+                    Point2="201.5,39.75"
+                    Point3="201.5,43.75" />
                   <mssgle:LineSegment
-                    End="174,133.5" />
+                    End="201.5,72" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Mautabschnitt.Paths[Sortierausgabe1]"
+          TopLeft="740.5,262">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-66.5,74"
+              Start="0,0"
+              End="-66.5,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.0368098159509" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.0368098159509"
+                    Point2="0,44.0368098159509"
+                    Point3="-4,44.0368098159509" />
+                  <mssgle:LineSegment
+                    End="-62.5,44.0368098159509" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-62.5,44.0368098159509"
+                    Point2="-66.5,44.0368098159509"
+                    Point3="-66.5,48.0368098159509" />
+                  <mssgle:LineSegment
+                    End="-66.5,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Mautabschnitt.Paths[Ausgabe des Zusammenführungsjoins]"
+          TopLeft="642,378">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,92"
+              Start="0,0"
+              End="0,84.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,84.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Mautabschnitt\OLE DB-Ziel"
+          TopLeft="427,695" />
+        <EdgeLayout
+          Id="Package\Mautabschnitt.Paths[Suchausgabe nicht übereinstimmender Einträge]"
+          TopLeft="624,512">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-126.5,183"
+              Start="0,0"
+              End="-126.5,175.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.7741935483871" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,70.7741935483871"
+                    Point2="0,74.7741935483871"
+                    Point3="-4,74.7741935483871" />
+                  <mssgle:LineSegment
+                    End="-122.5,74.7741935483871" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-122.5,74.7741935483871"
+                    Point2="-126.5,74.7741935483871"
+                    Point3="-126.5,78.7741935483871" />
+                  <mssgle:LineSegment
+                    End="-126.5,175.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="2.72999999999998,62.6129032258065,168.54,11.6630859375"
+              BoundingBox="-169.26701171875,79.7741935483871,212.0340234375,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Mautabschnitt\OLE DB-Ziel 1">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Mautabschnitt\Suche">
     <Properties>
@@ -8614,7 +9438,7 @@ where [refTable].[ABSCHNITTS_ID] = ?</property>
         <NodeLayout
           Size="159,42"
           Id="Package\Faktentabelle\Lade NutzerDIM"
-          TopLeft="152,122" />
+          TopLeft="155,124" />
         <NodeLayout
           Size="173,42"
           Id="Package\Faktentabelle\Lade FahrzeugDIM"
@@ -8622,7 +9446,7 @@ where [refTable].[ABSCHNITTS_ID] = ?</property>
         <NodeLayout
           Size="194,42"
           Id="Package\Faktentabelle\Zusammenführungsjoin"
-          TopLeft="250,355" />
+          TopLeft="251,344" />
         <NodeLayout
           Size="124,42"
           Id="Package\Faktentabelle\Sortieren"
@@ -8630,21 +9454,21 @@ where [refTable].[ABSCHNITTS_ID] = ?</property>
         <NodeLayout
           Size="133,42"
           Id="Package\Faktentabelle\Sortieren 1"
-          TopLeft="392,229" />
+          TopLeft="391,220" />
         <EdgeLayout
           Id="Package\Faktentabelle.Paths[Ausgabe der OLE DB-Quelle]"
-          TopLeft="457,166">
+          TopLeft="456.5,166">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,63"
+              EndConnector="0,54"
               Start="0,0"
-              End="0,55.5">
+              End="0,46.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,55.5" />
+                    End="0,46.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8655,18 +9479,18 @@ where [refTable].[ABSCHNITTS_ID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Faktentabelle.Paths[Ausgabe der OLE DB-Quelle1]"
-          TopLeft="235.25,164">
+          TopLeft="236.75,166">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,52"
+              EndConnector="0,50"
               Start="0,0"
-              End="0,44.5">
+              End="0,42.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.5" />
+                    End="0,42.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8681,26 +9505,26 @@ where [refTable].[ABSCHNITTS_ID] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="108,97"
+              EndConnector="78,86"
               Start="0,0"
-              End="108,89.5">
+              End="78,78.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.5" />
+                    End="0,47.1779141104294" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,44.5"
-                    Point2="0,48.5"
-                    Point3="4,48.5" />
+                    Point1="0,47.1779141104294"
+                    Point2="0,51.1779141104294"
+                    Point3="4,51.1779141104294" />
                   <mssgle:LineSegment
-                    End="104,48.5" />
+                    End="74,51.1779141104294" />
                   <mssgle:CubicBezierSegment
-                    Point1="104,48.5"
-                    Point2="108,48.5"
-                    Point3="108,52.5" />
+                    Point1="74,51.1779141104294"
+                    Point2="78,51.1779141104294"
+                    Point3="78,55.1779141104294" />
                   <mssgle:LineSegment
-                    End="108,89.5" />
+                    End="78,78.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8711,30 +9535,30 @@ where [refTable].[ABSCHNITTS_ID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Faktentabelle.Paths[Sortierausgabe1]"
-          TopLeft="458.5,271">
+          TopLeft="457.5,262">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-80.5,84"
+              EndConnector="-78.5,82"
               Start="0,0"
-              End="-80.5,76.5">
+              End="-78.5,74.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,45.9877300613497" />
+                    End="0,44.7975460122699" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,45.9877300613497"
-                    Point2="0,49.9877300613497"
-                    Point3="-4,49.9877300613497" />
+                    Point1="0,44.7975460122699"
+                    Point2="0,48.7975460122699"
+                    Point3="-4,48.7975460122699" />
                   <mssgle:LineSegment
-                    End="-76.5,49.9877300613497" />
+                    End="-74.5,48.7975460122699" />
                   <mssgle:CubicBezierSegment
-                    Point1="-76.5,49.9877300613497"
-                    Point2="-80.5,49.9877300613497"
-                    Point3="-80.5,53.9877300613497" />
+                    Point1="-74.5,48.7975460122699"
+                    Point2="-78.5,48.7975460122699"
+                    Point3="-78.5,52.7975460122699" />
                   <mssgle:LineSegment
-                    End="-80.5,76.5" />
+                    End="-78.5,74.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8761,6 +9585,19 @@ where [refTable].[ABSCHNITTS_ID] = ?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Faktentabelle\Lade FahrzeugDIM">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Mautabschnitt\OLE DB-Ziel">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
