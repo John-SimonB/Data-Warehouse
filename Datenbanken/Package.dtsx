@@ -11,8 +11,8 @@
   DTS:LocaleID="1031"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="223"
-  DTS:VersionGUID="{D7CB1244-7692-4C90-B8DB-8219B2796380}">
+  DTS:VersionBuild="224"
+  DTS:VersionGUID="{4F5A3AF9-E431-4219-BDA0-0DA7D86A1D0C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -114,15 +114,15 @@
                       name="FZ_DIM_ID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].Columns[FZ_ID]"
+                      refId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].Columns[FZ_NUTZER_ID]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Konvertierung"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[FZ_ID]"
+                      externalMetadataColumnId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[FZ_NUTZER_ID]"
                       length="50"
-                      lineageId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].Columns[FZ_ID]"
-                      name="FZ_ID"
+                      lineageId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].Columns[FZ_NUTZER_ID]"
+                      name="FZ_NUTZER_ID"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -164,7 +164,7 @@
                       dataType="numeric"
                       name="MAUSATZ"
                       precision="15"
-                      scale="3" />
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[FIN]"
                       codePage="1252"
@@ -177,6 +177,12 @@
                       dataType="str"
                       length="20"
                       name="KENNZEICHEN" />
+                    <externalMetadataColumn
+                      refId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].ExternalColumns[FZ_NUTZER_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FZ_NUTZER_ID" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -197,17 +203,17 @@
                       name="ErrorColumn"
                       specialFlags="2" />
                     <outputColumn
+                      refId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[FZ_NUTZER_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[FZ_NUTZER_ID]"
+                      name="FZ_NUTZER_ID" />
+                    <outputColumn
                       refId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[FZ_DIM_ID]"
                       dataType="i4"
                       lineageId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[FZ_DIM_ID]"
                       name="FZ_DIM_ID" />
-                    <outputColumn
-                      refId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[FZ_ID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Fehlerausgabe der OLE DB-Quelle].Columns[FZ_ID]"
-                      name="FZ_ID" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -385,7 +391,354 @@
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Faktentabelle\Sortieren"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sortieren;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;1"
+              description="Sortiert Eingabedaten in aufsteigender oder absteigender Folge, wenn sie nicht am Quellort sortiert werden können. Sortieren Sie beispielsweise Umsatzzahlen nach &quot;customer id&quot;, bevor sie in eine Flatfile geschrieben und einer anderen Abteilung zur Verfügung gestellt werden. Hinweis: Für umfangreiche Datenflüsse wird diese Transformation nicht empfohlen."
+              name="Sortieren"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob die Sortiertransformation Zeilen mit doppelten Sortierwerten entfernt."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die maximale Anzahl der Threads an, die beim Sortieren verwendet werden können."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Faktentabelle\Sortieren.Inputs[Sortiereingabe]"
+                  name="Sortiereingabe">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Faktentabelle\Sortieren.Inputs[Sortiereingabe].Columns[NUTZER_DIM_ID]"
+                      cachedDataType="i4"
+                      cachedName="NUTZER_DIM_ID"
+                      lineageId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Ausgabe der OLE DB-Quelle].Columns[NUTZER_DIM_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Sortierreihenfolge der Spalte an."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Faktentabelle\Sortieren.Inputs[Sortiereingabe].Columns[NUTZER_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NUTZER_ID"
+                      lineageId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Ausgabe der OLE DB-Quelle].Columns[NUTZER_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Sortierreihenfolge der Spalte an."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Faktentabelle\Sortieren.Outputs[Sortierausgabe]"
+                  isSorted="true"
+                  name="Sortierausgabe">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Faktentabelle\Sortieren.Outputs[Sortierausgabe].Columns[NUTZER_DIM_ID]"
+                      dataType="i4"
+                      lineageId="Package\Faktentabelle\Sortieren.Outputs[Sortierausgabe].Columns[NUTZER_DIM_ID]"
+                      name="NUTZER_DIM_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
+                          name="SortColumnId">#{Package\Faktentabelle\Lade NutzerDIM.Outputs[Ausgabe der OLE DB-Quelle].Columns[NUTZER_DIM_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Faktentabelle\Sortieren.Outputs[Sortierausgabe].Columns[NUTZER_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Faktentabelle\Sortieren.Outputs[Sortierausgabe].Columns[NUTZER_ID]"
+                      name="NUTZER_ID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
+                          name="SortColumnId">#{Package\Faktentabelle\Lade NutzerDIM.Outputs[Ausgabe der OLE DB-Quelle].Columns[NUTZER_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Faktentabelle\Sortieren 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sortieren;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;1"
+              description="Sortiert Eingabedaten in aufsteigender oder absteigender Folge, wenn sie nicht am Quellort sortiert werden können. Sortieren Sie beispielsweise Umsatzzahlen nach &quot;customer id&quot;, bevor sie in eine Flatfile geschrieben und einer anderen Abteilung zur Verfügung gestellt werden. Hinweis: Für umfangreiche Datenflüsse wird diese Transformation nicht empfohlen."
+              name="Sortieren 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob die Sortiertransformation Zeilen mit doppelten Sortierwerten entfernt."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die maximale Anzahl der Threads an, die beim Sortieren verwendet werden können."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Faktentabelle\Sortieren 1.Inputs[Sortiereingabe]"
+                  name="Sortiereingabe">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Faktentabelle\Sortieren 1.Inputs[Sortiereingabe].Columns[FZ_DIM_ID]"
+                      cachedDataType="i4"
+                      cachedName="FZ_DIM_ID"
+                      lineageId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].Columns[FZ_DIM_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Sortierreihenfolge der Spalte an."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Faktentabelle\Sortieren 1.Inputs[Sortiereingabe].Columns[FZ_NUTZER_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FZ_NUTZER_ID"
+                      lineageId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].Columns[FZ_NUTZER_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Vergleichsoptionen für Zeichendaten an."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Gibt die Sortierreihenfolge der Spalte an."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Faktentabelle\Sortieren 1.Outputs[Sortierausgabe]"
+                  isSorted="true"
+                  name="Sortierausgabe">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Faktentabelle\Sortieren 1.Outputs[Sortierausgabe].Columns[FZ_DIM_ID]"
+                      dataType="i4"
+                      lineageId="Package\Faktentabelle\Sortieren 1.Outputs[Sortierausgabe].Columns[FZ_DIM_ID]"
+                      name="FZ_DIM_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
+                          name="SortColumnId">#{Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].Columns[FZ_DIM_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Faktentabelle\Sortieren 1.Outputs[Sortierausgabe].Columns[FZ_NUTZER_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Faktentabelle\Sortieren 1.Outputs[Sortierausgabe].Columns[FZ_NUTZER_ID]"
+                      name="FZ_NUTZER_ID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Gibt den Herkunftsbezeichner der Eingabespalte an, die dieser Ausgabespalte zugeordnet ist."
+                          name="SortColumnId">#{Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle].Columns[FZ_NUTZER_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Faktentabelle\Zusammenführungsjoin"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Zusammenführungsjoin;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Alle Rechte vorbehalten; http://www.microsoft.com/sql/support;1"
+              description="Kombinieren Sie zwei sortierte Datenflüsse mithilfe eines der Joins FULL, LEFT oder INNER in einem Datenfluss. Diese Transformation wird empfohlen, wenn Datenflüsse an ihrem Quellort sortiert werden können."
+              name="Zusammenführungsjoin"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt den Typ des auszuführenden Joins an."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Gibt die Anzahl der Spalten im Sortierschlüssel an."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Zeigt an, ob die NULL-Werte als gleichberechtigte Werte behandelt werden."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Zeigt die pro Eingabe maximal angeforderten Puffer vor dem Blockieren an."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Faktentabelle\Zusammenführungsjoin.Inputs[Linke Eingabe des Zusammenführungsjoins]"
+                  hasSideEffects="true"
+                  name="Linke Eingabe des Zusammenführungsjoins">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Faktentabelle\Zusammenführungsjoin.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[NUTZER_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NUTZER_ID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Faktentabelle\Sortieren.Outputs[Sortierausgabe].Columns[NUTZER_ID]" />
+                    <inputColumn
+                      refId="Package\Faktentabelle\Zusammenführungsjoin.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[NUTZER_DIM_ID]"
+                      cachedDataType="i4"
+                      cachedName="NUTZER_DIM_ID"
+                      lineageId="Package\Faktentabelle\Sortieren.Outputs[Sortierausgabe].Columns[NUTZER_DIM_ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Faktentabelle\Zusammenführungsjoin.Inputs[Rechte Eingabe des Zusammenführungsjoins]"
+                  hasSideEffects="true"
+                  name="Rechte Eingabe des Zusammenführungsjoins">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Faktentabelle\Zusammenführungsjoin.Inputs[Rechte Eingabe des Zusammenführungsjoins].Columns[FZ_NUTZER_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FZ_NUTZER_ID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Faktentabelle\Sortieren 1.Outputs[Sortierausgabe].Columns[FZ_NUTZER_ID]" />
+                    <inputColumn
+                      refId="Package\Faktentabelle\Zusammenführungsjoin.Inputs[Rechte Eingabe des Zusammenführungsjoins].Columns[FZ_DIM_ID]"
+                      cachedDataType="i4"
+                      cachedName="FZ_DIM_ID"
+                      lineageId="Package\Faktentabelle\Sortieren 1.Outputs[Sortierausgabe].Columns[FZ_DIM_ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Faktentabelle\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins]"
+                  isSorted="true"
+                  name="Ausgabe des Zusammenführungsjoins">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Faktentabelle\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[NUTZER_DIM_ID]"
+                      dataType="i4"
+                      lineageId="Package\Faktentabelle\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[NUTZER_DIM_ID]"
+                      name="NUTZER_DIM_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Die mit dieser Ausgabespalte verbundene Eingabespalte"
+                          name="InputColumnID">#{Package\Faktentabelle\Zusammenführungsjoin.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[NUTZER_DIM_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Faktentabelle\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[NUTZER_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Faktentabelle\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[NUTZER_ID]"
+                      name="NUTZER_ID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Die mit dieser Ausgabespalte verbundene Eingabespalte"
+                          name="InputColumnID">#{Package\Faktentabelle\Zusammenführungsjoin.Inputs[Linke Eingabe des Zusammenführungsjoins].Columns[NUTZER_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Faktentabelle\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[FZ_DIM_ID]"
+                      dataType="i4"
+                      lineageId="Package\Faktentabelle\Zusammenführungsjoin.Outputs[Ausgabe des Zusammenführungsjoins].Columns[FZ_DIM_ID]"
+                      name="FZ_DIM_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Die mit dieser Ausgabespalte verbundene Eingabespalte"
+                          name="InputColumnID">#{Package\Faktentabelle\Zusammenführungsjoin.Inputs[Rechte Eingabe des Zusammenführungsjoins].Columns[FZ_DIM_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
+          <paths>
+            <path
+              refId="Package\Faktentabelle.Paths[Ausgabe der OLE DB-Quelle]"
+              endId="Package\Faktentabelle\Sortieren 1.Inputs[Sortiereingabe]"
+              name="Ausgabe der OLE DB-Quelle"
+              startId="Package\Faktentabelle\Lade FahrzeugDIM.Outputs[Ausgabe der OLE DB-Quelle]" />
+            <path
+              refId="Package\Faktentabelle.Paths[Ausgabe der OLE DB-Quelle1]"
+              endId="Package\Faktentabelle\Sortieren.Inputs[Sortiereingabe]"
+              name="Ausgabe der OLE DB-Quelle"
+              startId="Package\Faktentabelle\Lade NutzerDIM.Outputs[Ausgabe der OLE DB-Quelle]" />
+            <path
+              refId="Package\Faktentabelle.Paths[Sortierausgabe]"
+              endId="Package\Faktentabelle\Zusammenführungsjoin.Inputs[Linke Eingabe des Zusammenführungsjoins]"
+              name="Sortierausgabe"
+              startId="Package\Faktentabelle\Sortieren.Outputs[Sortierausgabe]" />
+            <path
+              refId="Package\Faktentabelle.Paths[Sortierausgabe1]"
+              endId="Package\Faktentabelle\Zusammenführungsjoin.Inputs[Rechte Eingabe des Zusammenführungsjoins]"
+              name="Sortierausgabe"
+              startId="Package\Faktentabelle\Sortieren 1.Outputs[Sortierausgabe]" />
+          </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -8257,7 +8610,7 @@ where [refTable].[ABSCHNITTS_ID] = ?</property>
     design-time-name="Package\Faktentabelle">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="159,42"
           Id="Package\Faktentabelle\Lade NutzerDIM"
@@ -8265,7 +8618,143 @@ where [refTable].[ABSCHNITTS_ID] = ?</property>
         <NodeLayout
           Size="173,42"
           Id="Package\Faktentabelle\Lade FahrzeugDIM"
-          TopLeft="381,124" />
+          TopLeft="381,125" />
+        <NodeLayout
+          Size="194,42"
+          Id="Package\Faktentabelle\Zusammenführungsjoin"
+          TopLeft="250,355" />
+        <NodeLayout
+          Size="124,42"
+          Id="Package\Faktentabelle\Sortieren"
+          TopLeft="177,216" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Faktentabelle\Sortieren 1"
+          TopLeft="392,229" />
+        <EdgeLayout
+          Id="Package\Faktentabelle.Paths[Ausgabe der OLE DB-Quelle]"
+          TopLeft="467.5,167">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9,62"
+              Start="0,0"
+              End="-9,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27"
+                    Point2="0,31"
+                    Point3="-4,31" />
+                  <mssgle:LineSegment
+                    End="-5,31" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5,31"
+                    Point2="-9,31"
+                    Point3="-9,35" />
+                  <mssgle:LineSegment
+                    End="-9,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Faktentabelle.Paths[Ausgabe der OLE DB-Quelle1]"
+          TopLeft="235.25,164">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Faktentabelle.Paths[Sortierausgabe]"
+          TopLeft="239,258">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="108,97"
+              Start="0,0"
+              End="108,89.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,44.5"
+                    Point2="0,48.5"
+                    Point3="4,48.5" />
+                  <mssgle:LineSegment
+                    End="104,48.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="104,48.5"
+                    Point2="108,48.5"
+                    Point3="108,52.5" />
+                  <mssgle:LineSegment
+                    End="108,89.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Faktentabelle.Paths[Sortierausgabe1]"
+          TopLeft="458.5,271">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-80.5,84"
+              Start="0,0"
+              End="-80.5,76.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.9877300613497" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45.9877300613497"
+                    Point2="0,49.9877300613497"
+                    Point3="-4,49.9877300613497" />
+                  <mssgle:LineSegment
+                    End="-76.5,49.9877300613497" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-76.5,49.9877300613497"
+                    Point2="-80.5,49.9877300613497"
+                    Point3="-80.5,53.9877300613497" />
+                  <mssgle:LineSegment
+                    End="-80.5,76.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
