@@ -13,7 +13,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x0060__x0022__x0060_"
       DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Users\John-Simon\Desktop\Datenbanken\Flatfile\Nutzer.csv">
+      DTS:ConnectionString="C:\Users\John-Simon\Desktop\Datenbanken\Flatfile\FlatfileNEU\Nutzer.csv">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -22,7 +22,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="NUTZER_ID"
-          DTS:DTSID="{9E9EB099-6F9D-478E-B1F5-C9919DEFBB90}"
+          DTS:DTSID="{D46C1935-CA09-4572-B989-21E490798E1B}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -31,7 +31,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="STATUS"
-          DTS:DTSID="{B5FF9D62-B956-4DCB-981E-517BF7B5C900}"
+          DTS:DTSID="{1F908205-201E-46BB-AF12-C84C5E81BA56}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -40,7 +40,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="FIRMENNAME"
-          DTS:DTSID="{4CF2A888-27BE-4281-9289-241763A559E4}"
+          DTS:DTSID="{0848A9A7-E403-4647-9561-105596CE0FEB}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -49,7 +49,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="VORNAME"
-          DTS:DTSID="{AE9D3770-1017-4597-8478-4FC3FBA51D33}"
+          DTS:DTSID="{A0DDE665-59A3-4D30-AA01-34C71E44247D}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -58,7 +58,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="NACHNAME"
-          DTS:DTSID="{1C455C67-31C1-4641-913C-4D35E2B03558}"
+          DTS:DTSID="{C2DE1A09-4093-4927-8230-292337BCCD52}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -67,7 +67,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="LAND"
-          DTS:DTSID="{3E9F0388-3FAF-4202-A942-176622D276E6}"
+          DTS:DTSID="{97C440D0-7A20-4693-A020-674DBC46FC7B}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -76,7 +76,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="STRASSE"
-          DTS:DTSID="{C6E2CD17-EAFB-4BE9-9242-3FCADEF17BD1}"
+          DTS:DTSID="{03615129-4C3A-44B0-A6DD-1C66C00939D1}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -85,7 +85,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="HAUSNUMMER"
-          DTS:DTSID="{0621AF97-24B9-4CB7-83DB-D69102BC1224}"
+          DTS:DTSID="{71715EE6-9A62-4AD6-A971-5CC47F35AE8C}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -94,7 +94,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="POSTLEITZAHL"
-          DTS:DTSID="{055FF9F0-697B-4A50-A091-BF1674B59CEF}"
+          DTS:DTSID="{194F5415-FCB0-4102-BB4F-208B00412914}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -103,7 +103,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="RECHNUNGSINTERVALL"
-          DTS:DTSID="{09A5D8DA-09EC-4536-B434-283020BEB30A}"
+          DTS:DTSID="{91FF6BD6-B97E-49FE-9EFB-FC58537EF1D9}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -112,7 +112,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="RECHNUNGSZUSTELLUNG"
-          DTS:DTSID="{BCE9F7BA-F763-4EA6-BD7E-B7DA5140623D}"
+          DTS:DTSID="{56D51A9D-00AD-4AF1-AD17-9FF866E6A11B}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

@@ -13,7 +13,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x0060__x0022__x0060_"
       DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Users\John-Simon\Desktop\Datenbanken\Flatfile\Fahrzeug.csv">
+      DTS:ConnectionString="C:\Users\John-Simon\Desktop\Datenbanken\Flatfile\FlatfileNEU\Fahrzeug.csv">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -22,7 +22,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="FZ_ID"
-          DTS:DTSID="{B28B43F7-AF0D-4893-B832-BACF2B08A1EF}"
+          DTS:DTSID="{922C6273-53D7-401F-8BF6-EB6917F0454E}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -31,7 +31,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="SSKL_ID"
-          DTS:DTSID="{F896080D-D52C-4ADE-A3AC-87AE9355CE12}"
+          DTS:DTSID="{E837FB7A-8B11-47E2-BA1F-7409401EC8F0}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -40,7 +40,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="NUTZER_ID"
-          DTS:DTSID="{A284EB0B-8DDD-47E0-9CB1-71B7492488D7}"
+          DTS:DTSID="{7D6CDB6B-F152-4FF3-AE4D-B736F03674B1}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -49,7 +49,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="KENNZEICHEN"
-          DTS:DTSID="{AC474BC6-C718-49EE-9893-F90F5BE9BDD1}"
+          DTS:DTSID="{E90C957B-3E1F-4EB5-8CB9-E2C792833CE6}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -58,7 +58,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="FIN"
-          DTS:DTSID="{F1C450A3-E867-431A-8644-94BBF9F83C0E}"
+          DTS:DTSID="{A8561BB9-1137-4C29-9038-EA2BD4A2AB33}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -67,7 +67,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="ACHSEN"
-          DTS:DTSID="{3C054D73-8158-41E3-A8F0-1AF7E011C970}"
+          DTS:DTSID="{1E3C9326-29F9-4570-B40B-678C8C343A24}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -75,7 +75,7 @@
           DTS:DataType="14"
           DTS:TextQualified="True"
           DTS:ObjectName="GEWICHT"
-          DTS:DTSID="{4E8998B6-5689-437A-8083-2F6BCD67E95D}"
+          DTS:DTSID="{F8A31E53-5EE1-4E9B-A4DA-4EC085B7A15D}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -84,7 +84,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="ANMELDEDATUM"
-          DTS:DTSID="{CC2B5CA3-A681-4CA1-98C3-35334F90CCF5}"
+          DTS:DTSID="{2E15DBF4-73D9-4ABE-A5D0-B376ABD50A91}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -93,7 +93,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="ABMELDEDATUM"
-          DTS:DTSID="{8C194A4B-4D5D-4127-82E8-145FBDB983CD}"
+          DTS:DTSID="{440371A1-5988-4FAF-BBF6-3C50BB403162}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -102,7 +102,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="ZULASSUNGSLAND"
-          DTS:DTSID="{22973BAA-A601-4463-973A-47D3FF9C7228}"
+          DTS:DTSID="{F17AC090-DE49-4AB6-8426-D92C650D6D21}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

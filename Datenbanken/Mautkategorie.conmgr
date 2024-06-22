@@ -13,7 +13,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x0060__x0022__x0060_"
       DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Users\John-Simon\Desktop\Datenbanken\Flatfile\Mautkategorie.csv">
+      DTS:ConnectionString="C:\Users\John-Simon\Desktop\Datenbanken\Flatfile\FlatfileNEU\Mautkategorie.csv">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -21,7 +21,7 @@
           DTS:DataType="21"
           DTS:TextQualified="True"
           DTS:ObjectName="KATEGORIE_ID"
-          DTS:DTSID="{2E42EA4A-69F9-4B89-A6DA-AA7DD748D931}"
+          DTS:DTSID="{272984F9-0355-4377-B9C5-7F1042525985}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -30,7 +30,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="SSKL_ID"
-          DTS:DTSID="{5E8BBEB7-1E1D-4610-83D7-B284E06613D9}"
+          DTS:DTSID="{7FD74534-629D-43EB-8519-57DB850D660F}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="KAT_BEZEICHNUNG"
-          DTS:DTSID="{63DCCB0F-261C-452A-80D8-D43C31E89F17}"
+          DTS:DTSID="{3E57F45B-BE07-4A65-8573-1AD50E33FD06}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="ACHSZAHL"
-          DTS:DTSID="{144A918B-F6D9-4B8E-983F-5B14F6123DFE}"
+          DTS:DTSID="{9F42B2C9-AE60-4A4C-A951-FFEFB48438E3}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -56,7 +56,7 @@
           DTS:DataType="14"
           DTS:TextQualified="True"
           DTS:ObjectName="MAUTSATZ_JE_KM"
-          DTS:DTSID="{84531371-4469-4267-93D6-ABB8714FF712}"
+          DTS:DTSID="{60A961C8-2040-46D5-A96E-24FBA24BEB39}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

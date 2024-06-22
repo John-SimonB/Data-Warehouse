@@ -13,7 +13,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x0060__x0022__x0060_"
       DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Users\John-Simon\Desktop\Datenbanken\Flatfile\Fahrzeuggerät.csv">
+      DTS:ConnectionString="C:\Users\John-Simon\Desktop\Datenbanken\Flatfile\FlatfileNEU\Fahrzeugerät.csv">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -22,7 +22,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="FZG_ID"
-          DTS:DTSID="{897639ED-60E3-4F58-AE2F-5ABCF474C591}"
+          DTS:DTSID="{6545979D-CE39-45F4-9541-74286AA173A1}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -31,7 +31,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="FZ_ID"
-          DTS:DTSID="{A2208920-0571-436A-B8BF-1DAFD0B113CA}"
+          DTS:DTSID="{33367F01-A7BA-40FF-911D-3BB0FD136538}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -40,7 +40,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="STATUS"
-          DTS:DTSID="{09EA25F7-9DFF-490C-A646-4B6F0E02F87C}"
+          DTS:DTSID="{9596A9C7-910D-4B04-ADCB-AA97BC0056E0}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -49,7 +49,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="TYP"
-          DTS:DTSID="{569060E6-1EF2-4DE1-A3FF-D91F92336058}"
+          DTS:DTSID="{9B53DE4A-77AC-4836-AE92-22CDA2D363C3}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -58,7 +58,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="EINBAUDATUM"
-          DTS:DTSID="{B349B3D9-0C67-4584-AE0A-2224F009B093}"
+          DTS:DTSID="{9F269F66-2609-4153-916C-91A540FA6135}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -67,7 +67,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="AUSBAUDATUM"
-          DTS:DTSID="{EAB5A894-F3A2-4D86-82B2-0E4B29A54979}"
+          DTS:DTSID="{F7A4C39F-8DDC-405F-B06E-3878DF36E069}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

@@ -22,7 +22,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="SSKL_ID"
-          DTS:DTSID="{A7C0BA28-4486-41AB-BEE2-981B54734378}"
+          DTS:DTSID="{B509A682-358D-4C85-A465-47570CF2C366}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -31,7 +31,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="MAUTSCHADSTOFFKLASSE"
-          DTS:DTSID="{F7527455-2256-454E-AA09-3C4A5BE3F3CF}"
+          DTS:DTSID="{3094BBD2-2413-46A8-82C5-A5A5D72C1B70}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -40,7 +40,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="BESCHREIBUNG"
-          DTS:DTSID="{84E42BF3-8F70-43D9-9008-2F7880BF1F7F}"
+          DTS:DTSID="{B09C5627-3A32-4BA1-90BF-0E7FC68822E1}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

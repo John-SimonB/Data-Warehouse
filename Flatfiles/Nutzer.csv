@@ -1,11 +1,10 @@
 `"`NUTZER_ID`"`,`"`STATUS`"`,`"`FIRMENNAME`"`,`"`VORNAME`"`,`"`NACHNAME`"`,`"`LAND`"`,`"`STRASSE`"`,`"`HAUSNUMMER`"`,`"`POSTLEITZAHL`"`,`"`RECHNUNGSINTERVALL`"`,`"`RECHNUNGSZUSTELLUNG`"`
-`"`1000000`"`,`"`active`"`,`"`Daimler AG`"`,`"`Mercedes`"`,`"`Benz`"`,`"`Deutschland`"`,`"`Autostrasse`"`,`"`125`"`,`"`12619`"`,`"`1`"`,`"`email`"`
-`"`1000001`"`,`"`active`"`,`"`Deutsche Post AG Zentrale`"`,`"`Frank`"`,`"`Winkelmann`"`,`"`Deutschland`"`,`"`Postzentrum`"`,`"`49`"`,`"`10258`"`,`"`1`"`,`"`pdf`"`
 `"`1000002`"`,`"`active`"`,`"`Coca-Cola Erfrischungsgetraenke AG`"`,`"`Reiner`"`,`"`Adel`"`,`"`Deutschland`"`,`"`Finkenweg`"`,`"`2`"`,`"`67134`"`,`"`1`"`,`"`post`"`
-`"`1000003`"`,`"`active`"`,`"`Ritter Logistik GmbH`"`,`"`Franz`"`,`"`Hoffmann`"`,`"`Deutschland`"`,`"`Schuetzenstrasse`"`,`"`36`"`,`"`59602`"`,`"`1`"`,`"`email`"`
-`"`1000004`"`,`"`active`"`,`"`P.T.S.U. Iwona Indeka`"`,`"`Czeslaw`"`,`"`Baltronowicz`"`,`"`Polen`"`,`"`Dabrowka Warszawska`"`,`"`26`"`,`"`42500`"`,`"`1`"`,`"`pdf`"`
-`"`1000005`"`,`"`active`"`,`"`Auto Transport Andrzej Sylwoniuk`"`,`"`Dariusz`"`,`"`Nowak`"`,`"`Polen`"`,`"`Sienkiewicza`"`,`"`4`"`,`"`72006`"`,`"`1`"`,`"`post`"`
-`"`1000006`"`,`"`active`"`,`"`Marini Antonio`"`,`"`Giovanni`"`,`"`del Simone`"`,`"`Italien`"`,`"`Via Callarga`"`,`"`9`"`,`"`31044`"`,`"`1`"`,`"`email`"`
-`"`1000007`"`,`"`active`"`,`"`Gatti Filastro SRL`"`,`"`Giuseppe`"`,`"`Vanda`"`,`"`Italien`"`,`"`Via Madrid`"`,`"`7`"`,`"`10154`"`,`"`1`"`,`"`post`"`
-`"`1000008`"`,`"`active`"`,`"`Juan Francisco Alvarez Lopez`"`,`"`Maria`"`,`"`Fernandez Duran`"`,`"`Spanien`"`,`"`Alfonso Pallares`"`,`"`7`"`,`"`46780`"`,`"`1`"`,`"`pdf`"`
-`"`1000009`"`,`"`active`"`,`"`Gomez Benitez NB Transportes`"`,`"`Juan`"`,`"`Mismo`"`,`"`Spanien`"`,`"`Esperanza`"`,`"`11`"`,`"`46830`"`,`"`1`"`,`"`post`"`
+`"`1001422`"`,`"`active`"`,`"`Frame Scene`"`,`"`Eric`"`,`"`Napolitano`"`,`"`Finnland`"`,`"`Bayreuther Strasse `"`,`"`90`"`,`"`72760`"`,`"`1`"`,`"`post`"`
+`"`1001453`"`,`"`active`"`,`"`Alpha Beta`"`,`"`Emmanuelle`"`,`"`Tanguay`"`,`"`Irland`"`,`"`Augsburger Strasse `"`,`"`108`"`,`"`53534`"`,`"`1`"`,`"`email`"`
+`"`1001473`"`,`"`active`"`,`"`Hanover Shoe`"`,`"`Halette`"`,`"`Chabot`"`,`"`Deutschland`"`,`"`Sömmeringstr`"`,`"`74`"`,`"`75196`"`,`"`1`"`,`"`email`"`
+`"`1001492`"`,`"`active`"`,`"`Big Bear Stores`"`,`"`Tisha`"`,`"`Thibodeaux`"`,`"`Bulgarien`"`,`"`Invalidenstrasse `"`,`"`127`"`,`"`66957`"`,`"`1`"`,`"`post`"`
+`"`1002504`"`,`"`active`"`,`"`Gamble-Skogmo`"`,`"`Camilla`"`,`"`Rozhkova`"`,`"`Kroatien`"`,`"`An der Schillingbrucke `"`,`"`46`"`,`"`88441`"`,`"`1`"`,`"`pdf`"`
+`"`1003434`"`,`"`active`"`,`"`Alert Alarm Company`"`,`"`Lily`"`,`"`Parkes`"`,`"`Kroatien`"`,`"`Rathausstrasse `"`,`"`126`"`,`"`90017`"`,`"`1`"`,`"`pdf`"`
+`"`1007932`"`,`"`active`"`,`"`Zantigo`"`,`"`Stefcia`"`,`"`Sobczak`"`,`"`Frankreich`"`,`"`Prenzlauer Allee `"`,`"`43`"`,`"`4289`"`,`"`1`"`,`"`pdf`"`
+`"`1007963`"`,`"`active`"`,`"`Stratagee`"`,`"`Vedette`"`,`"`Chartier`"`,`"`Österreich`"`,`"`Schaarsteinweg `"`,`"`2`"`,`"`94307`"`,`"`1`"`,`"`post`"`

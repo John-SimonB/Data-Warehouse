@@ -13,7 +13,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x0060__x0022__x0060_"
       DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Users\John-Simon\Desktop\Datenbanken\Flatfile\Mauterhebung.csv">
+      DTS:ConnectionString="C:\Users\John-Simon\Desktop\Datenbanken\Flatfile\FlatfileNEU\Mauterhebung.csv">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -22,7 +22,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="MAUT_ID"
-          DTS:DTSID="{F53486D6-C5ED-4BC1-ABC3-F9E4A34EFD86}"
+          DTS:DTSID="{288DA4B6-69F4-4CE0-9796-3229795C4E62}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -31,7 +31,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="ABSCHNITTS_ID"
-          DTS:DTSID="{AF9595D2-D7E6-4BBB-A251-DB640D04E1D4}"
+          DTS:DTSID="{D579F1DA-AEBE-4804-AABB-A6ED85BFEE0B}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -40,7 +40,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="FZG_ID"
-          DTS:DTSID="{0AF29984-5F5B-4162-A710-81D1CF75B963}"
+          DTS:DTSID="{9FA81F6F-90EC-4C57-828E-DDDCC8E78472}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -49,7 +49,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="KATEGORIE_ID"
-          DTS:DTSID="{74843027-37C4-455D-810B-D00F7F7E2C4B}"
+          DTS:DTSID="{1D743519-0511-4FF4-9355-B77D0B3ED8BF}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -58,7 +58,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="BEFAHRUNGSDATUM"
-          DTS:DTSID="{55ADDE8B-B0E0-44C1-B1BE-719BD0ADFA33}"
+          DTS:DTSID="{08D2FA69-AC19-48A1-A8CD-3AE4DDEFA0DD}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

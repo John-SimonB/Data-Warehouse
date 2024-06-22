@@ -13,7 +13,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x0060__x0022__x0060_"
       DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Users\John-Simon\Desktop\Datenbanken\Flatfile\Mautabschnitt2.csv">
+      DTS:ConnectionString="C:\Users\John-Simon\Desktop\Datenbanken\Flatfile\FlatfileNEU\Mautabschnitt.csv">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -22,7 +22,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="ABSCHNITTS_ID"
-          DTS:DTSID="{532DB1A5-80A8-4C64-80E2-3B96D3132E0D}"
+          DTS:DTSID="{02935B1C-01D5-4E2F-93F8-D3913AF9A9D1}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -30,7 +30,7 @@
           DTS:DataType="14"
           DTS:TextQualified="True"
           DTS:ObjectName="LAENGE"
-          DTS:DTSID="{579885E9-E385-49F9-B3E7-899398EBFBF6}"
+          DTS:DTSID="{1B2FD7BA-1C49-45D1-8C17-2B7BA0306F02}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="START_KOORDINATE"
-          DTS:DTSID="{1D9B2433-E906-4730-B890-2C9254B932AB}"
+          DTS:DTSID="{60975B62-8509-4B94-9ED6-B1BF3C4745A3}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="ZIEL_KOORDINATE"
-          DTS:DTSID="{B3FBC5B0-55A4-48A4-BE18-52923F94AC61}"
+          DTS:DTSID="{E540A972-D90E-43F7-8028-EAA311A29F31}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="NAME"
-          DTS:DTSID="{35DF52FD-8485-44D7-8C1B-DBFDAA24730B}"
+          DTS:DTSID="{CE94F2DA-4734-4537-911A-DDFA8E5337A8}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -66,7 +66,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="ABSCHNITTSTYP"
-          DTS:DTSID="{CFE126A7-707A-45F2-AC79-2E72D17CF4BC}"
+          DTS:DTSID="{755FC361-B90F-4A34-8ECA-48E5CE80D099}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
