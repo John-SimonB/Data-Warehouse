@@ -1,0 +1,30 @@
+USE [u575710]; -- Ersetze dies durch den Namen deiner Datenbank
+GO
+
+CREATE PROCEDURE Update_Nutzer_DIMENSION 
+	@NUTZER_ID VARCHAR(50),
+    @FIRMENNAME VARCHAR(100),
+    @VORNAME VARCHAR(50),
+    @NACHNAME VARCHAR(50),
+    @LAND VARCHAR(50),
+    @STRASSE VARCHAR(50),
+    @HAUSNUMMER VARCHAR(5),
+    @PLZ VARCHAR(20)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Update-Anweisung
+    UPDATE Nutzer_DIMENSION
+    SET 
+        FIRMENNAME = @FIRMENNAME,
+        VORNAME = @VORNAME,
+        NACHNAME = @NACHNAME,
+        LAND = @LAND,
+        STRASSE = @STRASSE,
+        HAUSNUMMER = @HAUSNUMMER,
+        PLZ = @PLZ
+    WHERE 
+        NUTZER_ID = @NUTZER_ID;
+END
+GO
